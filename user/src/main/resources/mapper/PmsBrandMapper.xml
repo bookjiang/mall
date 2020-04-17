@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.PmsBrandMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.PmsBrand">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="logo" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="factory" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="picture" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsBrand">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="logo" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="factory" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="picture" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_story" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    brand_id, name, show_status, product_count, product_comment_count, logo, factory, 
+    picture
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    brand_story
+  </sql>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.PmsProductClassifyMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.PmsProductClassify">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="parent_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="level" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="nav_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="icon" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsProductClassify">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="parent_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="level" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="nav_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="icon" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    product_classify_id, parent_id, name, level, product_count, product_unit, nav_status, 
+    show_status, icon
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    description
+  </sql>
+</mapper>

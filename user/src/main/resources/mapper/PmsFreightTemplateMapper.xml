@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.PmsFreightTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.PmsFreightTemplate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="freight_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="charge_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="first_weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="first_freight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="continue_weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="continue_freight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="destination" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    freight_id, name, charge_type, first_weight, first_freight, continue_weight, continue_freight, 
+    destination
+  </sql>
+</mapper>

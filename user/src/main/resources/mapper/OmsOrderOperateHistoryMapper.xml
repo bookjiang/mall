@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.OmsOrderOperateHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.OmsOrderOperateHistory">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="order_operate_history_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="operate_man" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="order_before_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_late_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    order_operate_history_id, order_id, operate_man, create_time, order_before_status, 
+    order_late_status, note
+  </sql>
+</mapper>

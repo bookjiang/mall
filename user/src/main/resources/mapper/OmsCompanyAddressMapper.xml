@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.OmsCompanyAddressMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.OmsCompanyAddress">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="address_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="address_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="send_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receive_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="region" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="detail_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    address_id, address_name, send_status, receive_status, name, phone, province, city, 
+    region, detail_address
+  </sql>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.SmsCouponMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.SmsCoupon">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="coupon_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platform" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="min_point" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="use_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="publish_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receive_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="enable_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="member_level" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    coupon_id, type, name, platform, count, amount, per_limit, min_point, start_time, 
+    end_time, use_type, note, publish_count, use_count, receive_count, enable_time, code, 
+    member_level
+  </sql>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.OmsCartItemMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.OmsCartItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="cart_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="quantity" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sku_sn" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="member_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="modify_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_attribute" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    cart_id, product_id, sku_id, member_id, quantity, price, product_pic, product_name, 
+    brand_name, product_sn, keywords, sku_sn, member_name, create_date, modify_date, 
+    delete_status, product_classify_id, product_attribute
+  </sql>
+</mapper>
