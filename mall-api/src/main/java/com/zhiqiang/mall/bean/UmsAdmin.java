@@ -1,10 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "ums_admin")
-public class UmsAdmin {
+public class UmsAdmin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")

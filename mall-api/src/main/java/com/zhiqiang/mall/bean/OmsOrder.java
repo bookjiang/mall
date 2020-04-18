@@ -1,11 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "oms_order")
-public class OmsOrder {
+public class OmsOrder implements Serializable {
     /**
      * 订单id
      */

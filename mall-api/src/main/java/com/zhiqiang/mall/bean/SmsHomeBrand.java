@@ -1,9 +1,10 @@
 package com.zhiqiang.mall.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "sms_home_brand")
-public class SmsHomeBrand {
+public class SmsHomeBrand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

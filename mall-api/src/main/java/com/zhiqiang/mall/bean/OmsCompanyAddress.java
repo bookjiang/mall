@@ -1,9 +1,10 @@
 package com.zhiqiang.mall.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "oms_company_address")
-public class OmsCompanyAddress {
+public class OmsCompanyAddress implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")

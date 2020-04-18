@@ -1,9 +1,10 @@
 package com.zhiqiang.mall.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "ums_points_consume_setting")
-public class UmsPointsConsumeSetting {
+public class UmsPointsConsumeSetting implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

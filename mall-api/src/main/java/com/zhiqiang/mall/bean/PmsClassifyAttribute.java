@@ -1,9 +1,10 @@
 package com.zhiqiang.mall.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "pms_classify_attribute")
-public class PmsClassifyAttribute {
+public class PmsClassifyAttribute implements Serializable {
     /**
      * 分类属性id
      */

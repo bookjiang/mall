@@ -1,10 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "pms_comment")
-public class PmsComment {
+public class PmsComment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")

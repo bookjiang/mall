@@ -1,10 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "sms_sales_session")
-public class SmsSalesSession {
+public class SmsSalesSession implements Serializable {
     /**
      * 编号
      */

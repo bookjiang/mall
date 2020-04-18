@@ -1,5 +1,6 @@
 package com.zhiqiang.mall.user.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.zhiqiang.mall.bean.UmsMember;
 import com.zhiqiang.mall.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    @Autowired
+   @Reference
     UmsMemberService umsMemberService;
 
     @RequestMapping("getAllUser")

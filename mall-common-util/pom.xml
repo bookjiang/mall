@@ -11,7 +11,7 @@
 
     <groupId>com.zhiqiang.mall</groupId>
     <artifactId>mall-common-util</artifactId>
-
+    <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,6 +50,69 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+        </dependency>
 
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gitee.reger</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dubbo</groupId>-->
+<!--            <artifactId>dubbo</artifactId>-->
+
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;            <dependency>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <groupId>com.101tec</groupId>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <artifactId>zkclient</artifactId>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <version>${zkclient.version}</version>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </dependency>&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.zookeeper</groupId>-->
+<!--            <artifactId>zookeeper</artifactId>-->
+
+<!--        </dependency>-->
+
+
+<!--        &lt;!&ndash;            <dependency>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <groupId>com.gitee.reger</groupId>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <artifactId>spring-boot-starter-dubbo</artifactId>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <version>${dubbo-starter.version}</version>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </dependency>&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dubbo</groupId>-->
+<!--            <artifactId>dubbo-spring-boot-starter</artifactId>-->
+
+<!--        </dependency>-->
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

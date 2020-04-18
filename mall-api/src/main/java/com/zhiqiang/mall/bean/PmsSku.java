@@ -1,10 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
 
 @Table(name = "pms_sku")
-public class PmsSku {
+public class PmsSku implements Serializable {
     /**
      * 商品sku编号
      */

@@ -1,11 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "sms_coupon")
-public class SmsCoupon {
+public class SmsCoupon implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coupon_id")

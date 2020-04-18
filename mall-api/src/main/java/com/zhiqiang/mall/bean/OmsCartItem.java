@@ -1,11 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "oms_cart_item")
-public class OmsCartItem {
+public class OmsCartItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")

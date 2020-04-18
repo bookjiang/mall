@@ -1,11 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "pms_product")
-public class PmsProduct {
+public class PmsProduct implements Serializable {
     /**
      * 货品(spu)id（与商品sku区别）
      */

@@ -1,10 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
 
 @Table(name = "pms_freight_template")
-public class PmsFreightTemplate {
+public class PmsFreightTemplate implements Serializable {
     /**
      * 运费模板id
      */

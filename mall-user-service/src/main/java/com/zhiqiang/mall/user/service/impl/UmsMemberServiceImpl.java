@@ -1,10 +1,13 @@
 package com.zhiqiang.mall.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.zhiqiang.mall.bean.UmsMember;
 import com.zhiqiang.mall.service.UmsMemberService;
 import com.zhiqiang.mall.user.mapper.UmsMemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
+
 
 import java.util.List;
 @Service
