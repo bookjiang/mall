@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "oms_order_return_reason")
 public class OmsOrderReturnReason implements Serializable {
     @Id

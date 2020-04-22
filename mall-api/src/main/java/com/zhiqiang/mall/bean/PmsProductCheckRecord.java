@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "pms_product_check_record")
 public class PmsProductCheckRecord implements Serializable {
     @Id

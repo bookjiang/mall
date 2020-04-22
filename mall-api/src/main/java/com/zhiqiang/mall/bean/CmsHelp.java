@@ -1,10 +1,13 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "cms_help")
+@ToString
 public class CmsHelp implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

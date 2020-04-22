@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "pms_sku")
 public class PmsSku implements Serializable {
     /**

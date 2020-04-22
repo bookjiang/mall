@@ -1,9 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name = "cms_help_classify")
+@ToString
 public class CmsHelpClassify implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

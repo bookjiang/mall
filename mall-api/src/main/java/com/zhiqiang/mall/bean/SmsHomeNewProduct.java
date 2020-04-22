@@ -1,8 +1,10 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
-
+@ToString
 @Table(name = "sms_home_new_product")
 public class SmsHomeNewProduct implements Serializable {
     @Id

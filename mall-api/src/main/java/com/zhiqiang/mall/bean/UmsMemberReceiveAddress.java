@@ -1,8 +1,10 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
-
+@ToString
 @Table(name = "ums_member_receive_address")
 public class UmsMemberReceiveAddress implements Serializable {
     @Id

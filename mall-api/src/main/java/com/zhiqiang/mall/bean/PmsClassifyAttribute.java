@@ -1,8 +1,10 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
-
+@ToString
 @Table(name = "pms_classify_attribute")
 public class PmsClassifyAttribute implements Serializable {
     /**

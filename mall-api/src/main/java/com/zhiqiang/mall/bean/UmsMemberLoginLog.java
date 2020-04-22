@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "ums_member_login_log")
 public class UmsMemberLoginLog implements Serializable {
     @Id

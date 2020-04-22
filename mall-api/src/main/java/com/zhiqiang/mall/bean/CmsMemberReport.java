@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "cms_member_report")
 public class CmsMemberReport implements Serializable {
     @Id

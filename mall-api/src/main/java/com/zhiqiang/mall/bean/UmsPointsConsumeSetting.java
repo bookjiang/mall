@@ -1,8 +1,10 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
-
+@ToString
 @Table(name = "ums_points_consume_setting")
 public class UmsPointsConsumeSetting implements Serializable {
     @Id

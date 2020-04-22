@@ -1,9 +1,11 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "oms_order_item")
 public class OmsOrderItem implements Serializable {
     /**

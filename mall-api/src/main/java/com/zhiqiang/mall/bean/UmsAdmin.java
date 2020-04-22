@@ -1,24 +1,43 @@
 package com.zhiqiang.mall.bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.ToString;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+@Data
+@ApiModel(value = "后台管理者模型")
+@ToString
 @Table(name = "ums_admin")
 public class UmsAdmin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")
+    @ApiModelProperty(value = "管理员id")
     private Long adminId;
 
     /**
      * 用户名
      */
+
+    @NotEmpty(message = "用户名不能为空")
     private String username;
 
     /**
      * 密码
      */
+    @Size(min = 6, message = "密码必须至少是6位")
+    @Pattern(regexp = "^?=.*?[A-Z]", message = "密码至少一个小写英文字母")
+    @NotEmpty(message = "密码不能为空")
     private String password;
 
     /**
@@ -29,6 +48,7 @@ public class UmsAdmin implements Serializable {
     /**
      * 邮箱
      */
+    @Email(message = "邮箱格式不合法")
     private String email;
 
     /**
@@ -86,6 +106,7 @@ public class UmsAdmin implements Serializable {
     /**
      * @param adminId
      */
+    @JsonProperty(value = "adminId")
     public void setAdminId(Long adminId) {
         this.adminId = adminId;
     }
@@ -167,6 +188,7 @@ public class UmsAdmin implements Serializable {
      *
      * @return nick_name - 昵称
      */
+
     public String getNickName() {
         return nickName;
     }
@@ -176,6 +198,7 @@ public class UmsAdmin implements Serializable {
      *
      * @param nickName 昵称
      */
+    @JsonProperty(value = "nickName")
     public void setNickName(String nickName) {
         this.nickName = nickName == null ? null : nickName.trim();
     }
@@ -212,6 +235,7 @@ public class UmsAdmin implements Serializable {
      *
      * @param createTime 创建时间
      */
+    @JsonProperty(value = "createTime")
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
@@ -230,6 +254,7 @@ public class UmsAdmin implements Serializable {
      *
      * @param loginTime 最后登录时间
      */
+    @JsonProperty(value = "loginTime")
     public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
     }

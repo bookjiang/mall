@@ -1,10 +1,12 @@
 package com.zhiqiang.mall.bean;
 
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-
+@ToString
 @Table(name = "pms_product")
 public class PmsProduct implements Serializable {
     /**
