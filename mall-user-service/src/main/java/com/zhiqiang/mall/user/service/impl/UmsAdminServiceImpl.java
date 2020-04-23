@@ -25,8 +25,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public int register(UmsAdmin umsAdmin) {
-        UmsAdmin umsAdmin1 = null;
-        //System.out.println(umsAdmin.toString());
+        UmsAdmin umsAdmin1 = new UmsAdmin();
+
         umsAdmin1.setUsername(umsAdmin.getUsername());
         List<UmsAdmin> umsAdmins=umsAdminMapper.select(umsAdmin1);
         if(umsAdmins.size()>0)

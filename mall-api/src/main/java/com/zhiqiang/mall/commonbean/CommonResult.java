@@ -77,6 +77,9 @@ public class CommonResult<T> {
     public static <T> CommonResult<T> validateFailed(String message) {
         return new CommonResult<T>(Code.VALIDATE_FAILED.getCode(), message, null);
     }
+    public static <T> CommonResult<T> validateFailed(T data) {
+        return new CommonResult<T>(Code.VALIDATE_FAILED.getCode(), Code.VALIDATE_FAILED.getMessage(), data);
+    }
 
     //未登录或者token过期
     public static <T> CommonResult<T> unauthorized(T data) {

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
+
 /**
  * @description: 后台用户管理接口
  * @param:
@@ -34,9 +36,19 @@ public class AdminController {
     @ApiOperation(value = "新增管理员")
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<UmsAdmin> register(@RequestBody UmsAdmin umsAdmin, BindingResult result)
+    public CommonResult<UmsAdmin> register(@Valid @RequestBody  UmsAdmin umsAdmin, BindingResult result)
     {
-        System.out.println("1"+umsAdmin.toString());
+
+        if(result.hasErrors())
+        {
+            String notes="总共有"+result.getErrorCount()+"处错误，分别为";
+            for(int i=0;i<result.getErrorCount();i++)
+            {
+
+                notes=notes+result.getFieldErrors().get(i).getDefaultMessage()+";";
+            }
+            return CommonResult.validateFailed(notes);
+        }
         int t=umsAdminService.register(umsAdmin);
         if(t==0)//0表示注册失败，1表示用户已存在，2表示成功
         {
