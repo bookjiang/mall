@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Table(name = "sms_sales_product_relation")
 public class SmsSalesProductRelation implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

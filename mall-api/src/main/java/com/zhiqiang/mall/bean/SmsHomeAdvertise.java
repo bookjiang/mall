@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Table(name = "sms_home_advertise")
 public class SmsHomeAdvertise implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

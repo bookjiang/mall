@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "ums_member_receive_address")
 public class UmsMemberReceiveAddress implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "member_id")

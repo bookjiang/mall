@@ -1,7 +1,7 @@
 package com.zhiqiang.mall.commonbean;
 
 import com.github.pagehelper.PageInfo;
-import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -42,15 +42,15 @@ public class CommonPage<T> {
      * @author: zhiqiang
      * @time: 2020/4/28 23:58
      */
-    public static <T> CommonPage<T> restPage(Page<T> pageInfo) {
-        CommonPage<T> result = new CommonPage<T>();
-        result.setTotalPage(pageInfo.getTotalPages());
-        result.setPageNum(pageInfo.getNumber());
-        result.setPageSize(pageInfo.getSize());
-        result.setTotal(pageInfo.getTotalElements());
-        result.setList(pageInfo.getContent());
-        return result;
-    }
+//    public static <T> CommonPage<T> restPage(Page<T> pageInfo) {
+//        CommonPage<T> result = new CommonPage<T>();
+//        result.setTotalPage(pageInfo.getTotalPages());
+//        result.setPageNum(pageInfo.getNumber());
+//        result.setPageSize(pageInfo.getSize());
+//        result.setTotal(pageInfo.getTotalElements());
+//        result.setList(pageInfo.getContent());
+//        return result;
+//    }
 
     public Integer getPageNum() {
         return pageNum;

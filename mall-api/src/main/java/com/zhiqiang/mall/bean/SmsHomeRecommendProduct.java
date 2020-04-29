@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "sms_home_recommend_product")
 public class SmsHomeRecommendProduct implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

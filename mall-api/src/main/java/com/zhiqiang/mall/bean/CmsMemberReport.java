@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Table(name = "cms_member_report")
 public class CmsMemberReport implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

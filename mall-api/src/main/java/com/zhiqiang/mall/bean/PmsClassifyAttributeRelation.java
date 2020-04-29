@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "pms_classify_attribute_relation")
 public class PmsClassifyAttributeRelation implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

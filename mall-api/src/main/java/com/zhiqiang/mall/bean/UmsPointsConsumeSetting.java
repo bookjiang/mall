@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "ums_points_consume_setting")
 public class UmsPointsConsumeSetting implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

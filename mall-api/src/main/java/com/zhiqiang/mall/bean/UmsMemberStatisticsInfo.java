@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Table(name = "ums_member_statistics_info")
 public class UmsMemberStatisticsInfo implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "member_id")
