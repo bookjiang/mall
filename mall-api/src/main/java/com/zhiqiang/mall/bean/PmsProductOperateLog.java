@@ -1,16 +1,15 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_product_operate_log")
 public class PmsProductOperateLog implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "operate_log_id")
     private Long operateLogId;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsProductOperateLog(Long operateLogId) {
         this.operateLogId = operateLogId;
@@ -32,5 +31,17 @@ public class PmsProductOperateLog implements Serializable {
      */
     public void setOperateLogId(Long operateLogId) {
         this.operateLogId = operateLogId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", operateLogId=").append(operateLogId);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

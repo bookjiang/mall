@@ -4,26 +4,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-
 
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
-
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
 @Data
 @ApiModel(value = "后台管理者模型")
-@ToString
 @Table(name = "ums_admin")
 public class UmsAdmin implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "管理员id")
     @JsonProperty(value = "adminId")
     private Long adminId;
@@ -31,7 +27,6 @@ public class UmsAdmin implements Serializable {
     /**
      * 用户名
      */
-
     @NotEmpty(message = "用户名不能为空")
     private String username;
 
@@ -57,7 +52,6 @@ public class UmsAdmin implements Serializable {
      * 昵称
      */
     @Column(name = "nick_name")
-    @JsonProperty(value = "nickName")
     private String nickName;
 
     /**
@@ -69,20 +63,20 @@ public class UmsAdmin implements Serializable {
      * 创建时间
      */
     @Column(name = "create_time")
-    @JsonProperty(value = "createTime")
     private Date createTime;
 
     /**
      * 最后登录时间
      */
     @Column(name = "login_time")
-    @JsonProperty(value = "loginTime")
     private Date loginTime;
 
     /**
      * 帐号启用状态：0->禁用；1->启用
      */
     private Integer status;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsAdmin(Long adminId, String username, String password, String icon, String email, String nickName, String note, Date createTime, Date loginTime, Integer status) {
         this.adminId = adminId;
@@ -111,7 +105,6 @@ public class UmsAdmin implements Serializable {
     /**
      * @param adminId
      */
-
     public void setAdminId(Long adminId) {
         this.adminId = adminId;
     }
@@ -131,8 +124,7 @@ public class UmsAdmin implements Serializable {
      * @param username 用户名
      */
     public void setUsername(String username) {
-        //this.username = username == null ? null : username.trim();
-        this.username=username;
+        this.username = username == null ? null : username.trim();
     }
 
     /**
@@ -194,7 +186,6 @@ public class UmsAdmin implements Serializable {
      *
      * @return nick_name - 昵称
      */
-
     public String getNickName() {
         return nickName;
     }
@@ -204,7 +195,6 @@ public class UmsAdmin implements Serializable {
      *
      * @param nickName 昵称
      */
-
     public void setNickName(String nickName) {
         this.nickName = nickName == null ? null : nickName.trim();
     }
@@ -241,7 +231,6 @@ public class UmsAdmin implements Serializable {
      *
      * @param createTime 创建时间
      */
-
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
@@ -260,7 +249,6 @@ public class UmsAdmin implements Serializable {
      *
      * @param loginTime 最后登录时间
      */
-
     public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
     }
@@ -281,5 +269,26 @@ public class UmsAdmin implements Serializable {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", adminId=").append(adminId);
+        sb.append(", username=").append(username);
+        sb.append(", password=").append(password);
+        sb.append(", icon=").append(icon);
+        sb.append(", email=").append(email);
+        sb.append(", nickName=").append(nickName);
+        sb.append(", note=").append(note);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", loginTime=").append(loginTime);
+        sb.append(", status=").append(status);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

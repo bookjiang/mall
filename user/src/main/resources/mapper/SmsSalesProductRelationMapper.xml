@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.SmsSalesProductRelationMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.SmsSalesProductRelation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="sales_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="sales_session_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="flash_promotion_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="flash_promotion_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="flash_promotion_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, sales_id, sales_session_id, product_id, flash_promotion_price, flash_promotion_count, 
+    flash_promotion_limit
+  </sql>
+  <select id="selectByExample" parameterType="com.zhiqiang.mall.bean.SmsSalesProductRelationExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sms_sales_product_relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhiqiang.mall.bean.SmsSalesProductRelationExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from sms_sales_product_relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.zhiqiang.mall.bean.SmsSalesProductRelationExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from sms_sales_product_relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update sms_sales_product_relation
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.salesId != null">
+        sales_id = #{record.salesId,jdbcType=BIGINT},
+      </if>
+      <if test="record.salesSessionId != null">
+        sales_session_id = #{record.salesSessionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=BIGINT},
+      </if>
+      <if test="record.flashPromotionPrice != null">
+        flash_promotion_price = #{record.flashPromotionPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.flashPromotionCount != null">
+        flash_promotion_count = #{record.flashPromotionCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.flashPromotionLimit != null">
+        flash_promotion_limit = #{record.flashPromotionLimit,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update sms_sales_product_relation
+    set id = #{record.id,jdbcType=BIGINT},
+      sales_id = #{record.salesId,jdbcType=BIGINT},
+      sales_session_id = #{record.salesSessionId,jdbcType=BIGINT},
+      product_id = #{record.productId,jdbcType=BIGINT},
+      flash_promotion_price = #{record.flashPromotionPrice,jdbcType=DECIMAL},
+      flash_promotion_count = #{record.flashPromotionCount,jdbcType=INTEGER},
+      flash_promotion_limit = #{record.flashPromotionLimit,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

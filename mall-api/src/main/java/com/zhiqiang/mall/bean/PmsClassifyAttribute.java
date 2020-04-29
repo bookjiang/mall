@@ -1,17 +1,14 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_classify_attribute")
 public class PmsClassifyAttribute implements Serializable {
     /**
      * 分类属性id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "classify_attribute_id")
     private Long classifyAttributeId;
 
@@ -31,6 +28,8 @@ public class PmsClassifyAttribute implements Serializable {
      */
     @Column(name = "param_count")
     private Integer paramCount;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsClassifyAttribute(Long classifyAttributeId, String name, Integer attributeCount, Integer paramCount) {
         this.classifyAttributeId = classifyAttributeId;
@@ -113,5 +112,20 @@ public class PmsClassifyAttribute implements Serializable {
      */
     public void setParamCount(Integer paramCount) {
         this.paramCount = paramCount;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", classifyAttributeId=").append(classifyAttributeId);
+        sb.append(", name=").append(name);
+        sb.append(", attributeCount=").append(attributeCount);
+        sb.append(", paramCount=").append(paramCount);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

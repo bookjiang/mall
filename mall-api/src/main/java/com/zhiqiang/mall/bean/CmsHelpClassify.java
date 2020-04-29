@@ -1,15 +1,11 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
+import javax.persistence.*;
 
 @Table(name = "cms_help_classify")
-@ToString
 public class CmsHelpClassify implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "classify_id")
     private Long classifyId;
 
@@ -36,6 +32,8 @@ public class CmsHelpClassify implements Serializable {
      * 备注
      */
     private String note;
+
+    private static final long serialVersionUID = 1L;
 
     public CmsHelpClassify(Long classifyId, String name, String icon, Integer helpCount, Integer showStatus, String note) {
         this.classifyId = classifyId;
@@ -148,5 +146,22 @@ public class CmsHelpClassify implements Serializable {
      */
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", classifyId=").append(classifyId);
+        sb.append(", name=").append(name);
+        sb.append(", icon=").append(icon);
+        sb.append(", helpCount=").append(helpCount);
+        sb.append(", showStatus=").append(showStatus);
+        sb.append(", note=").append(note);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

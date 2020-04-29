@@ -1,17 +1,14 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_product_classify")
 public class PmsProductClassify implements Serializable {
     /**
      * 分类id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_classify_id")
     private Long productClassifyId;
 
@@ -64,6 +61,8 @@ public class PmsProductClassify implements Serializable {
      * 描述
      */
     private String description;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsProductClassify(Long productClassifyId, Long parentId, String name, Integer level, Integer productCount, String productUnit, Integer navStatus, Integer showStatus, String icon, String description) {
         this.productClassifyId = productClassifyId;
@@ -260,5 +259,26 @@ public class PmsProductClassify implements Serializable {
      */
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", parentId=").append(parentId);
+        sb.append(", name=").append(name);
+        sb.append(", level=").append(level);
+        sb.append(", productCount=").append(productCount);
+        sb.append(", productUnit=").append(productUnit);
+        sb.append(", navStatus=").append(navStatus);
+        sb.append(", showStatus=").append(showStatus);
+        sb.append(", icon=").append(icon);
+        sb.append(", description=").append(description);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

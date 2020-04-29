@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "sms_coupon_history")
 public class SmsCouponHistory implements Serializable {
     @Id
@@ -71,6 +69,8 @@ public class SmsCouponHistory implements Serializable {
      */
     @Column(name = "order_sn")
     private String orderSn;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsCouponHistory(Long id, Long couponId, Long memberId, Long orderId, String couponCode, String memberNickname, Integer getType, Date createTime, Integer useStatus, Date useTime, String orderSn) {
         this.id = id;
@@ -282,5 +282,27 @@ public class SmsCouponHistory implements Serializable {
      */
     public void setOrderSn(String orderSn) {
         this.orderSn = orderSn == null ? null : orderSn.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", couponId=").append(couponId);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", orderId=").append(orderId);
+        sb.append(", couponCode=").append(couponCode);
+        sb.append(", memberNickname=").append(memberNickname);
+        sb.append(", getType=").append(getType);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", useStatus=").append(useStatus);
+        sb.append(", useTime=").append(useTime);
+        sb.append(", orderSn=").append(orderSn);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

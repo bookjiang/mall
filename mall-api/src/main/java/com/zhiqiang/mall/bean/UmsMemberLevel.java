@@ -1,14 +1,11 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "ums_member_level")
 public class UmsMemberLevel implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_level_id")
     private Long memberLevelId;
 
@@ -66,6 +63,8 @@ public class UmsMemberLevel implements Serializable {
     private Integer priviledgeBirthday;
 
     private String note;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMemberLevel(Long memberLevelId, String name, Integer growthPointLow, Integer growthPointHigh, Integer defaultStatus, Integer freeFreightTicket, Integer commentGrowthPoint, Integer priviledgeComment, Integer priviledgeMemberPrice, Integer priviledgeBirthday, String note) {
         this.memberLevelId = memberLevelId;
@@ -273,5 +272,27 @@ public class UmsMemberLevel implements Serializable {
      */
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", memberLevelId=").append(memberLevelId);
+        sb.append(", name=").append(name);
+        sb.append(", growthPointLow=").append(growthPointLow);
+        sb.append(", growthPointHigh=").append(growthPointHigh);
+        sb.append(", defaultStatus=").append(defaultStatus);
+        sb.append(", freeFreightTicket=").append(freeFreightTicket);
+        sb.append(", commentGrowthPoint=").append(commentGrowthPoint);
+        sb.append(", priviledgeComment=").append(priviledgeComment);
+        sb.append(", priviledgeMemberPrice=").append(priviledgeMemberPrice);
+        sb.append(", priviledgeBirthday=").append(priviledgeBirthday);
+        sb.append(", note=").append(note);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

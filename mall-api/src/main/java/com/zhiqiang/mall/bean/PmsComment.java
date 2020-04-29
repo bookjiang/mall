@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_comment")
 public class PmsComment implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
     private Long commentId;
 
@@ -93,6 +90,8 @@ public class PmsComment implements Serializable {
      * 内容
      */
     private String content;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsComment(Long commentId, Long productId, String nickName, String productName, Integer star, String memberIp, Date createTime, Integer showStatus, String productAttribute, Integer collectNum, Integer readNum, String pics, String memberIcon, Integer replayCount, String content) {
         this.commentId = commentId;
@@ -380,5 +379,31 @@ public class PmsComment implements Serializable {
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", commentId=").append(commentId);
+        sb.append(", productId=").append(productId);
+        sb.append(", nickName=").append(nickName);
+        sb.append(", productName=").append(productName);
+        sb.append(", star=").append(star);
+        sb.append(", memberIp=").append(memberIp);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", showStatus=").append(showStatus);
+        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", collectNum=").append(collectNum);
+        sb.append(", readNum=").append(readNum);
+        sb.append(", pics=").append(pics);
+        sb.append(", memberIcon=").append(memberIcon);
+        sb.append(", replayCount=").append(replayCount);
+        sb.append(", content=").append(content);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

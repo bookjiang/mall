@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "ums_member")
 public class UmsMember implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
     private Long memberId;
 
@@ -108,6 +105,8 @@ public class UmsMember implements Serializable {
      */
     @Column(name = "is_vip")
     private Integer isVip;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMember(Long memberId, Long memberLevelId, String username, String nickname, Integer status, String phone, String password, Date createTime, String icon, Integer gender, Date birthday, String city, String job, String personalizedSignature, Integer sourceType, Integer integration, Integer growth, Integer historyIntegration, Integer isVip) {
         this.memberId = memberId;
@@ -471,5 +470,35 @@ public class UmsMember implements Serializable {
      */
     public void setIsVip(Integer isVip) {
         this.isVip = isVip;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", memberId=").append(memberId);
+        sb.append(", memberLevelId=").append(memberLevelId);
+        sb.append(", username=").append(username);
+        sb.append(", nickname=").append(nickname);
+        sb.append(", status=").append(status);
+        sb.append(", phone=").append(phone);
+        sb.append(", password=").append(password);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", icon=").append(icon);
+        sb.append(", gender=").append(gender);
+        sb.append(", birthday=").append(birthday);
+        sb.append(", city=").append(city);
+        sb.append(", job=").append(job);
+        sb.append(", personalizedSignature=").append(personalizedSignature);
+        sb.append(", sourceType=").append(sourceType);
+        sb.append(", integration=").append(integration);
+        sb.append(", growth=").append(growth);
+        sb.append(", historyIntegration=").append(historyIntegration);
+        sb.append(", isVip=").append(isVip);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

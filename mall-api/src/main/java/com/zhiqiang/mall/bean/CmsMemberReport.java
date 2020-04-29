@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "cms_member_report")
 public class CmsMemberReport implements Serializable {
     @Id
@@ -73,6 +71,8 @@ public class CmsMemberReport implements Serializable {
      */
     @Column(name = "handle_replay")
     private String handleReplay;
+
+    private static final long serialVersionUID = 1L;
 
     public CmsMemberReport(Long id, String reportMemberName, Date createTime, Integer reportType, Long commentId, String reportObject, Integer reportStatus, Integer handleStatus, String note, Long handleMan, String reportContent, String handleReplay) {
         this.id = id;
@@ -299,5 +299,28 @@ public class CmsMemberReport implements Serializable {
      */
     public void setHandleReplay(String handleReplay) {
         this.handleReplay = handleReplay == null ? null : handleReplay.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", reportMemberName=").append(reportMemberName);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", reportType=").append(reportType);
+        sb.append(", commentId=").append(commentId);
+        sb.append(", reportObject=").append(reportObject);
+        sb.append(", reportStatus=").append(reportStatus);
+        sb.append(", handleStatus=").append(handleStatus);
+        sb.append(", note=").append(note);
+        sb.append(", handleMan=").append(handleMan);
+        sb.append(", reportContent=").append(reportContent);
+        sb.append(", handleReplay=").append(handleReplay);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

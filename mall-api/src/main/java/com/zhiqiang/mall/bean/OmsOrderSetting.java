@@ -1,14 +1,11 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "oms_order_setting")
 public class OmsOrderSetting implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_setting_id")
     private Long orderSettingId;
 
@@ -41,6 +38,8 @@ public class OmsOrderSetting implements Serializable {
      */
     @Column(name = "auto_comment_time")
     private Integer autoCommentTime;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrderSetting(Long orderSettingId, Integer salesCloseTime, Integer normalCloseTime, Integer confirmCloseTime, Integer afterSalesTime, Integer autoCommentTime) {
         this.orderSettingId = orderSettingId;
@@ -157,5 +156,22 @@ public class OmsOrderSetting implements Serializable {
      */
     public void setAutoCommentTime(Integer autoCommentTime) {
         this.autoCommentTime = autoCommentTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderSettingId=").append(orderSettingId);
+        sb.append(", salesCloseTime=").append(salesCloseTime);
+        sb.append(", normalCloseTime=").append(normalCloseTime);
+        sb.append(", confirmCloseTime=").append(confirmCloseTime);
+        sb.append(", afterSalesTime=").append(afterSalesTime);
+        sb.append(", autoCommentTime=").append(autoCommentTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,14 +1,11 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "oms_company_address")
 public class OmsCompanyAddress implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")
     private Long addressId;
 
@@ -60,6 +57,8 @@ public class OmsCompanyAddress implements Serializable {
      */
     @Column(name = "detail_address")
     private String detailAddress;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsCompanyAddress(Long addressId, String addressName, Integer sendStatus, Integer receiveStatus, String name, String phone, String province, String city, String region, String detailAddress) {
         this.addressId = addressId;
@@ -252,5 +251,26 @@ public class OmsCompanyAddress implements Serializable {
      */
     public void setDetailAddress(String detailAddress) {
         this.detailAddress = detailAddress == null ? null : detailAddress.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", addressId=").append(addressId);
+        sb.append(", addressName=").append(addressName);
+        sb.append(", sendStatus=").append(sendStatus);
+        sb.append(", receiveStatus=").append(receiveStatus);
+        sb.append(", name=").append(name);
+        sb.append(", phone=").append(phone);
+        sb.append(", province=").append(province);
+        sb.append(", city=").append(city);
+        sb.append(", region=").append(region);
+        sb.append(", detailAddress=").append(detailAddress);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

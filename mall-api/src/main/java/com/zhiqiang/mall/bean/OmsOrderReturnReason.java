@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_order_return_reason")
 public class OmsOrderReturnReason implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_return_reason_id")
     private Long orderReturnReasonId;
 
@@ -28,6 +25,8 @@ public class OmsOrderReturnReason implements Serializable {
      */
     @Column(name = "create_time")
     private Date createTime;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrderReturnReason(Long orderReturnReasonId, String name, Integer staus, Date createTime) {
         this.orderReturnReasonId = orderReturnReasonId;
@@ -106,5 +105,20 @@ public class OmsOrderReturnReason implements Serializable {
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderReturnReasonId=").append(orderReturnReasonId);
+        sb.append(", name=").append(name);
+        sb.append(", staus=").append(staus);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "ums_points_consume_setting")
 public class UmsPointsConsumeSetting implements Serializable {
     @Id
@@ -34,6 +32,8 @@ public class UmsPointsConsumeSetting implements Serializable {
      */
     @Column(name = "coupon_status")
     private Integer couponStatus;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsPointsConsumeSetting(Long id, Integer deductionPerAmount, Integer maxPercentPerOrder, Integer useUnit, Integer couponStatus) {
         this.id = id;
@@ -131,5 +131,21 @@ public class UmsPointsConsumeSetting implements Serializable {
      */
     public void setCouponStatus(Integer couponStatus) {
         this.couponStatus = couponStatus;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", deductionPerAmount=").append(deductionPerAmount);
+        sb.append(", maxPercentPerOrder=").append(maxPercentPerOrder);
+        sb.append(", useUnit=").append(useUnit);
+        sb.append(", couponStatus=").append(couponStatus);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

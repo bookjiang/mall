@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_comment_replay")
 public class PmsCommentReplay implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_replay_id")
     private Long commentReplayId;
 
@@ -46,6 +43,8 @@ public class PmsCommentReplay implements Serializable {
      * 评论人员类型:0->用户；1->管理员
      */
     private Integer type;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsCommentReplay(Long commentReplayId, Long commentId, String nickName, String memberIcon, String content, Date createTime, Integer type) {
         this.commentReplayId = commentReplayId;
@@ -181,5 +180,23 @@ public class PmsCommentReplay implements Serializable {
      */
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", commentReplayId=").append(commentReplayId);
+        sb.append(", commentId=").append(commentId);
+        sb.append(", nickName=").append(nickName);
+        sb.append(", memberIcon=").append(memberIcon);
+        sb.append(", content=").append(content);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", type=").append(type);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

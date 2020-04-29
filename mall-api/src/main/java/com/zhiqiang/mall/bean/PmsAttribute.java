@@ -1,14 +1,11 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_attribute")
 public class PmsAttribute implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "attribute_id")
     private Long attributeId;
 
@@ -51,6 +48,8 @@ public class PmsAttribute implements Serializable {
      * 属性类型：0->属性（规格);1->参数
      */
     private Integer type;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsAttribute(Long attributeId, Long classifyAttributeId, String name, Integer selectType, Integer inputType, String inputList, Integer handAddStatus, Integer type) {
         this.attributeId = attributeId;
@@ -205,5 +204,24 @@ public class PmsAttribute implements Serializable {
      */
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", attributeId=").append(attributeId);
+        sb.append(", classifyAttributeId=").append(classifyAttributeId);
+        sb.append(", name=").append(name);
+        sb.append(", selectType=").append(selectType);
+        sb.append(", inputType=").append(inputType);
+        sb.append(", inputList=").append(inputList);
+        sb.append(", handAddStatus=").append(handAddStatus);
+        sb.append(", type=").append(type);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

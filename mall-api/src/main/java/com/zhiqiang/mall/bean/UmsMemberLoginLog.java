@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "ums_member_login_log")
 public class UmsMemberLoginLog implements Serializable {
     @Id
@@ -29,6 +27,8 @@ public class UmsMemberLoginLog implements Serializable {
     private Integer loginType;
 
     private String province;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMemberLoginLog(Long id, Long memberId, Date createTime, String ip, String city, Integer loginType, String province) {
         this.id = id;
@@ -144,5 +144,23 @@ public class UmsMemberLoginLog implements Serializable {
      */
     public void setProvince(String province) {
         this.province = province == null ? null : province.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", ip=").append(ip);
+        sb.append(", city=").append(city);
+        sb.append(", loginType=").append(loginType);
+        sb.append(", province=").append(province);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

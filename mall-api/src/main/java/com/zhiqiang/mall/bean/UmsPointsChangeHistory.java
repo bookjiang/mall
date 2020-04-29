@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "ums_points_change_history")
 public class UmsPointsChangeHistory implements Serializable {
     @Id
@@ -47,6 +45,8 @@ public class UmsPointsChangeHistory implements Serializable {
      */
     @Column(name = "source_type")
     private Integer sourceType;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsPointsChangeHistory(Long id, Long memberId, Date createTime, Integer changeType, Integer changeCount, String operateMan, String operateNote, Integer sourceType) {
         this.id = id;
@@ -193,5 +193,24 @@ public class UmsPointsChangeHistory implements Serializable {
      */
     public void setSourceType(Integer sourceType) {
         this.sourceType = sourceType;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", changeType=").append(changeType);
+        sb.append(", changeCount=").append(changeCount);
+        sb.append(", operateMan=").append(operateMan);
+        sb.append(", operateNote=").append(operateNote);
+        sb.append(", sourceType=").append(sourceType);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

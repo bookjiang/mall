@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_classify_attribute_relation")
 public class PmsClassifyAttributeRelation implements Serializable {
     @Id
@@ -22,6 +20,8 @@ public class PmsClassifyAttributeRelation implements Serializable {
      */
     @Column(name = "attribute_id")
     private Long attributeId;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsClassifyAttributeRelation(Long id, Long productClassifyId, Long attributeId) {
         this.id = id;
@@ -81,5 +81,19 @@ public class PmsClassifyAttributeRelation implements Serializable {
      */
     public void setAttributeId(Long attributeId) {
         this.attributeId = attributeId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", attributeId=").append(attributeId);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

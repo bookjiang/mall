@@ -1,18 +1,15 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "sms_sales_session")
 public class SmsSalesSession implements Serializable {
     /**
      * 编号
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sales_session_id")
     private Long salesSessionId;
 
@@ -43,6 +40,8 @@ public class SmsSalesSession implements Serializable {
      */
     @Column(name = "create_time")
     private Date createTime;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsSalesSession(Long salesSessionId, String name, Date startTime, Date endTime, Integer status, Date createTime) {
         this.salesSessionId = salesSessionId;
@@ -163,5 +162,22 @@ public class SmsSalesSession implements Serializable {
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", salesSessionId=").append(salesSessionId);
+        sb.append(", name=").append(name);
+        sb.append(", startTime=").append(startTime);
+        sb.append(", endTime=").append(endTime);
+        sb.append(", status=").append(status);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

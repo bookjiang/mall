@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "ums_member_receive_address")
 public class UmsMemberReceiveAddress implements Serializable {
     @Id
@@ -54,6 +52,8 @@ public class UmsMemberReceiveAddress implements Serializable {
      */
     @Column(name = "detail_address")
     private String detailAddress;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMemberReceiveAddress(Long id, Long memberId, String name, String phoneNumber, Integer defaultStatus, String postCode, String province, String city, String region, String detailAddress) {
         this.id = id;
@@ -238,5 +238,26 @@ public class UmsMemberReceiveAddress implements Serializable {
      */
     public void setDetailAddress(String detailAddress) {
         this.detailAddress = detailAddress == null ? null : detailAddress.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", name=").append(name);
+        sb.append(", phoneNumber=").append(phoneNumber);
+        sb.append(", defaultStatus=").append(defaultStatus);
+        sb.append(", postCode=").append(postCode);
+        sb.append(", province=").append(province);
+        sb.append(", city=").append(city);
+        sb.append(", region=").append(region);
+        sb.append(", detailAddress=").append(detailAddress);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "sms_coupon_product_relation")
 public class SmsCouponProductRelation implements Serializable {
     @Id
@@ -34,6 +32,8 @@ public class SmsCouponProductRelation implements Serializable {
      */
     @Column(name = "product_sn")
     private String productSn;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsCouponProductRelation(Long id, Long couponId, Long productId, String productName, String productSn) {
         this.id = id;
@@ -131,5 +131,21 @@ public class SmsCouponProductRelation implements Serializable {
      */
     public void setProductSn(String productSn) {
         this.productSn = productSn == null ? null : productSn.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", couponId=").append(couponId);
+        sb.append(", productId=").append(productId);
+        sb.append(", productName=").append(productName);
+        sb.append(", productSn=").append(productSn);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

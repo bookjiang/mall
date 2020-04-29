@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.UmsMemberStatisticsInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.UmsMemberStatisticsInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="consume_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="order_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="coupon_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="return_order_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="login_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="collect_product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="invite_friend_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="recent_order_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, member_id, consume_amount, order_count, coupon_count, comment_count, return_order_count, 
+    login_count, collect_product_count, invite_friend_count, recent_order_time
+  </sql>
+  <select id="selectByExample" parameterType="com.zhiqiang.mall.bean.UmsMemberStatisticsInfoExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ums_member_statistics_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhiqiang.mall.bean.UmsMemberStatisticsInfoExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from ums_member_statistics_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.zhiqiang.mall.bean.UmsMemberStatisticsInfoExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from ums_member_statistics_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update ums_member_statistics_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.memberId != null">
+        member_id = #{record.memberId,jdbcType=BIGINT},
+      </if>
+      <if test="record.consumeAmount != null">
+        consume_amount = #{record.consumeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.orderCount != null">
+        order_count = #{record.orderCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.couponCount != null">
+        coupon_count = #{record.couponCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentCount != null">
+        comment_count = #{record.commentCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.returnOrderCount != null">
+        return_order_count = #{record.returnOrderCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.loginCount != null">
+        login_count = #{record.loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.collectProductCount != null">
+        collect_product_count = #{record.collectProductCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.inviteFriendCount != null">
+        invite_friend_count = #{record.inviteFriendCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.recentOrderTime != null">
+        recent_order_time = #{record.recentOrderTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update ums_member_statistics_info
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.memberId,jdbcType=BIGINT},
+      consume_amount = #{record.consumeAmount,jdbcType=DECIMAL},
+      order_count = #{record.orderCount,jdbcType=INTEGER},
+      coupon_count = #{record.couponCount,jdbcType=INTEGER},
+      comment_count = #{record.commentCount,jdbcType=INTEGER},
+      return_order_count = #{record.returnOrderCount,jdbcType=INTEGER},
+      login_count = #{record.loginCount,jdbcType=INTEGER},
+      collect_product_count = #{record.collectProductCount,jdbcType=INTEGER},
+      invite_friend_count = #{record.inviteFriendCount,jdbcType=INTEGER},
+      recent_order_time = #{record.recentOrderTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

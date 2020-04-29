@@ -1,18 +1,15 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_sku")
 public class PmsSku implements Serializable {
     /**
      * 商品sku编号
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sku_id")
     private Long skuId;
 
@@ -89,6 +86,8 @@ public class PmsSku implements Serializable {
      * 销量
      */
     private Integer sale;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsSku(Long skuId, Long productId, String skuSn, BigDecimal price, Integer discountType, BigDecimal promotionPrice, BigDecimal memberPrice, BigDecimal pointLimit, BigDecimal fullPrice, BigDecimal reductionMoney, Integer stock, Integer warningStock, String picture, Integer sale) {
         this.skuId = skuId;
@@ -361,5 +360,30 @@ public class PmsSku implements Serializable {
      */
     public void setSale(Integer sale) {
         this.sale = sale;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", skuId=").append(skuId);
+        sb.append(", productId=").append(productId);
+        sb.append(", skuSn=").append(skuSn);
+        sb.append(", price=").append(price);
+        sb.append(", discountType=").append(discountType);
+        sb.append(", promotionPrice=").append(promotionPrice);
+        sb.append(", memberPrice=").append(memberPrice);
+        sb.append(", pointLimit=").append(pointLimit);
+        sb.append(", fullPrice=").append(fullPrice);
+        sb.append(", reductionMoney=").append(reductionMoney);
+        sb.append(", stock=").append(stock);
+        sb.append(", warningStock=").append(warningStock);
+        sb.append(", picture=").append(picture);
+        sb.append(", sale=").append(sale);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

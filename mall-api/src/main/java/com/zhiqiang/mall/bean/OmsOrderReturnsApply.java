@@ -1,16 +1,13 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_order_returns_apply")
 public class OmsOrderReturnsApply implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_returns_apply_id")
     private Long orderReturnsApplyId;
 
@@ -165,6 +162,8 @@ public class OmsOrderReturnsApply implements Serializable {
      */
     @Column(name = "proof_pics")
     private String proofPics;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrderReturnsApply(Long orderReturnsApplyId, Long orderId, Long addressId, Long productId, String orderSn, Date createTime, String memberName, String returnName, BigDecimal returnAmount, String returnPhone, Integer status, Date handleTime, String handleMan, String handleNote, String receiveMan, Date receiveTime, String receiveNote, String productPic, String productName, String productBrand, String productAttribute, Integer productCount, BigDecimal price, BigDecimal realPrice, String reason, String description, String proofPics) {
         this.orderReturnsApplyId = orderReturnsApplyId;
@@ -680,5 +679,43 @@ public class OmsOrderReturnsApply implements Serializable {
      */
     public void setProofPics(String proofPics) {
         this.proofPics = proofPics == null ? null : proofPics.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderReturnsApplyId=").append(orderReturnsApplyId);
+        sb.append(", orderId=").append(orderId);
+        sb.append(", addressId=").append(addressId);
+        sb.append(", productId=").append(productId);
+        sb.append(", orderSn=").append(orderSn);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", memberName=").append(memberName);
+        sb.append(", returnName=").append(returnName);
+        sb.append(", returnAmount=").append(returnAmount);
+        sb.append(", returnPhone=").append(returnPhone);
+        sb.append(", status=").append(status);
+        sb.append(", handleTime=").append(handleTime);
+        sb.append(", handleMan=").append(handleMan);
+        sb.append(", handleNote=").append(handleNote);
+        sb.append(", receiveMan=").append(receiveMan);
+        sb.append(", receiveTime=").append(receiveTime);
+        sb.append(", receiveNote=").append(receiveNote);
+        sb.append(", productPic=").append(productPic);
+        sb.append(", productName=").append(productName);
+        sb.append(", productBrand=").append(productBrand);
+        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", productCount=").append(productCount);
+        sb.append(", price=").append(price);
+        sb.append(", realPrice=").append(realPrice);
+        sb.append(", reason=").append(reason);
+        sb.append(", description=").append(description);
+        sb.append(", proofPics=").append(proofPics);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

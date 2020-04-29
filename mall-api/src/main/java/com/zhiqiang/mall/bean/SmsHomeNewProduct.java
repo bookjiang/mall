@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "sms_home_new_product")
 public class SmsHomeNewProduct implements Serializable {
     @Id
@@ -33,6 +31,8 @@ public class SmsHomeNewProduct implements Serializable {
      * 排序
      */
     private Integer sort;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsHomeNewProduct(Long id, Long productId, String productName, Integer recommendStatus, Integer sort) {
         this.id = id;
@@ -130,5 +130,21 @@ public class SmsHomeNewProduct implements Serializable {
      */
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", productId=").append(productId);
+        sb.append(", productName=").append(productName);
+        sb.append(", recommendStatus=").append(recommendStatus);
+        sb.append(", sort=").append(sort);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

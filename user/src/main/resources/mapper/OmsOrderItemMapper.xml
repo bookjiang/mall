@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.OmsOrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.OmsOrderItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="order_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="sku_sn" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_quantity" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="promotion_info" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="promotion_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="coupon_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="points_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="real_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="get_points" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="get_growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_attribute" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    order_item_id, order_id, order_sn, product_id, product_pic, product_name, product_sn, 
+    product_classify_id, brand_name, sku_id, sku_sn, price, product_quantity, promotion_info, 
+    promotion_amount, coupon_amount, points_amount, real_amount, get_points, get_growth, 
+    product_attribute
+  </sql>
+  <select id="selectByExample" parameterType="com.zhiqiang.mall.bean.OmsOrderItemExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from oms_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhiqiang.mall.bean.OmsOrderItemExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from oms_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.zhiqiang.mall.bean.OmsOrderItemExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from oms_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update oms_order_item
+    <set>
+      <if test="record.orderItemId != null">
+        order_item_id = #{record.orderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderSn != null">
+        order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=BIGINT},
+      </if>
+      <if test="record.productPic != null">
+        product_pic = #{record.productPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productName != null">
+        product_name = #{record.productName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productSn != null">
+        product_sn = #{record.productSn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productClassifyId != null">
+        product_classify_id = #{record.productClassifyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.brandName != null">
+        brand_name = #{record.brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.skuId != null">
+        sku_id = #{record.skuId,jdbcType=BIGINT},
+      </if>
+      <if test="record.skuSn != null">
+        sku_sn = #{record.skuSn,jdbcType=BIGINT},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.productQuantity != null">
+        product_quantity = #{record.productQuantity,jdbcType=INTEGER},
+      </if>
+      <if test="record.promotionInfo != null">
+        promotion_info = #{record.promotionInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.promotionAmount != null">
+        promotion_amount = #{record.promotionAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.couponAmount != null">
+        coupon_amount = #{record.couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pointsAmount != null">
+        points_amount = #{record.pointsAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.realAmount != null">
+        real_amount = #{record.realAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.getPoints != null">
+        get_points = #{record.getPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.getGrowth != null">
+        get_growth = #{record.getGrowth,jdbcType=INTEGER},
+      </if>
+      <if test="record.productAttribute != null">
+        product_attribute = #{record.productAttribute,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update oms_order_item
+    set order_item_id = #{record.orderItemId,jdbcType=BIGINT},
+      order_id = #{record.orderId,jdbcType=BIGINT},
+      order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      product_id = #{record.productId,jdbcType=BIGINT},
+      product_pic = #{record.productPic,jdbcType=VARCHAR},
+      product_name = #{record.productName,jdbcType=VARCHAR},
+      product_sn = #{record.productSn,jdbcType=VARCHAR},
+      product_classify_id = #{record.productClassifyId,jdbcType=BIGINT},
+      brand_name = #{record.brandName,jdbcType=VARCHAR},
+      sku_id = #{record.skuId,jdbcType=BIGINT},
+      sku_sn = #{record.skuSn,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=DECIMAL},
+      product_quantity = #{record.productQuantity,jdbcType=INTEGER},
+      promotion_info = #{record.promotionInfo,jdbcType=VARCHAR},
+      promotion_amount = #{record.promotionAmount,jdbcType=DECIMAL},
+      coupon_amount = #{record.couponAmount,jdbcType=DECIMAL},
+      points_amount = #{record.pointsAmount,jdbcType=DECIMAL},
+      real_amount = #{record.realAmount,jdbcType=DECIMAL},
+      get_points = #{record.getPoints,jdbcType=INTEGER},
+      get_growth = #{record.getGrowth,jdbcType=INTEGER},
+      product_attribute = #{record.productAttribute,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

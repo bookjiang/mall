@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.PmsProductMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.PmsProduct">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="reference_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="growth_value" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="member_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="point_limit" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="publish_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="new_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="recommand_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="service" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="discount_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="freight_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="member_price" javaType="java.lang.Long" jdbcType="DECIMAL" />
+      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="check_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sales" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="album" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="detail_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sale_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="sale_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="sale_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_classify_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsProduct">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="reference_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="growth_value" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="member_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="point_limit" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="publish_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="new_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="recommand_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="service" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="discount_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="freight_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="member_price" javaType="java.lang.Long" jdbcType="DECIMAL" />
+      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="check_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sales" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="album" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="detail_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sale_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="sale_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="sale_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_classify_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+      <arg column="detail_description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+      <arg column="detail_html" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+      <arg column="detail_mobile_html" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    product_id, product_classify_id, name, keywords, brand_id, product_sn, reference_price, 
+    price, stock, low_stock, weight, unit, growth_value, member_point, point_limit, publish_status, 
+    new_status, recommand_status, service, discount_type, product_pic, freight_id, member_price, 
+    delete_status, check_status, sales, note, album, detail_title, sale_start_time, sale_end_time, 
+    sale_per_limit, product_classify_name, brand_name
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    description, detail_description, detail_html, detail_mobile_html
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.zhiqiang.mall.bean.PmsProductExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from pms_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.zhiqiang.mall.bean.PmsProductExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pms_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhiqiang.mall.bean.PmsProductExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from pms_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.zhiqiang.mall.bean.PmsProductExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from pms_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update pms_product
+    <set>
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=BIGINT},
+      </if>
+      <if test="record.productClassifyId != null">
+        product_classify_id = #{record.productClassifyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keywords != null">
+        keywords = #{record.keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brandId != null">
+        brand_id = #{record.brandId,jdbcType=BIGINT},
+      </if>
+      <if test="record.productSn != null">
+        product_sn = #{record.productSn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.referencePrice != null">
+        reference_price = #{record.referencePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.stock != null">
+        stock = #{record.stock,jdbcType=INTEGER},
+      </if>
+      <if test="record.lowStock != null">
+        low_stock = #{record.lowStock,jdbcType=INTEGER},
+      </if>
+      <if test="record.weight != null">
+        weight = #{record.weight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.unit != null">
+        unit = #{record.unit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.growthValue != null">
+        growth_value = #{record.growthValue,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberPoint != null">
+        member_point = #{record.memberPoint,jdbcType=INTEGER},
+      </if>
+      <if test="record.pointLimit != null">
+        point_limit = #{record.pointLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.publishStatus != null">
+        publish_status = #{record.publishStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.newStatus != null">
+        new_status = #{record.newStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.recommandStatus != null">
+        recommand_status = #{record.recommandStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.service != null">
+        service = #{record.service,jdbcType=VARCHAR},
+      </if>
+      <if test="record.discountType != null">
+        discount_type = #{record.discountType,jdbcType=INTEGER},
+      </if>
+      <if test="record.productPic != null">
+        product_pic = #{record.productPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.freightId != null">
+        freight_id = #{record.freightId,jdbcType=BIGINT},
+      </if>
+      <if test="record.memberPrice != null">
+        member_price = #{record.memberPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.deleteStatus != null">
+        delete_status = #{record.deleteStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.checkStatus != null">
+        check_status = #{record.checkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.sales != null">
+        sales = #{record.sales,jdbcType=INTEGER},
+      </if>
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.album != null">
+        album = #{record.album,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailTitle != null">
+        detail_title = #{record.detailTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.saleStartTime != null">
+        sale_start_time = #{record.saleStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.saleEndTime != null">
+        sale_end_time = #{record.saleEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.salePerLimit != null">
+        sale_per_limit = #{record.salePerLimit,jdbcType=INTEGER},
+      </if>
+      <if test="record.productClassifyName != null">
+        product_classify_name = #{record.productClassifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brandName != null">
+        brand_name = #{record.brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.detailDescription != null">
+        detail_description = #{record.detailDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.detailHtml != null">
+        detail_html = #{record.detailHtml,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.detailMobileHtml != null">
+        detail_mobile_html = #{record.detailMobileHtml,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update pms_product
+    set product_id = #{record.productId,jdbcType=BIGINT},
+      product_classify_id = #{record.productClassifyId,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      keywords = #{record.keywords,jdbcType=VARCHAR},
+      brand_id = #{record.brandId,jdbcType=BIGINT},
+      product_sn = #{record.productSn,jdbcType=VARCHAR},
+      reference_price = #{record.referencePrice,jdbcType=DECIMAL},
+      price = #{record.price,jdbcType=DECIMAL},
+      stock = #{record.stock,jdbcType=INTEGER},
+      low_stock = #{record.lowStock,jdbcType=INTEGER},
+      weight = #{record.weight,jdbcType=DECIMAL},
+      unit = #{record.unit,jdbcType=VARCHAR},
+      growth_value = #{record.growthValue,jdbcType=INTEGER},
+      member_point = #{record.memberPoint,jdbcType=INTEGER},
+      point_limit = #{record.pointLimit,jdbcType=DECIMAL},
+      publish_status = #{record.publishStatus,jdbcType=INTEGER},
+      new_status = #{record.newStatus,jdbcType=INTEGER},
+      recommand_status = #{record.recommandStatus,jdbcType=INTEGER},
+      service = #{record.service,jdbcType=VARCHAR},
+      discount_type = #{record.discountType,jdbcType=INTEGER},
+      product_pic = #{record.productPic,jdbcType=VARCHAR},
+      freight_id = #{record.freightId,jdbcType=BIGINT},
+      member_price = #{record.memberPrice,jdbcType=DECIMAL},
+      delete_status = #{record.deleteStatus,jdbcType=INTEGER},
+      check_status = #{record.checkStatus,jdbcType=INTEGER},
+      sales = #{record.sales,jdbcType=INTEGER},
+      note = #{record.note,jdbcType=VARCHAR},
+      album = #{record.album,jdbcType=VARCHAR},
+      detail_title = #{record.detailTitle,jdbcType=VARCHAR},
+      sale_start_time = #{record.saleStartTime,jdbcType=TIMESTAMP},
+      sale_end_time = #{record.saleEndTime,jdbcType=TIMESTAMP},
+      sale_per_limit = #{record.salePerLimit,jdbcType=INTEGER},
+      product_classify_name = #{record.productClassifyName,jdbcType=VARCHAR},
+      brand_name = #{record.brandName,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=LONGVARCHAR},
+      detail_description = #{record.detailDescription,jdbcType=LONGVARCHAR},
+      detail_html = #{record.detailHtml,jdbcType=LONGVARCHAR},
+      detail_mobile_html = #{record.detailMobileHtml,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update pms_product
+    set product_id = #{record.productId,jdbcType=BIGINT},
+      product_classify_id = #{record.productClassifyId,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      keywords = #{record.keywords,jdbcType=VARCHAR},
+      brand_id = #{record.brandId,jdbcType=BIGINT},
+      product_sn = #{record.productSn,jdbcType=VARCHAR},
+      reference_price = #{record.referencePrice,jdbcType=DECIMAL},
+      price = #{record.price,jdbcType=DECIMAL},
+      stock = #{record.stock,jdbcType=INTEGER},
+      low_stock = #{record.lowStock,jdbcType=INTEGER},
+      weight = #{record.weight,jdbcType=DECIMAL},
+      unit = #{record.unit,jdbcType=VARCHAR},
+      growth_value = #{record.growthValue,jdbcType=INTEGER},
+      member_point = #{record.memberPoint,jdbcType=INTEGER},
+      point_limit = #{record.pointLimit,jdbcType=DECIMAL},
+      publish_status = #{record.publishStatus,jdbcType=INTEGER},
+      new_status = #{record.newStatus,jdbcType=INTEGER},
+      recommand_status = #{record.recommandStatus,jdbcType=INTEGER},
+      service = #{record.service,jdbcType=VARCHAR},
+      discount_type = #{record.discountType,jdbcType=INTEGER},
+      product_pic = #{record.productPic,jdbcType=VARCHAR},
+      freight_id = #{record.freightId,jdbcType=BIGINT},
+      member_price = #{record.memberPrice,jdbcType=DECIMAL},
+      delete_status = #{record.deleteStatus,jdbcType=INTEGER},
+      check_status = #{record.checkStatus,jdbcType=INTEGER},
+      sales = #{record.sales,jdbcType=INTEGER},
+      note = #{record.note,jdbcType=VARCHAR},
+      album = #{record.album,jdbcType=VARCHAR},
+      detail_title = #{record.detailTitle,jdbcType=VARCHAR},
+      sale_start_time = #{record.saleStartTime,jdbcType=TIMESTAMP},
+      sale_end_time = #{record.saleEndTime,jdbcType=TIMESTAMP},
+      sale_per_limit = #{record.salePerLimit,jdbcType=INTEGER},
+      product_classify_name = #{record.productClassifyName,jdbcType=VARCHAR},
+      brand_name = #{record.brandName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_product_check_record")
 public class PmsProductCheckRecord implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "check_id")
     private Long checkId;
 
@@ -40,6 +37,8 @@ public class PmsProductCheckRecord implements Serializable {
      * 反馈详情
      */
     private String detail;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsProductCheckRecord(Long checkId, Long productId, Date createTime, String checkMan, Integer status, String detail) {
         this.checkId = checkId;
@@ -156,5 +155,22 @@ public class PmsProductCheckRecord implements Serializable {
      */
     public void setDetail(String detail) {
         this.detail = detail == null ? null : detail.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", checkId=").append(checkId);
+        sb.append(", productId=").append(productId);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", checkMan=").append(checkMan);
+        sb.append(", status=").append(status);
+        sb.append(", detail=").append(detail);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

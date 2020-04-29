@@ -1,18 +1,15 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_freight_template")
 public class PmsFreightTemplate implements Serializable {
     /**
      * 运费模板id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "freight_id")
     private Long freightId;
 
@@ -55,6 +52,8 @@ public class PmsFreightTemplate implements Serializable {
      * 目的地
      */
     private String destination;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsFreightTemplate(Long freightId, String name, Integer chargeType, BigDecimal firstWeight, BigDecimal firstFreight, BigDecimal continueWeight, BigDecimal continueFreight, String destination) {
         this.freightId = freightId;
@@ -213,5 +212,24 @@ public class PmsFreightTemplate implements Serializable {
      */
     public void setDestination(String destination) {
         this.destination = destination == null ? null : destination.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", freightId=").append(freightId);
+        sb.append(", name=").append(name);
+        sb.append(", chargeType=").append(chargeType);
+        sb.append(", firstWeight=").append(firstWeight);
+        sb.append(", firstFreight=").append(firstFreight);
+        sb.append(", continueWeight=").append(continueWeight);
+        sb.append(", continueFreight=").append(continueFreight);
+        sb.append(", destination=").append(destination);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

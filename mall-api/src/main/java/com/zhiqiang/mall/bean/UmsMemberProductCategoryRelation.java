@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "ums_member_product_category_relation")
 public class UmsMemberProductCategoryRelation implements Serializable {
     @Id
@@ -16,6 +14,8 @@ public class UmsMemberProductCategoryRelation implements Serializable {
 
     @Column(name = "product_classify_id")
     private Long productClassifyId;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMemberProductCategoryRelation(Long id, Long memberId, Long productClassifyId) {
         this.id = id;
@@ -67,5 +67,19 @@ public class UmsMemberProductCategoryRelation implements Serializable {
      */
     public void setProductClassifyId(Long productClassifyId) {
         this.productClassifyId = productClassifyId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

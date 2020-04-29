@@ -1,18 +1,15 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_order_item")
 public class OmsOrderItem implements Serializable {
     /**
      * 订单商品条目id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_item_id")
     private Long orderItemId;
 
@@ -134,6 +131,8 @@ public class OmsOrderItem implements Serializable {
      */
     @Column(name = "product_attribute")
     private String productAttribute;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrderItem(Long orderItemId, Long orderId, String orderSn, Long productId, String productPic, String productName, String productSn, Long productClassifyId, String brandName, Long skuId, Long skuSn, BigDecimal price, Integer productQuantity, String promotionInfo, BigDecimal promotionAmount, BigDecimal couponAmount, BigDecimal pointsAmount, BigDecimal realAmount, Integer getPoints, Integer getGrowth, String productAttribute) {
         this.orderItemId = orderItemId;
@@ -539,5 +538,37 @@ public class OmsOrderItem implements Serializable {
      */
     public void setProductAttribute(String productAttribute) {
         this.productAttribute = productAttribute == null ? null : productAttribute.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderItemId=").append(orderItemId);
+        sb.append(", orderId=").append(orderId);
+        sb.append(", orderSn=").append(orderSn);
+        sb.append(", productId=").append(productId);
+        sb.append(", productPic=").append(productPic);
+        sb.append(", productName=").append(productName);
+        sb.append(", productSn=").append(productSn);
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", brandName=").append(brandName);
+        sb.append(", skuId=").append(skuId);
+        sb.append(", skuSn=").append(skuSn);
+        sb.append(", price=").append(price);
+        sb.append(", productQuantity=").append(productQuantity);
+        sb.append(", promotionInfo=").append(promotionInfo);
+        sb.append(", promotionAmount=").append(promotionAmount);
+        sb.append(", couponAmount=").append(couponAmount);
+        sb.append(", pointsAmount=").append(pointsAmount);
+        sb.append(", realAmount=").append(realAmount);
+        sb.append(", getPoints=").append(getPoints);
+        sb.append(", getGrowth=").append(getGrowth);
+        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,17 +1,14 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_brand")
 public class PmsBrand implements Serializable {
     /**
      * 品牌id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "brand_id")
     private Long brandId;
 
@@ -58,6 +55,8 @@ public class PmsBrand implements Serializable {
      */
     @Column(name = "brand_story")
     private String brandStory;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsBrand(Long brandId, String name, Integer showStatus, Integer productCount, Integer productCommentCount, String logo, Integer factory, String picture, String brandStory) {
         this.brandId = brandId;
@@ -235,5 +234,25 @@ public class PmsBrand implements Serializable {
      */
     public void setBrandStory(String brandStory) {
         this.brandStory = brandStory == null ? null : brandStory.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", brandId=").append(brandId);
+        sb.append(", name=").append(name);
+        sb.append(", showStatus=").append(showStatus);
+        sb.append(", productCount=").append(productCount);
+        sb.append(", productCommentCount=").append(productCommentCount);
+        sb.append(", logo=").append(logo);
+        sb.append(", factory=").append(factory);
+        sb.append(", picture=").append(picture);
+        sb.append(", brandStory=").append(brandStory);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

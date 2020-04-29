@@ -1,7 +1,5 @@
 package com.zhiqiang.mall.commonbean;
 
-import jdk.net.SocketFlow;
-
 /**
  * @ClassName: CommonResult
  * @description: 通用返回对象
@@ -11,14 +9,14 @@ import jdk.net.SocketFlow;
 public class CommonResult<T> {
     private int code;
     private String message;
-    private T result_data;
+    private T data;
 
     protected CommonResult(){}
 
-    protected CommonResult(int code, String message, T result_data) {
+    protected CommonResult(int code, String message, T data) {
         this.code = code;
         this.message = message;
-        this.result_data = result_data;
+        this.data = data;
     }
 
     /**
@@ -29,9 +27,9 @@ public class CommonResult<T> {
      * @author: zhiqiang
      * @time: 2020/4/21 20:35
      */
-    public static <T> CommonResult<T> success(T result_data,String message)
+    public static <T> CommonResult<T> success(T data,String message)
     {
-        return new CommonResult<T>(Code.SUCCESS.getCode(), message, result_data);
+        return new CommonResult<T>(Code.SUCCESS.getCode(), message, data);
     }
 
     /**
@@ -107,11 +105,11 @@ public class CommonResult<T> {
         this.message = message;
     }
 
-    public T getResult_data() {
-        return result_data;
+    public T getData() {
+        return data;
     }
 
-    public void setResult_data(T result_data) {
-        this.result_data = result_data;
+    public void setData(T data) {
+        this.data = data;
     }
 }

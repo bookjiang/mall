@@ -1,16 +1,13 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "sms_coupon")
 public class SmsCoupon implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coupon_id")
     private Long couponId;
 
@@ -108,6 +105,8 @@ public class SmsCoupon implements Serializable {
      */
     @Column(name = "member_level")
     private Integer memberLevel;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsCoupon(Long couponId, Integer type, String name, Integer platform, Integer count, BigDecimal amount, Integer perLimit, BigDecimal minPoint, Date startTime, Date endTime, Integer useType, String note, Integer publishCount, Integer useCount, Integer receiveCount, Date enableTime, String code, Integer memberLevel) {
         this.couponId = couponId;
@@ -452,5 +451,34 @@ public class SmsCoupon implements Serializable {
      */
     public void setMemberLevel(Integer memberLevel) {
         this.memberLevel = memberLevel;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", couponId=").append(couponId);
+        sb.append(", type=").append(type);
+        sb.append(", name=").append(name);
+        sb.append(", platform=").append(platform);
+        sb.append(", count=").append(count);
+        sb.append(", amount=").append(amount);
+        sb.append(", perLimit=").append(perLimit);
+        sb.append(", minPoint=").append(minPoint);
+        sb.append(", startTime=").append(startTime);
+        sb.append(", endTime=").append(endTime);
+        sb.append(", useType=").append(useType);
+        sb.append(", note=").append(note);
+        sb.append(", publishCount=").append(publishCount);
+        sb.append(", useCount=").append(useCount);
+        sb.append(", receiveCount=").append(receiveCount);
+        sb.append(", enableTime=").append(enableTime);
+        sb.append(", code=").append(code);
+        sb.append(", memberLevel=").append(memberLevel);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

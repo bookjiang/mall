@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "ums_admin_login_log")
 public class UmsAdminLoginLog implements Serializable {
     @Id
@@ -27,6 +25,8 @@ public class UmsAdminLoginLog implements Serializable {
      */
     @Column(name = "user_agent")
     private String userAgent;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsAdminLoginLog(Long id, Long adminId, Date createTime, String ip, String address, String userAgent) {
         this.id = id;
@@ -127,5 +127,22 @@ public class UmsAdminLoginLog implements Serializable {
      */
     public void setUserAgent(String userAgent) {
         this.userAgent = userAgent == null ? null : userAgent.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", adminId=").append(adminId);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", ip=").append(ip);
+        sb.append(", address=").append(address);
+        sb.append(", userAgent=").append(userAgent);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

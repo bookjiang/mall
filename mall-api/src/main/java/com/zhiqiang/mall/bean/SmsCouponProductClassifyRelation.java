@@ -1,10 +1,8 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "sms_coupon_product_classify_relation")
 public class SmsCouponProductClassifyRelation implements Serializable {
     @Id
@@ -34,6 +32,8 @@ public class SmsCouponProductClassifyRelation implements Serializable {
      */
     @Column(name = "parent_category_name")
     private String parentCategoryName;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsCouponProductClassifyRelation(Long id, Long couponId, Long productCategoryId, String productCategoryName, String parentCategoryName) {
         this.id = id;
@@ -131,5 +131,21 @@ public class SmsCouponProductClassifyRelation implements Serializable {
      */
     public void setParentCategoryName(String parentCategoryName) {
         this.parentCategoryName = parentCategoryName == null ? null : parentCategoryName.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", couponId=").append(couponId);
+        sb.append(", productCategoryId=").append(productCategoryId);
+        sb.append(", productCategoryName=").append(productCategoryName);
+        sb.append(", parentCategoryName=").append(parentCategoryName);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

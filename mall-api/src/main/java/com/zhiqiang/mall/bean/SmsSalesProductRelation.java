@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "sms_sales_product_relation")
 public class SmsSalesProductRelation implements Serializable {
     @Id
@@ -47,6 +45,8 @@ public class SmsSalesProductRelation implements Serializable {
      */
     @Column(name = "flash_promotion_limit")
     private Integer flashPromotionLimit;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsSalesProductRelation(Long id, Long salesId, Long salesSessionId, Long productId, BigDecimal flashPromotionPrice, Integer flashPromotionCount, Integer flashPromotionLimit) {
         this.id = id;
@@ -182,5 +182,23 @@ public class SmsSalesProductRelation implements Serializable {
      */
     public void setFlashPromotionLimit(Integer flashPromotionLimit) {
         this.flashPromotionLimit = flashPromotionLimit;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", salesId=").append(salesId);
+        sb.append(", salesSessionId=").append(salesSessionId);
+        sb.append(", productId=").append(productId);
+        sb.append(", flashPromotionPrice=").append(flashPromotionPrice);
+        sb.append(", flashPromotionCount=").append(flashPromotionCount);
+        sb.append(", flashPromotionLimit=").append(flashPromotionLimit);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,16 +1,13 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_cart_item")
 public class OmsCartItem implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")
     private Long cartId;
 
@@ -112,6 +109,8 @@ public class OmsCartItem implements Serializable {
      */
     @Column(name = "product_attribute")
     private String productAttribute;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsCartItem(Long cartId, Long productId, Long skuId, Long memberId, Integer quantity, BigDecimal price, String productPic, String productName, String brandName, String productSn, String keywords, Long skuSn, String memberName, Date createDate, Date modifyDate, Integer deleteStatus, Long productClassifyId, String productAttribute) {
         this.cartId = cartId;
@@ -456,5 +455,34 @@ public class OmsCartItem implements Serializable {
      */
     public void setProductAttribute(String productAttribute) {
         this.productAttribute = productAttribute == null ? null : productAttribute.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", cartId=").append(cartId);
+        sb.append(", productId=").append(productId);
+        sb.append(", skuId=").append(skuId);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", quantity=").append(quantity);
+        sb.append(", price=").append(price);
+        sb.append(", productPic=").append(productPic);
+        sb.append(", productName=").append(productName);
+        sb.append(", brandName=").append(brandName);
+        sb.append(", productSn=").append(productSn);
+        sb.append(", keywords=").append(keywords);
+        sb.append(", skuSn=").append(skuSn);
+        sb.append(", memberName=").append(memberName);
+        sb.append(", createDate=").append(createDate);
+        sb.append(", modifyDate=").append(modifyDate);
+        sb.append(", deleteStatus=").append(deleteStatus);
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -1,12 +1,10 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "ums_member_statistics_info")
 public class UmsMemberStatisticsInfo implements Serializable {
     @Id
@@ -63,6 +61,8 @@ public class UmsMemberStatisticsInfo implements Serializable {
      */
     @Column(name = "recent_order_time")
     private Date recentOrderTime;
+
+    private static final long serialVersionUID = 1L;
 
     public UmsMemberStatisticsInfo(Long id, Long memberId, BigDecimal consumeAmount, Integer orderCount, Integer couponCount, Integer commentCount, Integer returnOrderCount, Integer loginCount, Integer collectProductCount, Integer inviteFriendCount, Date recentOrderTime) {
         this.id = id;
@@ -262,5 +262,27 @@ public class UmsMemberStatisticsInfo implements Serializable {
      */
     public void setRecentOrderTime(Date recentOrderTime) {
         this.recentOrderTime = recentOrderTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", consumeAmount=").append(consumeAmount);
+        sb.append(", orderCount=").append(orderCount);
+        sb.append(", couponCount=").append(couponCount);
+        sb.append(", commentCount=").append(commentCount);
+        sb.append(", returnOrderCount=").append(returnOrderCount);
+        sb.append(", loginCount=").append(loginCount);
+        sb.append(", collectProductCount=").append(collectProductCount);
+        sb.append(", inviteFriendCount=").append(inviteFriendCount);
+        sb.append(", recentOrderTime=").append(recentOrderTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

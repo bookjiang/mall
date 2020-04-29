@@ -1,19 +1,16 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_order")
 public class OmsOrder implements Serializable {
     /**
      * 订单id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private Long orderId;
 
@@ -271,6 +268,8 @@ public class OmsOrder implements Serializable {
      */
     @Column(name = "modify_time")
     private Date modifyTime;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrder(Long orderId, Long memberId, Long couponId, String orderSn, Date createTime, String memberUsername, BigDecimal totalAmount, BigDecimal payAmount, BigDecimal freightAmount, BigDecimal promotionAmount, BigDecimal pointsDiscountAmount, BigDecimal couponAmount, BigDecimal discountAmount, Integer payType, Integer sourceType, Integer status, Integer orderType, String logisticsCompany, String logisticsNum, Integer autoConfirmDay, Integer getPoints, Integer growth, String promotionInfo, Integer billType, String billHeader, String billContent, String billReceiverPhone, String billReceiverEmail, String receiverName, String receiverPhone, String receiverPostcode, String receiverProvince, String receiverCity, String receiverRegion, String receiverDetailAddress, String note, Integer confirmStatus, Integer deleteStatus, Date payTime, Integer usePoints, Date deliveryTime, Date receiverTime, Date commentTime, Date modifyTime) {
         this.orderId = orderId;
@@ -1113,5 +1112,60 @@ public class OmsOrder implements Serializable {
      */
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderId=").append(orderId);
+        sb.append(", memberId=").append(memberId);
+        sb.append(", couponId=").append(couponId);
+        sb.append(", orderSn=").append(orderSn);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", memberUsername=").append(memberUsername);
+        sb.append(", totalAmount=").append(totalAmount);
+        sb.append(", payAmount=").append(payAmount);
+        sb.append(", freightAmount=").append(freightAmount);
+        sb.append(", promotionAmount=").append(promotionAmount);
+        sb.append(", pointsDiscountAmount=").append(pointsDiscountAmount);
+        sb.append(", couponAmount=").append(couponAmount);
+        sb.append(", discountAmount=").append(discountAmount);
+        sb.append(", payType=").append(payType);
+        sb.append(", sourceType=").append(sourceType);
+        sb.append(", status=").append(status);
+        sb.append(", orderType=").append(orderType);
+        sb.append(", logisticsCompany=").append(logisticsCompany);
+        sb.append(", logisticsNum=").append(logisticsNum);
+        sb.append(", autoConfirmDay=").append(autoConfirmDay);
+        sb.append(", getPoints=").append(getPoints);
+        sb.append(", growth=").append(growth);
+        sb.append(", promotionInfo=").append(promotionInfo);
+        sb.append(", billType=").append(billType);
+        sb.append(", billHeader=").append(billHeader);
+        sb.append(", billContent=").append(billContent);
+        sb.append(", billReceiverPhone=").append(billReceiverPhone);
+        sb.append(", billReceiverEmail=").append(billReceiverEmail);
+        sb.append(", receiverName=").append(receiverName);
+        sb.append(", receiverPhone=").append(receiverPhone);
+        sb.append(", receiverPostcode=").append(receiverPostcode);
+        sb.append(", receiverProvince=").append(receiverProvince);
+        sb.append(", receiverCity=").append(receiverCity);
+        sb.append(", receiverRegion=").append(receiverRegion);
+        sb.append(", receiverDetailAddress=").append(receiverDetailAddress);
+        sb.append(", note=").append(note);
+        sb.append(", confirmStatus=").append(confirmStatus);
+        sb.append(", deleteStatus=").append(deleteStatus);
+        sb.append(", payTime=").append(payTime);
+        sb.append(", usePoints=").append(usePoints);
+        sb.append(", deliveryTime=").append(deliveryTime);
+        sb.append(", receiverTime=").append(receiverTime);
+        sb.append(", commentTime=").append(commentTime);
+        sb.append(", modifyTime=").append(modifyTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

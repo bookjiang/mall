@@ -1,11 +1,9 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "sms_home_advertise")
 public class SmsHomeAdvertise implements Serializable {
     @Id
@@ -70,6 +68,8 @@ public class SmsHomeAdvertise implements Serializable {
      * 排序
      */
     private Integer sort;
+
+    private static final long serialVersionUID = 1L;
 
     public SmsHomeAdvertise(Long id, String name, Integer type, String pic, Date startTime, Date endTime, Integer status, Integer clickCount, Integer orderCount, String url, String note, Integer sort) {
         this.id = id;
@@ -300,5 +300,28 @@ public class SmsHomeAdvertise implements Serializable {
      */
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", type=").append(type);
+        sb.append(", pic=").append(pic);
+        sb.append(", startTime=").append(startTime);
+        sb.append(", endTime=").append(endTime);
+        sb.append(", status=").append(status);
+        sb.append(", clickCount=").append(clickCount);
+        sb.append(", orderCount=").append(orderCount);
+        sb.append(", url=").append(url);
+        sb.append(", note=").append(note);
+        sb.append(", sort=").append(sort);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

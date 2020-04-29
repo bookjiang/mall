@@ -1,17 +1,14 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.io.Serializable;
-@ToString
+import javax.persistence.*;
+
 @Table(name = "pms_attribute_value")
 public class PmsAttributeValue implements Serializable {
     /**
      * 属性值id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "attribute_value_id")
     private Long attributeValueId;
 
@@ -31,6 +28,8 @@ public class PmsAttributeValue implements Serializable {
      * 手动录入或则列表选择；多格式
      */
     private String value;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsAttributeValue(Long attributeValueId, Long skuId, Long attributeId, String value) {
         this.attributeValueId = attributeValueId;
@@ -113,5 +112,20 @@ public class PmsAttributeValue implements Serializable {
      */
     public void setValue(String value) {
         this.value = value == null ? null : value.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", attributeValueId=").append(attributeValueId);
+        sb.append(", skuId=").append(skuId);
+        sb.append(", attributeId=").append(attributeId);
+        sb.append(", value=").append(value);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

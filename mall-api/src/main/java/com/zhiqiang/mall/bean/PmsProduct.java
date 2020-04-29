@@ -1,19 +1,16 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "pms_product")
 public class PmsProduct implements Serializable {
     /**
      * 货品(spu)id（与商品sku区别）
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private Long productId;
 
@@ -227,6 +224,8 @@ public class PmsProduct implements Serializable {
      */
     @Column(name = "detail_mobile_html")
     private String detailMobileHtml;
+
+    private static final long serialVersionUID = 1L;
 
     public PmsProduct(Long productId, Long productClassifyId, String name, String keywords, Long brandId, String productSn, BigDecimal referencePrice, BigDecimal price, Integer stock, Integer lowStock, BigDecimal weight, String unit, Integer growthValue, Integer memberPoint, BigDecimal pointLimit, Integer publishStatus, Integer newStatus, Integer recommandStatus, String service, Integer discountType, String productPic, Long freightId, Long memberPrice, Integer deleteStatus, Integer checkStatus, Integer sales, String note, String album, String detailTitle, Date saleStartTime, Date saleEndTime, Integer salePerLimit, String productClassifyName, String brandName, String description, String detailDescription, String detailHtml, String detailMobileHtml) {
         this.productId = productId;
@@ -955,5 +954,54 @@ public class PmsProduct implements Serializable {
      */
     public void setDetailMobileHtml(String detailMobileHtml) {
         this.detailMobileHtml = detailMobileHtml == null ? null : detailMobileHtml.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", productId=").append(productId);
+        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", name=").append(name);
+        sb.append(", keywords=").append(keywords);
+        sb.append(", brandId=").append(brandId);
+        sb.append(", productSn=").append(productSn);
+        sb.append(", referencePrice=").append(referencePrice);
+        sb.append(", price=").append(price);
+        sb.append(", stock=").append(stock);
+        sb.append(", lowStock=").append(lowStock);
+        sb.append(", weight=").append(weight);
+        sb.append(", unit=").append(unit);
+        sb.append(", growthValue=").append(growthValue);
+        sb.append(", memberPoint=").append(memberPoint);
+        sb.append(", pointLimit=").append(pointLimit);
+        sb.append(", publishStatus=").append(publishStatus);
+        sb.append(", newStatus=").append(newStatus);
+        sb.append(", recommandStatus=").append(recommandStatus);
+        sb.append(", service=").append(service);
+        sb.append(", discountType=").append(discountType);
+        sb.append(", productPic=").append(productPic);
+        sb.append(", freightId=").append(freightId);
+        sb.append(", memberPrice=").append(memberPrice);
+        sb.append(", deleteStatus=").append(deleteStatus);
+        sb.append(", checkStatus=").append(checkStatus);
+        sb.append(", sales=").append(sales);
+        sb.append(", note=").append(note);
+        sb.append(", album=").append(album);
+        sb.append(", detailTitle=").append(detailTitle);
+        sb.append(", saleStartTime=").append(saleStartTime);
+        sb.append(", saleEndTime=").append(saleEndTime);
+        sb.append(", salePerLimit=").append(salePerLimit);
+        sb.append(", productClassifyName=").append(productClassifyName);
+        sb.append(", brandName=").append(brandName);
+        sb.append(", description=").append(description);
+        sb.append(", detailDescription=").append(detailDescription);
+        sb.append(", detailHtml=").append(detailHtml);
+        sb.append(", detailMobileHtml=").append(detailMobileHtml);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

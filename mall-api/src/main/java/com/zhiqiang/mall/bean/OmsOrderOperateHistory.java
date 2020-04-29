@@ -1,15 +1,12 @@
 package com.zhiqiang.mall.bean;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-@ToString
+
 @Table(name = "oms_order_operate_history")
 public class OmsOrderOperateHistory implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_operate_history_id")
     private Long orderOperateHistoryId;
 
@@ -47,6 +44,8 @@ public class OmsOrderOperateHistory implements Serializable {
      * 备注
      */
     private String note;
+
+    private static final long serialVersionUID = 1L;
 
     public OmsOrderOperateHistory(Long orderOperateHistoryId, Long orderId, String operateMan, Date createTime, Integer orderBeforeStatus, Integer orderLateStatus, String note) {
         this.orderOperateHistoryId = orderOperateHistoryId;
@@ -182,5 +181,23 @@ public class OmsOrderOperateHistory implements Serializable {
      */
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", orderOperateHistoryId=").append(orderOperateHistoryId);
+        sb.append(", orderId=").append(orderId);
+        sb.append(", operateMan=").append(operateMan);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", orderBeforeStatus=").append(orderBeforeStatus);
+        sb.append(", orderLateStatus=").append(orderLateStatus);
+        sb.append(", note=").append(note);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }
