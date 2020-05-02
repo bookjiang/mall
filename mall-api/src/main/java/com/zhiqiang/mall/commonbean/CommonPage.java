@@ -1,6 +1,7 @@
 package com.zhiqiang.mall.commonbean;
 
 import com.github.pagehelper.PageInfo;
+import com.zhiqiang.mall.bean.UmsAdmin;
 //import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -24,9 +25,9 @@ public class CommonPage<T> {
      * @author: zhiqiang
      * @time: 2020/4/28 23:58
      */
-    public static <T> CommonPage<T> restPage(List<T> list) {
+    public static <T> CommonPage<T> restPage(PageInfo<T> pageInfo) {
         CommonPage<T> result = new CommonPage<T>();
-        PageInfo<T> pageInfo = new PageInfo<T>(list);
+        //PageInfo<T> pageInfo = new PageInfo<T>(list);
         result.setTotalPage(pageInfo.getPages());
         result.setPageNum(pageInfo.getPageNum());
         result.setPageSize(pageInfo.getPageSize());

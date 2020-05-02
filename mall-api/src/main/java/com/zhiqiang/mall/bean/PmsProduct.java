@@ -1,24 +1,29 @@
 package com.zhiqiang.mall.bean;
 
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
-
+@Data
+@ApiModel(value = "商品模型")
 @Table(name = "pms_product")
 public class PmsProduct implements Serializable {
     /**
      * 货品(spu)id（与商品sku区别）
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private Long productId;
+    private Long id;
 
     /**
      * 分类
      */
     @Column(name = "product_classify_id")
-    private Long productClassifyId;
+    private Long productCategoryId;
 
     /**
      * 货品名称
@@ -28,7 +33,14 @@ public class PmsProduct implements Serializable {
     /**
      * 关键字（类似副标题）
      */
+    @Column(name="keywords")
     private String keywords;
+
+    /**
+     * 与关键字同
+     */
+    //private String subTitle;
+
 
     /**
      * 品牌id
@@ -46,11 +58,12 @@ public class PmsProduct implements Serializable {
      * 参考价格
      */
     @Column(name = "reference_price")
-    private BigDecimal referencePrice;
+    private BigDecimal originalPrice;
 
     /**
-     * 实际价格
+     * 实际价格,即价格
      */
+
     private BigDecimal price;
 
     /**
@@ -78,19 +91,20 @@ public class PmsProduct implements Serializable {
      * 增加的成长值
      */
     @Column(name = "growth_value")
-    private Integer growthValue;
+    private Integer giftGrowth;
 
     /**
      * 增加积分
      */
     @Column(name = "member_point")
-    private Integer memberPoint;
+    private Integer giftPoint;
 
     /**
      * 积分兑换限额（百分比，表示只能抵扣价格的百分比）
      */
+    //注意这是百分比
     @Column(name = "point_limit")
-    private BigDecimal pointLimit;
+    private BigDecimal usePointLimit;
 
     /**
      * 上架状态(0->下架；1->上架)
@@ -113,31 +127,32 @@ public class PmsProduct implements Serializable {
     /**
      * 服务保障（字符串，分号分割）：1->破损包退；2->运费险；3->保价险;4->正品保证(假一赔四);5->包邮
      */
-    private String service;
+    @Column(name = "service")
+    private String serviceIds;
 
     /**
      * 优惠方式(0;无优惠;1:促销价;2:会员价;3:积分兑换优惠)4:满减
      */
     @Column(name = "discount_type")
-    private Integer discountType;
+    private Integer promotionType;
 
     /**
      * 货品图片（一张，主页用) 
      */
     @Column(name = "product_pic")
-    private String productPic;
+    private String pic;
 
     /**
      * 运费模板id
      */
     @Column(name = "freight_id")
-    private Long freightId;
+    private Long feightTemplateId;
 
     /**
-     * 会员价格
+     * 会员价格，即促销价格
      */
     @Column(name = "member_price")
-    private Long memberPrice;
+    private Long promotionPrice;
 
     /**
      * 是否删除：0->未删除；1->已删除
@@ -149,12 +164,13 @@ public class PmsProduct implements Serializable {
      * 审核状态：0->未审核；1->审核通过
      */
     @Column(name = "check_status")
-    private Integer checkStatus;
+    private Integer verifyStatus;
 
     /**
      * 销量
      */
-    private Integer sales;
+    @Column(name = "sales")
+    private Integer sale;
 
     /**
      * 备注
@@ -164,7 +180,8 @@ public class PmsProduct implements Serializable {
     /**
      * 相册（用于进入商品页面轮播）
      */
-    private String album;
+    @Column(name = "album")
+    private String albumPics;
 
     /**
      * 详情标题
@@ -176,25 +193,25 @@ public class PmsProduct implements Serializable {
      * 促销开始时间
      */
     @Column(name = "sale_start_time")
-    private Date saleStartTime;
+    private Date promotionStartTime;
 
     /**
      * 促销结束时间
      */
     @Column(name = "sale_end_time")
-    private Date saleEndTime;
+    private Date promotionEndTime;
 
     /**
      * 活动限购数量
      */
     @Column(name = "sale_per_limit")
-    private Integer salePerLimit;
+    private Integer promotionPerLimit;
 
     /**
      * 产品分类名称
      */
     @Column(name = "product_classify_name")
-    private String productClassifyName;
+    private String productCategoryName;
 
     /**
      * 品牌名称
@@ -211,7 +228,7 @@ public class PmsProduct implements Serializable {
      * 详情描述
      */
     @Column(name = "detail_description")
-    private String detailDescription;
+    private String detailDesc;
 
     /**
      * 电脑端产品详情页
@@ -227,43 +244,43 @@ public class PmsProduct implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public PmsProduct(Long productId, Long productClassifyId, String name, String keywords, Long brandId, String productSn, BigDecimal referencePrice, BigDecimal price, Integer stock, Integer lowStock, BigDecimal weight, String unit, Integer growthValue, Integer memberPoint, BigDecimal pointLimit, Integer publishStatus, Integer newStatus, Integer recommandStatus, String service, Integer discountType, String productPic, Long freightId, Long memberPrice, Integer deleteStatus, Integer checkStatus, Integer sales, String note, String album, String detailTitle, Date saleStartTime, Date saleEndTime, Integer salePerLimit, String productClassifyName, String brandName, String description, String detailDescription, String detailHtml, String detailMobileHtml) {
-        this.productId = productId;
-        this.productClassifyId = productClassifyId;
+    public PmsProduct(Long id, Long productCategoryId, String name, String keywords, Long brandId, String productSn, BigDecimal originalPrice, BigDecimal price, Integer stock, Integer lowStock, BigDecimal weight, String unit, Integer giftGrowth, Integer giftPoint, BigDecimal usePointLimit, Integer publishStatus, Integer newStatus, Integer recommandStatus, String serviceIds, Integer promotionType, String pic, Long feightTemplateId, Long promotionPrice, Integer deleteStatus, Integer verifyStatus, Integer sale, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, String productCategoryName, String brandName, String description, String detailDesc, String detailHtml, String detailMobileHtml) {
+        this.id = id;
+        this.productCategoryId = productCategoryId;
         this.name = name;
         this.keywords = keywords;
         this.brandId = brandId;
         this.productSn = productSn;
-        this.referencePrice = referencePrice;
+        this.originalPrice = originalPrice;
         this.price = price;
         this.stock = stock;
         this.lowStock = lowStock;
         this.weight = weight;
         this.unit = unit;
-        this.growthValue = growthValue;
-        this.memberPoint = memberPoint;
-        this.pointLimit = pointLimit;
+        this.giftGrowth = giftGrowth;
+        this.giftPoint = giftPoint;
+        this.usePointLimit = usePointLimit;
         this.publishStatus = publishStatus;
         this.newStatus = newStatus;
         this.recommandStatus = recommandStatus;
-        this.service = service;
-        this.discountType = discountType;
-        this.productPic = productPic;
-        this.freightId = freightId;
-        this.memberPrice = memberPrice;
+        this.serviceIds = serviceIds;
+        this.promotionType = promotionType;
+        this.pic = pic;
+        this.feightTemplateId = feightTemplateId;
+        this.promotionPrice = promotionPrice;
         this.deleteStatus = deleteStatus;
-        this.checkStatus = checkStatus;
-        this.sales = sales;
+        this.verifyStatus = verifyStatus;
+        this.sale = sale;
         this.note = note;
-        this.album = album;
+        this.albumPics = albumPics;
         this.detailTitle = detailTitle;
-        this.saleStartTime = saleStartTime;
-        this.saleEndTime = saleEndTime;
-        this.salePerLimit = salePerLimit;
-        this.productClassifyName = productClassifyName;
+        this.promotionStartTime = promotionStartTime;
+        this.promotionEndTime = promotionEndTime;
+        this.promotionPerLimit = promotionPerLimit;
+        this.productCategoryName = productCategoryName;
         this.brandName = brandName;
         this.description = description;
-        this.detailDescription = detailDescription;
+        this.detailDesc = detailDesc;
         this.detailHtml = detailHtml;
         this.detailMobileHtml = detailMobileHtml;
     }
@@ -277,17 +294,17 @@ public class PmsProduct implements Serializable {
      *
      * @return product_id - 货品(spu)id（与商品sku区别）
      */
-    public Long getProductId() {
-        return productId;
+    public Long getId() {
+        return id;
     }
 
     /**
      * 设置货品(spu)id（与商品sku区别）
      *
-     * @param productId 货品(spu)id（与商品sku区别）
+     * @param id 货品(spu)id（与商品sku区别）
      */
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -295,17 +312,17 @@ public class PmsProduct implements Serializable {
      *
      * @return product_classify_id - 分类
      */
-    public Long getProductClassifyId() {
-        return productClassifyId;
+    public Long getProductCategoryId() {
+        return productCategoryId;
     }
 
     /**
      * 设置分类
      *
-     * @param productClassifyId 分类
+     * @param productCategoryId 分类
      */
-    public void setProductClassifyId(Long productClassifyId) {
-        this.productClassifyId = productClassifyId;
+    public void setProductCategoryId(Long productCategoryId) {
+        this.productCategoryId = productCategoryId;
     }
 
     /**
@@ -385,17 +402,17 @@ public class PmsProduct implements Serializable {
      *
      * @return reference_price - 参考价格
      */
-    public BigDecimal getReferencePrice() {
-        return referencePrice;
+    public BigDecimal getOriginalPrice() {
+        return originalPrice;
     }
 
     /**
      * 设置参考价格
      *
-     * @param referencePrice 参考价格
+     * @param originalPrice 参考价格
      */
-    public void setReferencePrice(BigDecimal referencePrice) {
-        this.referencePrice = referencePrice;
+    public void setOriginalPrice(BigDecimal originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
     /**
@@ -493,17 +510,17 @@ public class PmsProduct implements Serializable {
      *
      * @return growth_value - 增加的成长值
      */
-    public Integer getGrowthValue() {
-        return growthValue;
+    public Integer getGiftGrowth() {
+        return giftGrowth;
     }
 
     /**
      * 设置增加的成长值
      *
-     * @param growthValue 增加的成长值
+     * @param giftGrowth 增加的成长值
      */
-    public void setGrowthValue(Integer growthValue) {
-        this.growthValue = growthValue;
+    public void setGiftGrowth(Integer giftGrowth) {
+        this.giftGrowth = giftGrowth;
     }
 
     /**
@@ -511,17 +528,17 @@ public class PmsProduct implements Serializable {
      *
      * @return member_point - 增加积分
      */
-    public Integer getMemberPoint() {
-        return memberPoint;
+    public Integer getGiftPoint() {
+        return giftPoint;
     }
 
     /**
      * 设置增加积分
      *
-     * @param memberPoint 增加积分
+     * @param giftPoint 增加积分
      */
-    public void setMemberPoint(Integer memberPoint) {
-        this.memberPoint = memberPoint;
+    public void setGiftPoint(Integer giftPoint) {
+        this.giftPoint = giftPoint;
     }
 
     /**
@@ -529,17 +546,17 @@ public class PmsProduct implements Serializable {
      *
      * @return point_limit - 积分兑换限额（百分比，表示只能抵扣价格的百分比）
      */
-    public BigDecimal getPointLimit() {
-        return pointLimit;
+    public BigDecimal getUsePointLimit() {
+        return usePointLimit;
     }
 
     /**
      * 设置积分兑换限额（百分比，表示只能抵扣价格的百分比）
      *
-     * @param pointLimit 积分兑换限额（百分比，表示只能抵扣价格的百分比）
+     * @param usePointLimit 积分兑换限额（百分比，表示只能抵扣价格的百分比）
      */
-    public void setPointLimit(BigDecimal pointLimit) {
-        this.pointLimit = pointLimit;
+    public void setUsePointLimit(BigDecimal usePointLimit) {
+        this.usePointLimit = usePointLimit;
     }
 
     /**
@@ -601,17 +618,17 @@ public class PmsProduct implements Serializable {
      *
      * @return service - 服务保障（字符串，分号分割）：1->破损包退；2->运费险；3->保价险;4->正品保证(假一赔四);5->包邮
      */
-    public String getService() {
-        return service;
+    public String getServiceIds() {
+        return serviceIds;
     }
 
     /**
      * 设置服务保障（字符串，分号分割）：1->破损包退；2->运费险；3->保价险;4->正品保证(假一赔四);5->包邮
      *
-     * @param service 服务保障（字符串，分号分割）：1->破损包退；2->运费险；3->保价险;4->正品保证(假一赔四);5->包邮
+     * @param serviceIds 服务保障（字符串，分号分割）：1->破损包退；2->运费险；3->保价险;4->正品保证(假一赔四);5->包邮
      */
-    public void setService(String service) {
-        this.service = service == null ? null : service.trim();
+    public void setServiceIds(String serviceIds) {
+        this.serviceIds = serviceIds == null ? null : serviceIds.trim();
     }
 
     /**
@@ -619,17 +636,17 @@ public class PmsProduct implements Serializable {
      *
      * @return discount_type - 优惠方式(0;无优惠;1:促销价;2:会员价;3:积分兑换优惠)4:满减
      */
-    public Integer getDiscountType() {
-        return discountType;
+    public Integer getPromotionType() {
+        return promotionType;
     }
 
     /**
      * 设置优惠方式(0;无优惠;1:促销价;2:会员价;3:积分兑换优惠)4:满减
      *
-     * @param discountType 优惠方式(0;无优惠;1:促销价;2:会员价;3:积分兑换优惠)4:满减
+     * @param promotionType 优惠方式(0;无优惠;1:促销价;2:会员价;3:积分兑换优惠)4:满减
      */
-    public void setDiscountType(Integer discountType) {
-        this.discountType = discountType;
+    public void setPromotionType(Integer promotionType) {
+        this.promotionType = promotionType;
     }
 
     /**
@@ -637,17 +654,17 @@ public class PmsProduct implements Serializable {
      *
      * @return product_pic - 货品图片（一张，主页用) 
      */
-    public String getProductPic() {
-        return productPic;
+    public String getPic() {
+        return pic;
     }
 
     /**
      * 设置货品图片（一张，主页用) 
      *
-     * @param productPic 货品图片（一张，主页用) 
+     * @param pic 货品图片（一张，主页用)
      */
-    public void setProductPic(String productPic) {
-        this.productPic = productPic == null ? null : productPic.trim();
+    public void setPic(String pic) {
+        this.pic = pic == null ? null : pic.trim();
     }
 
     /**
@@ -655,17 +672,17 @@ public class PmsProduct implements Serializable {
      *
      * @return freight_id - 运费模板id
      */
-    public Long getFreightId() {
-        return freightId;
+    public Long getFeightTemplateId() {
+        return feightTemplateId;
     }
 
     /**
      * 设置运费模板id
      *
-     * @param freightId 运费模板id
+     * @param feightTemplateId 运费模板id
      */
-    public void setFreightId(Long freightId) {
-        this.freightId = freightId;
+    public void setFeightTemplateId(Long feightTemplateId) {
+        this.feightTemplateId = feightTemplateId;
     }
 
     /**
@@ -673,17 +690,17 @@ public class PmsProduct implements Serializable {
      *
      * @return member_price - 会员价格
      */
-    public Long getMemberPrice() {
-        return memberPrice;
+    public Long getPromotionPrice() {
+        return promotionPrice;
     }
 
     /**
      * 设置会员价格
      *
-     * @param memberPrice 会员价格
+     * @param promotionPrice 会员价格
      */
-    public void setMemberPrice(Long memberPrice) {
-        this.memberPrice = memberPrice;
+    public void setPromotionPrice(Long promotionPrice) {
+        this.promotionPrice = promotionPrice;
     }
 
     /**
@@ -709,17 +726,17 @@ public class PmsProduct implements Serializable {
      *
      * @return check_status - 审核状态：0->未审核；1->审核通过
      */
-    public Integer getCheckStatus() {
-        return checkStatus;
+    public Integer getVerifyStatus() {
+        return verifyStatus;
     }
 
     /**
      * 设置审核状态：0->未审核；1->审核通过
      *
-     * @param checkStatus 审核状态：0->未审核；1->审核通过
+     * @param verifyStatus 审核状态：0->未审核；1->审核通过
      */
-    public void setCheckStatus(Integer checkStatus) {
-        this.checkStatus = checkStatus;
+    public void setVerifyStatus(Integer verifyStatus) {
+        this.verifyStatus = verifyStatus;
     }
 
     /**
@@ -727,17 +744,17 @@ public class PmsProduct implements Serializable {
      *
      * @return sales - 销量
      */
-    public Integer getSales() {
-        return sales;
+    public Integer getSale() {
+        return sale;
     }
 
     /**
      * 设置销量
      *
-     * @param sales 销量
+     * @param sale 销量
      */
-    public void setSales(Integer sales) {
-        this.sales = sales;
+    public void setSale(Integer sale) {
+        this.sale = sale;
     }
 
     /**
@@ -763,17 +780,17 @@ public class PmsProduct implements Serializable {
      *
      * @return album - 相册（用于进入商品页面轮播）
      */
-    public String getAlbum() {
-        return album;
+    public String getAlbumPics() {
+        return albumPics;
     }
 
     /**
      * 设置相册（用于进入商品页面轮播）
      *
-     * @param album 相册（用于进入商品页面轮播）
+     * @param albumPics 相册（用于进入商品页面轮播）
      */
-    public void setAlbum(String album) {
-        this.album = album == null ? null : album.trim();
+    public void setAlbumPics(String albumPics) {
+        this.albumPics = albumPics == null ? null : albumPics.trim();
     }
 
     /**
@@ -799,17 +816,17 @@ public class PmsProduct implements Serializable {
      *
      * @return sale_start_time - 促销开始时间
      */
-    public Date getSaleStartTime() {
-        return saleStartTime;
+    public Date getPromotionStartTime() {
+        return promotionStartTime;
     }
 
     /**
      * 设置促销开始时间
      *
-     * @param saleStartTime 促销开始时间
+     * @param promotionStartTime 促销开始时间
      */
-    public void setSaleStartTime(Date saleStartTime) {
-        this.saleStartTime = saleStartTime;
+    public void setPromotionStartTime(Date promotionStartTime) {
+        this.promotionStartTime = promotionStartTime;
     }
 
     /**
@@ -817,17 +834,17 @@ public class PmsProduct implements Serializable {
      *
      * @return sale_end_time - 促销结束时间
      */
-    public Date getSaleEndTime() {
-        return saleEndTime;
+    public Date getPromotionEndTime() {
+        return promotionEndTime;
     }
 
     /**
      * 设置促销结束时间
      *
-     * @param saleEndTime 促销结束时间
+     * @param promotionEndTime 促销结束时间
      */
-    public void setSaleEndTime(Date saleEndTime) {
-        this.saleEndTime = saleEndTime;
+    public void setPromotionEndTime(Date promotionEndTime) {
+        this.promotionEndTime = promotionEndTime;
     }
 
     /**
@@ -835,17 +852,17 @@ public class PmsProduct implements Serializable {
      *
      * @return sale_per_limit - 活动限购数量
      */
-    public Integer getSalePerLimit() {
-        return salePerLimit;
+    public Integer getPromotionPerLimit() {
+        return promotionPerLimit;
     }
 
     /**
      * 设置活动限购数量
      *
-     * @param salePerLimit 活动限购数量
+     * @param promotionPerLimit 活动限购数量
      */
-    public void setSalePerLimit(Integer salePerLimit) {
-        this.salePerLimit = salePerLimit;
+    public void setPromotionPerLimit(Integer promotionPerLimit) {
+        this.promotionPerLimit = promotionPerLimit;
     }
 
     /**
@@ -853,17 +870,17 @@ public class PmsProduct implements Serializable {
      *
      * @return product_classify_name - 产品分类名称
      */
-    public String getProductClassifyName() {
-        return productClassifyName;
+    public String getProductCategoryName() {
+        return productCategoryName;
     }
 
     /**
      * 设置产品分类名称
      *
-     * @param productClassifyName 产品分类名称
+     * @param productCategoryName 产品分类名称
      */
-    public void setProductClassifyName(String productClassifyName) {
-        this.productClassifyName = productClassifyName == null ? null : productClassifyName.trim();
+    public void setProductCategoryName(String productCategoryName) {
+        this.productCategoryName = productCategoryName == null ? null : productCategoryName.trim();
     }
 
     /**
@@ -907,17 +924,17 @@ public class PmsProduct implements Serializable {
      *
      * @return detail_description - 详情描述
      */
-    public String getDetailDescription() {
-        return detailDescription;
+    public String getDetailDesc() {
+        return detailDesc;
     }
 
     /**
      * 设置详情描述
      *
-     * @param detailDescription 详情描述
+     * @param detailDesc 详情描述
      */
-    public void setDetailDescription(String detailDescription) {
-        this.detailDescription = detailDescription == null ? null : detailDescription.trim();
+    public void setDetailDesc(String detailDesc) {
+        this.detailDesc = detailDesc == null ? null : detailDesc.trim();
     }
 
     /**
@@ -962,42 +979,42 @@ public class PmsProduct implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", productId=").append(productId);
-        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", productId=").append(id);
+        sb.append(", productClassifyId=").append(productCategoryId);
         sb.append(", name=").append(name);
         sb.append(", keywords=").append(keywords);
         sb.append(", brandId=").append(brandId);
         sb.append(", productSn=").append(productSn);
-        sb.append(", referencePrice=").append(referencePrice);
+        sb.append(", referencePrice=").append(originalPrice);
         sb.append(", price=").append(price);
         sb.append(", stock=").append(stock);
         sb.append(", lowStock=").append(lowStock);
         sb.append(", weight=").append(weight);
         sb.append(", unit=").append(unit);
-        sb.append(", growthValue=").append(growthValue);
-        sb.append(", memberPoint=").append(memberPoint);
-        sb.append(", pointLimit=").append(pointLimit);
+        sb.append(", growthValue=").append(giftGrowth);
+        sb.append(", memberPoint=").append(giftPoint);
+        sb.append(", pointLimit=").append(usePointLimit);
         sb.append(", publishStatus=").append(publishStatus);
         sb.append(", newStatus=").append(newStatus);
         sb.append(", recommandStatus=").append(recommandStatus);
-        sb.append(", service=").append(service);
-        sb.append(", discountType=").append(discountType);
-        sb.append(", productPic=").append(productPic);
-        sb.append(", freightId=").append(freightId);
-        sb.append(", memberPrice=").append(memberPrice);
+        sb.append(", service=").append(serviceIds);
+        sb.append(", discountType=").append(promotionType);
+        sb.append(", productPic=").append(pic);
+        sb.append(", freightId=").append(feightTemplateId);
+        sb.append(", memberPrice=").append(promotionPrice);
         sb.append(", deleteStatus=").append(deleteStatus);
-        sb.append(", checkStatus=").append(checkStatus);
-        sb.append(", sales=").append(sales);
+        sb.append(", checkStatus=").append(verifyStatus);
+        sb.append(", sales=").append(sale);
         sb.append(", note=").append(note);
-        sb.append(", album=").append(album);
+        sb.append(", album=").append(albumPics);
         sb.append(", detailTitle=").append(detailTitle);
-        sb.append(", saleStartTime=").append(saleStartTime);
-        sb.append(", saleEndTime=").append(saleEndTime);
-        sb.append(", salePerLimit=").append(salePerLimit);
-        sb.append(", productClassifyName=").append(productClassifyName);
+        sb.append(", saleStartTime=").append(promotionStartTime);
+        sb.append(", saleEndTime=").append(promotionEndTime);
+        sb.append(", salePerLimit=").append(promotionPerLimit);
+        sb.append(", productClassifyName=").append(productCategoryName);
         sb.append(", brandName=").append(brandName);
         sb.append(", description=").append(description);
-        sb.append(", detailDescription=").append(detailDescription);
+        sb.append(", detailDescription=").append(detailDesc);
         sb.append(", detailHtml=").append(detailHtml);
         sb.append(", detailMobileHtml=").append(detailMobileHtml);
         sb.append(", serialVersionUID=").append(serialVersionUID);

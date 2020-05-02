@@ -1,6 +1,5 @@
 package com.zhiqiang.mall.bean;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,8 +20,8 @@ public class UmsAdmin implements Serializable {
     @Column(name = "admin_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "管理员id")
-    @JsonProperty(value = "adminId")
-    private Long adminId;
+
+    private Long id;
 
     /**
      * 用户名
@@ -34,7 +33,7 @@ public class UmsAdmin implements Serializable {
      * 密码
      */
     @Size(min = 6, message = "密码必须至少是6位")
-    @Pattern(regexp = "^?=.*?[A-Z]", message = "密码至少一个小写英文字母")
+    @Pattern(regexp = "^.*(?=.{6,})(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).*$", message = "密码需含有大写，小写，数字")
     private String password;
 
     /**
@@ -78,8 +77,8 @@ public class UmsAdmin implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public UmsAdmin(Long adminId, String username, String password, String icon, String email, String nickName, String note, Date createTime, Date loginTime, Integer status) {
-        this.adminId = adminId;
+    public UmsAdmin(Long id, String username, String password, String icon, String email, String nickName, String note, Date createTime, Date loginTime, Integer status) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.icon = icon;
@@ -98,15 +97,15 @@ public class UmsAdmin implements Serializable {
     /**
      * @return admin_id
      */
-    public Long getAdminId() {
-        return adminId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param adminId
+     * @param id
      */
-    public void setAdminId(Long adminId) {
-        this.adminId = adminId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -277,7 +276,7 @@ public class UmsAdmin implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", adminId=").append(adminId);
+        sb.append(", adminId=").append(id);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
         sb.append(", icon=").append(icon);

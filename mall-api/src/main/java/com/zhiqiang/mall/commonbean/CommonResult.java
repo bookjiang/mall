@@ -32,6 +32,11 @@ public class CommonResult<T> {
         return new CommonResult<T>(Code.SUCCESS.getCode(), message, data);
     }
 
+//    public static <T> CommonResult<T> success(String message)
+//    {
+//        return new CommonResult<T>(Code.SUCCESS.getCode(), message, data);
+//    }
+
     /**
      * @description: 返回成功结果
      * @param:data  数据

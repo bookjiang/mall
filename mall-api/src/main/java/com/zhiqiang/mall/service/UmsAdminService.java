@@ -1,5 +1,6 @@
 package com.zhiqiang.mall.service;
 
+import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.UmsAdmin;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,5 +26,11 @@ public interface UmsAdminService {
 
     UmsAdmin getItem(Long id);
 
-    List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
+    PageInfo<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
+
+    int update(Long id, UmsAdmin admin);
+
+    int delete(Long id);
+
+    int updateByUserName(UmsAdmin umsAdmin);
 }

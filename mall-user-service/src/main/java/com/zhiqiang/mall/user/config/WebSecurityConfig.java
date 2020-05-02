@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * @ClassName: WebSecurityConfig
+ * @ClassName: WebSecurityConfig,用于密码加密
  * @description: 安全配置类
  * @author: zhiqiang
  * @create: 2020/4/22 13:33
