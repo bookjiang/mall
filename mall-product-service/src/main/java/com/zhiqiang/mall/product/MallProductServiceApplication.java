@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication(exclude={SecurityAutoConfiguration.class})
-@MapperScan(basePackages = "com.zhiqiang.mall.user.mapper")
+@MapperScan({"com.zhiqiang.mall.user.mapper","com.zhiqiang.mall.product.Dao"})
 @ComponentScan({"com.zhiqiang.mall.config","com.zhiqiang.mall.product.config"})
 public class MallProductServiceApplication {
 

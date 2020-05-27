@@ -1,5 +1,7 @@
 package com.zhiqiang.mall.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.*;
@@ -11,7 +13,7 @@ public class PmsSku implements Serializable {
      */
     @Id
     @Column(name = "sku_id")
-    private Long skuId;
+    private Long id;
 
     /**
      * 货品id
@@ -23,7 +25,7 @@ public class PmsSku implements Serializable {
      * sku条码
      */
     @Column(name = "sku_sn")
-    private String skuSn;
+    private String skuCode;
 
     /**
      * 价格
@@ -75,24 +77,29 @@ public class PmsSku implements Serializable {
      * 预警库存
      */
     @Column(name = "warning_stock")
-    private Integer warningStock;
+    private Integer lowStock;
 
     /**
      * 图片
      */
-    private String picture;
+    @ApiModelProperty(value = "展示图片")
+    @Column(name = "picture")
+    private String pic;
 
     /**
      * 销量
      */
     private Integer sale;
 
+    @Transient
+    private Integer lockStock;
+
     private static final long serialVersionUID = 1L;
 
-    public PmsSku(Long skuId, Long productId, String skuSn, BigDecimal price, Integer discountType, BigDecimal promotionPrice, BigDecimal memberPrice, BigDecimal pointLimit, BigDecimal fullPrice, BigDecimal reductionMoney, Integer stock, Integer warningStock, String picture, Integer sale) {
-        this.skuId = skuId;
+    public PmsSku(Long id, Long productId, String skuCode, BigDecimal price, Integer discountType, BigDecimal promotionPrice, BigDecimal memberPrice, BigDecimal pointLimit, BigDecimal fullPrice, BigDecimal reductionMoney, Integer stock, Integer lowStock, String pic, Integer sale) {
+        this.id = id;
         this.productId = productId;
-        this.skuSn = skuSn;
+        this.skuCode = skuCode;
         this.price = price;
         this.discountType = discountType;
         this.promotionPrice = promotionPrice;
@@ -101,8 +108,8 @@ public class PmsSku implements Serializable {
         this.fullPrice = fullPrice;
         this.reductionMoney = reductionMoney;
         this.stock = stock;
-        this.warningStock = warningStock;
-        this.picture = picture;
+        this.lowStock = lowStock;
+        this.pic = pic;
         this.sale = sale;
     }
 
@@ -115,17 +122,17 @@ public class PmsSku implements Serializable {
      *
      * @return sku_id - 商品sku编号
      */
-    public Long getSkuId() {
-        return skuId;
+    public Long getId() {
+        return id;
     }
 
     /**
      * 设置商品sku编号
      *
-     * @param skuId 商品sku编号
+     * @param id 商品sku编号
      */
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -151,17 +158,17 @@ public class PmsSku implements Serializable {
      *
      * @return sku_sn - sku条码
      */
-    public String getSkuSn() {
-        return skuSn;
+    public String getSkuCode() {
+        return skuCode;
     }
 
     /**
      * 设置sku条码
      *
-     * @param skuSn sku条码
+     * @param skuCode sku条码
      */
-    public void setSkuSn(String skuSn) {
-        this.skuSn = skuSn == null ? null : skuSn.trim();
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode == null ? null : skuCode.trim();
     }
 
     /**
@@ -313,17 +320,17 @@ public class PmsSku implements Serializable {
      *
      * @return warning_stock - 预警库存
      */
-    public Integer getWarningStock() {
-        return warningStock;
+    public Integer getLowStock() {
+        return lowStock;
     }
 
     /**
      * 设置预警库存
      *
-     * @param warningStock 预警库存
+     * @param lowStock 预警库存
      */
-    public void setWarningStock(Integer warningStock) {
-        this.warningStock = warningStock;
+    public void setLowStock(Integer lowStock) {
+        this.lowStock = lowStock;
     }
 
     /**
@@ -331,17 +338,17 @@ public class PmsSku implements Serializable {
      *
      * @return picture - 图片
      */
-    public String getPicture() {
-        return picture;
+    public String getPic() {
+        return pic;
     }
 
     /**
      * 设置图片
      *
-     * @param picture 图片
+     * @param pic 图片
      */
-    public void setPicture(String picture) {
-        this.picture = picture == null ? null : picture.trim();
+    public void setPic(String pic) {
+        this.pic = pic == null ? null : pic.trim();
     }
 
     /**
@@ -368,9 +375,9 @@ public class PmsSku implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", skuId=").append(skuId);
+        sb.append(", skuId=").append(id);
         sb.append(", productId=").append(productId);
-        sb.append(", skuSn=").append(skuSn);
+        sb.append(", skuSn=").append(skuCode);
         sb.append(", price=").append(price);
         sb.append(", discountType=").append(discountType);
         sb.append(", promotionPrice=").append(promotionPrice);
@@ -379,8 +386,8 @@ public class PmsSku implements Serializable {
         sb.append(", fullPrice=").append(fullPrice);
         sb.append(", reductionMoney=").append(reductionMoney);
         sb.append(", stock=").append(stock);
-        sb.append(", warningStock=").append(warningStock);
-        sb.append(", picture=").append(picture);
+        sb.append(", warningStock=").append(lowStock);
+        sb.append(", picture=").append(pic);
         sb.append(", sale=").append(sale);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

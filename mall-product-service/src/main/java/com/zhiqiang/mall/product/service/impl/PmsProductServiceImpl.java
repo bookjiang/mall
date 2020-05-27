@@ -57,6 +57,58 @@ public class PmsProductServiceImpl implements PmsProductService {
 
     }
 
+    @Override
+    public List<PmsProduct> list(String keyword) {
+        PmsProductExample productExample = new PmsProductExample();
+        PmsProductExample.Criteria criteria = productExample.createCriteria();
+        criteria.andDeleteStatusEqualTo(0);
+        if(!StringUtils.isEmpty(keyword)){
+            criteria.andNameLike("%" + keyword + "%");
+            productExample.or().andDeleteStatusEqualTo(0).andProductSnLike("%" + keyword + "%");
+        }
+        return pmsProductMapper.selectByExample(productExample);
+    }
+
+    @Override
+    public int updatePublishStatus(List<Long> ids, Integer publishStatus) {
+        PmsProduct record = new PmsProduct();
+        record.setPublishStatus(publishStatus);
+        PmsProductExample example = new PmsProductExample();
+        example.createCriteria().andProductIdIn(ids);
+        return pmsProductMapper.updateByExampleSelective(record, example);
+
+
+    }
+
+    @Override
+    public int updateRecommendStatus(List<Long> ids, Integer recommendStatus) {
+        PmsProduct record = new PmsProduct();
+        record.setRecommandStatus(recommendStatus);
+        PmsProductExample example = new PmsProductExample();
+        example.createCriteria().andProductIdIn(ids);
+        return pmsProductMapper.updateByExampleSelective(record, example);
+
+    }
+
+    @Override
+    public int updateNewStatus(List<Long> ids, Integer newStatus) {
+        PmsProduct record = new PmsProduct();
+        record.setNewStatus(newStatus);
+        PmsProductExample example = new PmsProductExample();
+        example.createCriteria().andProductIdIn(ids);
+        return pmsProductMapper.updateByExampleSelective(record, example);
+
+    }
+
+    @Override
+    public int updateDeleteStatus(List<Long> ids, Integer deleteStatus) {
+        PmsProduct record = new PmsProduct();
+        record.setDeleteStatus(deleteStatus);
+        PmsProductExample example = new PmsProductExample();
+        example.createCriteria().andProductIdIn(ids);
+        //example.createCriteria().andIdIn(ids);
+        return pmsProductMapper.updateByExampleSelective(record, example);
+    }
 
 
 }

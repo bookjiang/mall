@@ -15,6 +15,7 @@
       <arg column="nav_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="icon" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
     </constructor>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsProductClassify">

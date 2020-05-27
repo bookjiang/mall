@@ -10,7 +10,7 @@ public class PmsBrand implements Serializable {
      */
     @Id
     @Column(name = "brand_id")
-    private Long brandId;
+    private Long id;
 
     /**
      * 品牌名字
@@ -43,12 +43,14 @@ public class PmsBrand implements Serializable {
     /**
      * 是否厂商直供
      */
-    private Integer factory;
+    @Column(name = "factory")
+    private Integer factoryStatus;
 
     /**
      * 平台宣传图
      */
-    private String picture;
+    @Column(name = "picture")
+    private String bigPic;
 
     /**
      * 品牌故事
@@ -58,15 +60,15 @@ public class PmsBrand implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public PmsBrand(Long brandId, String name, Integer showStatus, Integer productCount, Integer productCommentCount, String logo, Integer factory, String picture, String brandStory) {
-        this.brandId = brandId;
+    public PmsBrand(Long id, String name, Integer showStatus, Integer productCount, Integer productCommentCount, String logo, Integer factoryStatus, String bigPic, String brandStory) {
+        this.id = id;
         this.name = name;
         this.showStatus = showStatus;
         this.productCount = productCount;
         this.productCommentCount = productCommentCount;
         this.logo = logo;
-        this.factory = factory;
-        this.picture = picture;
+        this.factoryStatus = factoryStatus;
+        this.bigPic = bigPic;
         this.brandStory = brandStory;
     }
 
@@ -79,17 +81,17 @@ public class PmsBrand implements Serializable {
      *
      * @return brand_id - 品牌id
      */
-    public Long getBrandId() {
-        return brandId;
+    public Long getId() {
+        return id;
     }
 
     /**
      * 设置品牌id
      *
-     * @param brandId 品牌id
+     * @param id 品牌id
      */
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -187,17 +189,17 @@ public class PmsBrand implements Serializable {
      *
      * @return factory - 是否厂商直供
      */
-    public Integer getFactory() {
-        return factory;
+    public Integer getFactoryStatus() {
+        return factoryStatus;
     }
 
     /**
      * 设置是否厂商直供
      *
-     * @param factory 是否厂商直供
+     * @param factoryStatus 是否厂商直供
      */
-    public void setFactory(Integer factory) {
-        this.factory = factory;
+    public void setFactoryStatus(Integer factoryStatus) {
+        this.factoryStatus = factoryStatus;
     }
 
     /**
@@ -205,17 +207,17 @@ public class PmsBrand implements Serializable {
      *
      * @return picture - 平台宣传图
      */
-    public String getPicture() {
-        return picture;
+    public String getBigPic() {
+        return bigPic;
     }
 
     /**
      * 设置平台宣传图
      *
-     * @param picture 平台宣传图
+     * @param bigPic 平台宣传图
      */
-    public void setPicture(String picture) {
-        this.picture = picture == null ? null : picture.trim();
+    public void setBigPic(String bigPic) {
+        this.bigPic = bigPic == null ? null : bigPic.trim();
     }
 
     /**
@@ -242,14 +244,14 @@ public class PmsBrand implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", brandId=").append(brandId);
+        sb.append(", brandId=").append(id);
         sb.append(", name=").append(name);
         sb.append(", showStatus=").append(showStatus);
         sb.append(", productCount=").append(productCount);
         sb.append(", productCommentCount=").append(productCommentCount);
         sb.append(", logo=").append(logo);
-        sb.append(", factory=").append(factory);
-        sb.append(", picture=").append(picture);
+        sb.append(", factory=").append(factoryStatus);
+        sb.append(", picture=").append(bigPic);
         sb.append(", brandStory=").append(brandStory);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

@@ -40,6 +40,7 @@
       <arg column="sale_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="product_classify_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
     </constructor>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsProduct">
@@ -48,6 +49,7 @@
     -->
     <constructor>
       <idArg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -91,7 +93,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    product_id, product_classify_id, name, keywords, brand_id, product_sn, reference_price, 
+    product_id, product_classify_id,product_attribute_category_id, name, keywords, brand_id, product_sn, reference_price,
     price, stock, low_stock, weight, unit, growth_value, member_point, point_limit, publish_status, 
     new_status, recommand_status, service, discount_type, product_pic, freight_id, member_price, 
     delete_status, check_status, sales, note, album, detail_title, sale_start_time, sale_end_time, 

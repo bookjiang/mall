@@ -19,6 +19,8 @@ public class PmsProduct implements Serializable {
     @Column(name = "product_id")
     private Long id;
 
+    @Column(name = "product_attribute_category_id")
+    private Long productAttributeCategoryId;
     /**
      * 分类
      */
@@ -39,7 +41,8 @@ public class PmsProduct implements Serializable {
     /**
      * 与关键字同
      */
-    //private String subTitle;
+    @Transient
+    private String subTitle;
 
 
     /**

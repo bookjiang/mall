@@ -13,5 +13,17 @@ import java.util.List;
  * @create: 2020/5/1 22:02
  */
 public interface PmsProductService {
+    
+
     PageInfo<PmsProduct> listAll(ProductQueryParams productQueryParam, Integer pageSize, Integer pageNum);
+
+    List<PmsProduct> list(String keyword);
+
+    int updatePublishStatus(List<Long> ids, Integer publishStatus);
+
+    int updateRecommendStatus(List<Long> ids, Integer recommendStatus);
+
+    int updateNewStatus(List<Long> ids, Integer newStatus);
+
+    int updateDeleteStatus(List<Long> ids, Integer deleteStatus);
 }

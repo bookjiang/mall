@@ -1,16 +1,19 @@
 package com.zhiqiang.mall.bean;
 
+import io.swagger.annotations.ApiModel;
+
 import java.io.Serializable;
 import javax.persistence.*;
-
+@ApiModel(value = "商品分类")
 @Table(name = "pms_product_classify")
 public class PmsProductClassify implements Serializable {
     /**
      * 分类id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_classify_id")
-    private Long productClassifyId;
+    private Long id;
 
     /**
      * 上级分类编号，0表示一级分类；
@@ -51,12 +54,15 @@ public class PmsProductClassify implements Serializable {
      */
     @Column(name = "show_status")
     private Integer showStatus;
+    @Transient
+    private Integer sort;
 
     /**
      * 图标
      */
     private String icon;
-
+    @Transient
+    private String keywords;
     /**
      * 描述
      */
@@ -64,8 +70,8 @@ public class PmsProductClassify implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public PmsProductClassify(Long productClassifyId, Long parentId, String name, Integer level, Integer productCount, String productUnit, Integer navStatus, Integer showStatus, String icon, String description) {
-        this.productClassifyId = productClassifyId;
+    public PmsProductClassify(Long id, Long parentId, String name, Integer level, Integer productCount, String productUnit, Integer navStatus, Integer showStatus, String icon, String description) {
+        this.id = id;
         this.parentId = parentId;
         this.name = name;
         this.level = level;
@@ -86,17 +92,17 @@ public class PmsProductClassify implements Serializable {
      *
      * @return product_classify_id - 分类id
      */
-    public Long getProductClassifyId() {
-        return productClassifyId;
+    public Long getId() {
+        return id;
     }
 
     /**
      * 设置分类id
      *
-     * @param productClassifyId 分类id
+     * @param id 分类id
      */
-    public void setProductClassifyId(Long productClassifyId) {
-        this.productClassifyId = productClassifyId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -267,7 +273,7 @@ public class PmsProductClassify implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", productClassifyId=").append(id);
         sb.append(", parentId=").append(parentId);
         sb.append(", name=").append(name);
         sb.append(", level=").append(level);

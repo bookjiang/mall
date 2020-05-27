@@ -9,3 +9,12 @@ mall-manage-web用户服务的web层8081
 
 mall-product-service商品服务的service层8072
 mall-product-web商品服务的service层8082
+
+mall-order-service商品服务的service层8073
+mall-order-web商品服务的service层8083
+
+mall-content-service商品服务的service层8074
+mall-content-web商品服务的service层8084
+
+mall-content-service商品服务的service层8075
+mall-content-web商品服务的service层8085
