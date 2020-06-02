@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="address_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="address_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="send_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="receive_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
@@ -22,7 +22,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    address_id, address_name, send_status, receive_status, name, phone, province, city, 
-    region, detail_address
+    id, address_name, send_status, receive_status, name, phone, province, city, region, 
+    detail_address
   </sql>
 </mapper>

@@ -7,11 +7,9 @@ import javax.persistence.*;
 @Table(name = "sms_home_advertise")
 public class SmsHomeAdvertise implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * 名称
-     */
     private String name;
 
     /**
@@ -19,20 +17,11 @@ public class SmsHomeAdvertise implements Serializable {
      */
     private Integer type;
 
-    /**
-     * 图片地址
-     */
     private String pic;
 
-    /**
-     * 开始时间
-     */
     @Column(name = "start_time")
     private Date startTime;
 
-    /**
-     * 结束时间
-     */
     @Column(name = "end_time")
     private Date endTime;
 
@@ -104,18 +93,14 @@ public class SmsHomeAdvertise implements Serializable {
     }
 
     /**
-     * 获取名称
-     *
-     * @return name - 名称
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置名称
-     *
-     * @param name 名称
+     * @param name
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
@@ -140,54 +125,42 @@ public class SmsHomeAdvertise implements Serializable {
     }
 
     /**
-     * 获取图片地址
-     *
-     * @return pic - 图片地址
+     * @return pic
      */
     public String getPic() {
         return pic;
     }
 
     /**
-     * 设置图片地址
-     *
-     * @param pic 图片地址
+     * @param pic
      */
     public void setPic(String pic) {
         this.pic = pic == null ? null : pic.trim();
     }
 
     /**
-     * 获取开始时间
-     *
-     * @return start_time - 开始时间
+     * @return start_time
      */
     public Date getStartTime() {
         return startTime;
     }
 
     /**
-     * 设置开始时间
-     *
-     * @param startTime 开始时间
+     * @param startTime
      */
     public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
     /**
-     * 获取结束时间
-     *
-     * @return end_time - 结束时间
+     * @return end_time
      */
     public Date getEndTime() {
         return endTime;
     }
 
     /**
-     * 设置结束时间
-     *
-     * @param endTime 结束时间
+     * @param endTime
      */
     public void setEndTime(Date endTime) {
         this.endTime = endTime;

@@ -105,63 +105,63 @@ public class PmsCommentReplayExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andCommentReplayIdIsNull() {
-            addCriterion("comment_replay_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdIsNotNull() {
-            addCriterion("comment_replay_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdEqualTo(Long value) {
-            addCriterion("comment_replay_id =", value, "commentReplayId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdNotEqualTo(Long value) {
-            addCriterion("comment_replay_id <>", value, "commentReplayId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdGreaterThan(Long value) {
-            addCriterion("comment_replay_id >", value, "commentReplayId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("comment_replay_id >=", value, "commentReplayId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdLessThan(Long value) {
-            addCriterion("comment_replay_id <", value, "commentReplayId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdLessThanOrEqualTo(Long value) {
-            addCriterion("comment_replay_id <=", value, "commentReplayId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdIn(List<Long> values) {
-            addCriterion("comment_replay_id in", values, "commentReplayId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdNotIn(List<Long> values) {
-            addCriterion("comment_replay_id not in", values, "commentReplayId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdBetween(Long value1, Long value2) {
-            addCriterion("comment_replay_id between", value1, value2, "commentReplayId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentReplayIdNotBetween(Long value1, Long value2) {
-            addCriterion("comment_replay_id not between", value1, value2, "commentReplayId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -225,73 +225,73 @@ public class PmsCommentReplayExample {
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIsNull() {
-            addCriterion("nick_name is null");
+        public Criteria andMemberNickNameIsNull() {
+            addCriterion("member_nick_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIsNotNull() {
-            addCriterion("nick_name is not null");
+        public Criteria andMemberNickNameIsNotNull() {
+            addCriterion("member_nick_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameEqualTo(String value) {
-            addCriterion("nick_name =", value, "nickName");
+        public Criteria andMemberNickNameEqualTo(String value) {
+            addCriterion("member_nick_name =", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotEqualTo(String value) {
-            addCriterion("nick_name <>", value, "nickName");
+        public Criteria andMemberNickNameNotEqualTo(String value) {
+            addCriterion("member_nick_name <>", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameGreaterThan(String value) {
-            addCriterion("nick_name >", value, "nickName");
+        public Criteria andMemberNickNameGreaterThan(String value) {
+            addCriterion("member_nick_name >", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameGreaterThanOrEqualTo(String value) {
-            addCriterion("nick_name >=", value, "nickName");
+        public Criteria andMemberNickNameGreaterThanOrEqualTo(String value) {
+            addCriterion("member_nick_name >=", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLessThan(String value) {
-            addCriterion("nick_name <", value, "nickName");
+        public Criteria andMemberNickNameLessThan(String value) {
+            addCriterion("member_nick_name <", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLessThanOrEqualTo(String value) {
-            addCriterion("nick_name <=", value, "nickName");
+        public Criteria andMemberNickNameLessThanOrEqualTo(String value) {
+            addCriterion("member_nick_name <=", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLike(String value) {
-            addCriterion("nick_name like", value, "nickName");
+        public Criteria andMemberNickNameLike(String value) {
+            addCriterion("member_nick_name like", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotLike(String value) {
-            addCriterion("nick_name not like", value, "nickName");
+        public Criteria andMemberNickNameNotLike(String value) {
+            addCriterion("member_nick_name not like", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIn(List<String> values) {
-            addCriterion("nick_name in", values, "nickName");
+        public Criteria andMemberNickNameIn(List<String> values) {
+            addCriterion("member_nick_name in", values, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotIn(List<String> values) {
-            addCriterion("nick_name not in", values, "nickName");
+        public Criteria andMemberNickNameNotIn(List<String> values) {
+            addCriterion("member_nick_name not in", values, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameBetween(String value1, String value2) {
-            addCriterion("nick_name between", value1, value2, "nickName");
+        public Criteria andMemberNickNameBetween(String value1, String value2) {
+            addCriterion("member_nick_name between", value1, value2, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotBetween(String value1, String value2) {
-            addCriterion("nick_name not between", value1, value2, "nickName");
+        public Criteria andMemberNickNameNotBetween(String value1, String value2) {
+            addCriterion("member_nick_name not between", value1, value2, "memberNickName");
             return (Criteria) this;
         }
 

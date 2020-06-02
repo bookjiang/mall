@@ -1,6 +1,8 @@
 package com.zhiqiang.mall.product.Dao;
 
-import com.zhiqiang.mall.bean.PmsProductCategoryWithChildrenItem;
+
+
+import com.zhiqiang.mall.model.PmsProductCategoryWithChildrenItem;
 
 import java.util.List;
 

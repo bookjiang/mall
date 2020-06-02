@@ -7,49 +7,34 @@ import javax.persistence.*;
 @Table(name = "pms_comment_replay")
 public class PmsCommentReplay implements Serializable {
     @Id
-    @Column(name = "comment_replay_id")
-    private Long commentReplayId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 评论id
-     */
     @Column(name = "comment_id")
     private Long commentId;
 
-    /**
-     * 用户昵称
-     */
-    @Column(name = "nick_name")
-    private String nickName;
+    @Column(name = "member_nick_name")
+    private String memberNickName;
 
-    /**
-     * 用户头像
-     */
     @Column(name = "member_icon")
     private String memberIcon;
 
-    /**
-     * 内容
-     */
     private String content;
 
-    /**
-     * 创建时间
-     */
     @Column(name = "create_time")
     private Date createTime;
 
     /**
-     * 评论人员类型:0->用户；1->管理员
+     * 评论人员类型；0->会员；1->管理员
      */
     private Integer type;
 
     private static final long serialVersionUID = 1L;
 
-    public PmsCommentReplay(Long commentReplayId, Long commentId, String nickName, String memberIcon, String content, Date createTime, Integer type) {
-        this.commentReplayId = commentReplayId;
+    public PmsCommentReplay(Long id, Long commentId, String memberNickName, String memberIcon, String content, Date createTime, Integer type) {
+        this.id = id;
         this.commentId = commentId;
-        this.nickName = nickName;
+        this.memberNickName = memberNickName;
         this.memberIcon = memberIcon;
         this.content = content;
         this.createTime = createTime;
@@ -61,122 +46,102 @@ public class PmsCommentReplay implements Serializable {
     }
 
     /**
-     * @return comment_replay_id
+     * @return id
      */
-    public Long getCommentReplayId() {
-        return commentReplayId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param commentReplayId
+     * @param id
      */
-    public void setCommentReplayId(Long commentReplayId) {
-        this.commentReplayId = commentReplayId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取评论id
-     *
-     * @return comment_id - 评论id
+     * @return comment_id
      */
     public Long getCommentId() {
         return commentId;
     }
 
     /**
-     * 设置评论id
-     *
-     * @param commentId 评论id
+     * @param commentId
      */
     public void setCommentId(Long commentId) {
         this.commentId = commentId;
     }
 
     /**
-     * 获取用户昵称
-     *
-     * @return nick_name - 用户昵称
+     * @return member_nick_name
      */
-    public String getNickName() {
-        return nickName;
+    public String getMemberNickName() {
+        return memberNickName;
     }
 
     /**
-     * 设置用户昵称
-     *
-     * @param nickName 用户昵称
+     * @param memberNickName
      */
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setMemberNickName(String memberNickName) {
+        this.memberNickName = memberNickName == null ? null : memberNickName.trim();
     }
 
     /**
-     * 获取用户头像
-     *
-     * @return member_icon - 用户头像
+     * @return member_icon
      */
     public String getMemberIcon() {
         return memberIcon;
     }
 
     /**
-     * 设置用户头像
-     *
-     * @param memberIcon 用户头像
+     * @param memberIcon
      */
     public void setMemberIcon(String memberIcon) {
         this.memberIcon = memberIcon == null ? null : memberIcon.trim();
     }
 
     /**
-     * 获取内容
-     *
-     * @return content - 内容
+     * @return content
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * 设置内容
-     *
-     * @param content 内容
+     * @param content
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
 
     /**
-     * 获取创建时间
-     *
-     * @return create_time - 创建时间
+     * @return create_time
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 设置创建时间
-     *
-     * @param createTime 创建时间
+     * @param createTime
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 获取评论人员类型:0->用户；1->管理员
+     * 获取评论人员类型；0->会员；1->管理员
      *
-     * @return type - 评论人员类型:0->用户；1->管理员
+     * @return type - 评论人员类型；0->会员；1->管理员
      */
     public Integer getType() {
         return type;
     }
 
     /**
-     * 设置评论人员类型:0->用户；1->管理员
+     * 设置评论人员类型；0->会员；1->管理员
      *
-     * @param type 评论人员类型:0->用户；1->管理员
+     * @param type 评论人员类型；0->会员；1->管理员
      */
     public void setType(Integer type) {
         this.type = type;
@@ -188,9 +153,9 @@ public class PmsCommentReplay implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", commentReplayId=").append(commentReplayId);
+        sb.append(", id=").append(id);
         sb.append(", commentId=").append(commentId);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", memberNickName=").append(memberNickName);
         sb.append(", memberIcon=").append(memberIcon);
         sb.append(", content=").append(content);
         sb.append(", createTime=").append(createTime);

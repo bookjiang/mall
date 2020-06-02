@@ -6,12 +6,11 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="order_operate_history_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="operate_man" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="order_before_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="order_late_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
@@ -19,7 +18,6 @@
     <!--
       WARNING - @mbg.generated
     -->
-    order_operate_history_id, order_id, operate_man, create_time, order_before_status, 
-    order_late_status, note
+    id, order_id, operate_man, create_time, order_status, note
   </sql>
 </mapper>

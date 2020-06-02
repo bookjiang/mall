@@ -2,7 +2,9 @@ package com.zhiqiang.mall.service;
 
 import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.PmsProduct;
-import com.zhiqiang.mall.bean.ProductQueryParams;
+import com.zhiqiang.mall.model.PmsProductResult;
+import com.zhiqiang.mall.model.ProductQueryParams;
+
 
 import java.util.List;
 
@@ -26,4 +28,6 @@ public interface PmsProductService {
     int updateNewStatus(List<Long> ids, Integer newStatus);
 
     int updateDeleteStatus(List<Long> ids, Integer deleteStatus);
+
+    PmsProductResult getUpdateInfo(Long id);
 }

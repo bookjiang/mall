@@ -7,12 +7,9 @@ import javax.persistence.*;
 @Table(name = "ums_member")
 public class UmsMember implements Serializable {
     @Id
-    @Column(name = "member_id")
-    private Long memberId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 用户等级id
-     */
     @Column(name = "member_level_id")
     private Long memberLevelId;
 
@@ -22,14 +19,14 @@ public class UmsMember implements Serializable {
     private String username;
 
     /**
+     * 密码
+     */
+    private String password;
+
+    /**
      * 昵称
      */
     private String nickname;
-
-    /**
-     * 帐号启用状态:0->禁用；1->启用
-     */
-    private Integer status;
 
     /**
      * 手机号码
@@ -37,9 +34,9 @@ public class UmsMember implements Serializable {
     private String phone;
 
     /**
-     * 密码
+     * 帐号启用状态:0->禁用；1->启用
      */
-    private String password;
+    private Integer status;
 
     /**
      * 注册时间
@@ -95,27 +92,27 @@ public class UmsMember implements Serializable {
     private Integer growth;
 
     /**
+     * 剩余抽奖次数
+     */
+    @Column(name = "luckey_count")
+    private Integer luckeyCount;
+
+    /**
      * 历史积分数量
      */
     @Column(name = "history_integration")
     private Integer historyIntegration;
 
-    /**
-     * 是否会员（0->否；1->是）
-     */
-    @Column(name = "is_vip")
-    private Integer isVip;
-
     private static final long serialVersionUID = 1L;
 
-    public UmsMember(Long memberId, Long memberLevelId, String username, String nickname, Integer status, String phone, String password, Date createTime, String icon, Integer gender, Date birthday, String city, String job, String personalizedSignature, Integer sourceType, Integer integration, Integer growth, Integer historyIntegration, Integer isVip) {
-        this.memberId = memberId;
+    public UmsMember(Long id, Long memberLevelId, String username, String password, String nickname, String phone, Integer status, Date createTime, String icon, Integer gender, Date birthday, String city, String job, String personalizedSignature, Integer sourceType, Integer integration, Integer growth, Integer luckeyCount, Integer historyIntegration) {
+        this.id = id;
         this.memberLevelId = memberLevelId;
         this.username = username;
-        this.nickname = nickname;
-        this.status = status;
-        this.phone = phone;
         this.password = password;
+        this.nickname = nickname;
+        this.phone = phone;
+        this.status = status;
         this.createTime = createTime;
         this.icon = icon;
         this.gender = gender;
@@ -126,8 +123,8 @@ public class UmsMember implements Serializable {
         this.sourceType = sourceType;
         this.integration = integration;
         this.growth = growth;
+        this.luckeyCount = luckeyCount;
         this.historyIntegration = historyIntegration;
-        this.isVip = isVip;
     }
 
     public UmsMember() {
@@ -135,32 +132,28 @@ public class UmsMember implements Serializable {
     }
 
     /**
-     * @return member_id
+     * @return id
      */
-    public Long getMemberId() {
-        return memberId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param memberId
+     * @param id
      */
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取用户等级id
-     *
-     * @return member_level_id - 用户等级id
+     * @return member_level_id
      */
     public Long getMemberLevelId() {
         return memberLevelId;
     }
 
     /**
-     * 设置用户等级id
-     *
-     * @param memberLevelId 用户等级id
+     * @param memberLevelId
      */
     public void setMemberLevelId(Long memberLevelId) {
         this.memberLevelId = memberLevelId;
@@ -185,6 +178,24 @@ public class UmsMember implements Serializable {
     }
 
     /**
+     * 获取密码
+     *
+     * @return password - 密码
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * 设置密码
+     *
+     * @param password 密码
+     */
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    /**
      * 获取昵称
      *
      * @return nickname - 昵称
@@ -200,24 +211,6 @@ public class UmsMember implements Serializable {
      */
     public void setNickname(String nickname) {
         this.nickname = nickname == null ? null : nickname.trim();
-    }
-
-    /**
-     * 获取帐号启用状态:0->禁用；1->启用
-     *
-     * @return status - 帐号启用状态:0->禁用；1->启用
-     */
-    public Integer getStatus() {
-        return status;
-    }
-
-    /**
-     * 设置帐号启用状态:0->禁用；1->启用
-     *
-     * @param status 帐号启用状态:0->禁用；1->启用
-     */
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     /**
@@ -239,21 +232,21 @@ public class UmsMember implements Serializable {
     }
 
     /**
-     * 获取密码
+     * 获取帐号启用状态:0->禁用；1->启用
      *
-     * @return password - 密码
+     * @return status - 帐号启用状态:0->禁用；1->启用
      */
-    public String getPassword() {
-        return password;
+    public Integer getStatus() {
+        return status;
     }
 
     /**
-     * 设置密码
+     * 设置帐号启用状态:0->禁用；1->启用
      *
-     * @param password 密码
+     * @param status 帐号启用状态:0->禁用；1->启用
      */
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     /**
@@ -437,6 +430,24 @@ public class UmsMember implements Serializable {
     }
 
     /**
+     * 获取剩余抽奖次数
+     *
+     * @return luckey_count - 剩余抽奖次数
+     */
+    public Integer getLuckeyCount() {
+        return luckeyCount;
+    }
+
+    /**
+     * 设置剩余抽奖次数
+     *
+     * @param luckeyCount 剩余抽奖次数
+     */
+    public void setLuckeyCount(Integer luckeyCount) {
+        this.luckeyCount = luckeyCount;
+    }
+
+    /**
      * 获取历史积分数量
      *
      * @return history_integration - 历史积分数量
@@ -454,37 +465,19 @@ public class UmsMember implements Serializable {
         this.historyIntegration = historyIntegration;
     }
 
-    /**
-     * 获取是否会员（0->否；1->是）
-     *
-     * @return is_vip - 是否会员（0->否；1->是）
-     */
-    public Integer getIsVip() {
-        return isVip;
-    }
-
-    /**
-     * 设置是否会员（0->否；1->是）
-     *
-     * @param isVip 是否会员（0->否；1->是）
-     */
-    public void setIsVip(Integer isVip) {
-        this.isVip = isVip;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", memberId=").append(memberId);
+        sb.append(", id=").append(id);
         sb.append(", memberLevelId=").append(memberLevelId);
         sb.append(", username=").append(username);
-        sb.append(", nickname=").append(nickname);
-        sb.append(", status=").append(status);
-        sb.append(", phone=").append(phone);
         sb.append(", password=").append(password);
+        sb.append(", nickname=").append(nickname);
+        sb.append(", phone=").append(phone);
+        sb.append(", status=").append(status);
         sb.append(", createTime=").append(createTime);
         sb.append(", icon=").append(icon);
         sb.append(", gender=").append(gender);
@@ -495,8 +488,8 @@ public class UmsMember implements Serializable {
         sb.append(", sourceType=").append(sourceType);
         sb.append(", integration=").append(integration);
         sb.append(", growth=").append(growth);
+        sb.append(", luckeyCount=").append(luckeyCount);
         sb.append(", historyIntegration=").append(historyIntegration);
-        sb.append(", isVip=").append(isVip);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

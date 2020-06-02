@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.OmsOrderReturnApplyMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.OmsOrderReturnApply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="company_address_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="member_username" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="return_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="return_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="return_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="handle_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_brand" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_attr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_real_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="reason" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="proof_pics" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="handle_note" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="handle_man" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receive_man" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receive_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="receive_note" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, company_address_id, product_id, order_sn, create_time, member_username, 
+    return_amount, return_name, return_phone, status, handle_time, product_pic, product_name, 
+    product_brand, product_attr, product_count, product_price, product_real_price, reason, 
+    description, proof_pics, handle_note, handle_man, receive_man, receive_time, receive_note
+  </sql>
+</mapper>

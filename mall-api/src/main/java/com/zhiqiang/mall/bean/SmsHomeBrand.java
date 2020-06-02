@@ -6,29 +6,18 @@ import javax.persistence.*;
 @Table(name = "sms_home_brand")
 public class SmsHomeBrand implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * 商品品牌id
-     */
     @Column(name = "brand_id")
     private Long brandId;
 
-    /**
-     * 商品品牌名称
-     */
     @Column(name = "brand_name")
     private String brandName;
 
-    /**
-     * 推荐状态：0->不推荐;1->推荐
-     */
     @Column(name = "recommend_status")
     private Integer recommendStatus;
 
-    /**
-     * 排序
-     */
     private Integer sort;
 
     private static final long serialVersionUID = 1L;
@@ -60,72 +49,56 @@ public class SmsHomeBrand implements Serializable {
     }
 
     /**
-     * 获取商品品牌id
-     *
-     * @return brand_id - 商品品牌id
+     * @return brand_id
      */
     public Long getBrandId() {
         return brandId;
     }
 
     /**
-     * 设置商品品牌id
-     *
-     * @param brandId 商品品牌id
+     * @param brandId
      */
     public void setBrandId(Long brandId) {
         this.brandId = brandId;
     }
 
     /**
-     * 获取商品品牌名称
-     *
-     * @return brand_name - 商品品牌名称
+     * @return brand_name
      */
     public String getBrandName() {
         return brandName;
     }
 
     /**
-     * 设置商品品牌名称
-     *
-     * @param brandName 商品品牌名称
+     * @param brandName
      */
     public void setBrandName(String brandName) {
         this.brandName = brandName == null ? null : brandName.trim();
     }
 
     /**
-     * 获取推荐状态：0->不推荐;1->推荐
-     *
-     * @return recommend_status - 推荐状态：0->不推荐;1->推荐
+     * @return recommend_status
      */
     public Integer getRecommendStatus() {
         return recommendStatus;
     }
 
     /**
-     * 设置推荐状态：0->不推荐;1->推荐
-     *
-     * @param recommendStatus 推荐状态：0->不推荐;1->推荐
+     * @param recommendStatus
      */
     public void setRecommendStatus(Integer recommendStatus) {
         this.recommendStatus = recommendStatus;
     }
 
     /**
-     * 获取排序
-     *
-     * @return sort - 排序
+     * @return sort
      */
     public Integer getSort() {
         return sort;
     }
 
     /**
-     * 设置排序
-     *
-     * @param sort 排序
+     * @param sort
      */
     public void setSort(Integer sort) {
         this.sort = sort;

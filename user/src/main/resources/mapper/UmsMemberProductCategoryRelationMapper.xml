@@ -8,13 +8,13 @@
     <constructor>
       <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    id, member_id, product_classify_id
+    id, member_id, product_category_id
   </sql>
 </mapper>

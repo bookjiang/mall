@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.CmsTopicMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.CmsTopic">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="attend_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="attention_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="read_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="award_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="attend_type" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.CmsTopic">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="attend_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="attention_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="read_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="award_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="attend_type" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="content" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, category_id, name, create_time, start_time, end_time, attend_count, attention_count, 
+    read_count, award_name, attend_type
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    content
+  </sql>
+</mapper>

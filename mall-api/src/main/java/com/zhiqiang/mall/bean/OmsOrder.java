@@ -11,18 +11,12 @@ public class OmsOrder implements Serializable {
      * 订单id
      */
     @Id
-    @Column(name = "order_id")
-    private Long orderId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 用户id
-     */
     @Column(name = "member_id")
     private Long memberId;
 
-    /**
-     * 优惠券id
-     */
     @Column(name = "coupon_id")
     private Long couponId;
 
@@ -39,7 +33,7 @@ public class OmsOrder implements Serializable {
     private Date createTime;
 
     /**
-     * 用户账号
+     * 用户帐号
      */
     @Column(name = "member_username")
     private String memberUsername;
@@ -51,7 +45,7 @@ public class OmsOrder implements Serializable {
     private BigDecimal totalAmount;
 
     /**
-     * 应付金额（实际支付金额)
+     * 应付金额（实际支付金额）
      */
     @Column(name = "pay_amount")
     private BigDecimal payAmount;
@@ -63,7 +57,7 @@ public class OmsOrder implements Serializable {
     private BigDecimal freightAmount;
 
     /**
-     * 促销优惠金额（促销价，满减，会员价)
+     * 促销优化金额（促销价、满减、阶梯价）
      */
     @Column(name = "promotion_amount")
     private BigDecimal promotionAmount;
@@ -71,8 +65,8 @@ public class OmsOrder implements Serializable {
     /**
      * 积分抵扣金额
      */
-    @Column(name = "points_discount_amount")
-    private BigDecimal pointsDiscountAmount;
+    @Column(name = "integration_amount")
+    private BigDecimal integrationAmount;
 
     /**
      * 优惠券抵扣金额
@@ -81,19 +75,19 @@ public class OmsOrder implements Serializable {
     private BigDecimal couponAmount;
 
     /**
-     * 管理员后台调整金额
+     * 管理员后台调整订单使用的折扣金额
      */
     @Column(name = "discount_amount")
     private BigDecimal discountAmount;
 
     /**
-     * 支付类型：0->未支付；1->支付宝；2->微信；
+     * 支付方式：0->未支付；1->支付宝；2->微信
      */
     @Column(name = "pay_type")
     private Integer payType;
 
     /**
-     * 订单来源:0->PC订单;1->app订单
+     * 订单来源：0->PC订单；1->app订单
      */
     @Column(name = "source_type")
     private Integer sourceType;
@@ -104,37 +98,36 @@ public class OmsOrder implements Serializable {
     private Integer status;
 
     /**
-     * 订单类型:0->正常订单;1->秒杀订单
+     * 订单类型：0->正常订单；1->秒杀订单
      */
     @Column(name = "order_type")
     private Integer orderType;
 
     /**
-     * 物流公司
+     * 物流公司(配送方式)
      */
-    @Column(name = "logistics_company")
-    private String logisticsCompany;
+    @Column(name = "delivery_company")
+    private String deliveryCompany;
 
     /**
      * 物流单号
      */
-    @Column(name = "logistics_num")
-    private String logisticsNum;
+    @Column(name = "delivery_sn")
+    private String deliverySn;
 
     /**
-     * 自动收货时间（天）
+     * 自动确认时间（天）
      */
     @Column(name = "auto_confirm_day")
     private Integer autoConfirmDay;
 
     /**
-     * 获得积分
+     * 可以获得的积分
      */
-    @Column(name = "get_points")
-    private Integer getPoints;
+    private Integer integration;
 
     /**
-     * 获得成长值
+     * 可以活动的成长值
      */
     private Integer growth;
 
@@ -145,7 +138,7 @@ public class OmsOrder implements Serializable {
     private String promotionInfo;
 
     /**
-     * 发票类型：0->不开发票;1->电子发票;2->纸质发票
+     * 发票类型：0->不开发票；1->电子发票；2->纸质发票
      */
     @Column(name = "bill_type")
     private Integer billType;
@@ -181,7 +174,7 @@ public class OmsOrder implements Serializable {
     private String receiverName;
 
     /**
-     * 收货人你电话
+     * 收货人电话
      */
     @Column(name = "receiver_phone")
     private String receiverPhone;
@@ -189,11 +182,11 @@ public class OmsOrder implements Serializable {
     /**
      * 收货人邮编
      */
-    @Column(name = "receiver_postcode")
-    private String receiverPostcode;
+    @Column(name = "receiver_post_code")
+    private String receiverPostCode;
 
     /**
-     * 收货人省份/直辖市
+     * 省份/直辖市
      */
     @Column(name = "receiver_province")
     private String receiverProvince;
@@ -222,28 +215,28 @@ public class OmsOrder implements Serializable {
     private String note;
 
     /**
-     * 确认收货状态:0->未确认；1->已确认
+     * 确认收货状态：0->未确认；1->已确认
      */
     @Column(name = "confirm_status")
     private Integer confirmStatus;
 
     /**
-     * 删除状态:0->未删除；1->已删除
+     * 删除状态：0->未删除；1->已删除
      */
     @Column(name = "delete_status")
     private Integer deleteStatus;
 
     /**
-     * 支付时间
-     */
-    @Column(name = "pay_time")
-    private Date payTime;
-
-    /**
      * 下单时使用的积分
      */
-    @Column(name = "use_points")
-    private Integer usePoints;
+    @Column(name = "use_integration")
+    private Integer useIntegration;
+
+    /**
+     * 支付时间
+     */
+    @Column(name = "payment_time")
+    private Date paymentTime;
 
     /**
      * 发货时间
@@ -254,8 +247,8 @@ public class OmsOrder implements Serializable {
     /**
      * 确认收货时间
      */
-    @Column(name = "receiver_time")
-    private Date receiverTime;
+    @Column(name = "receive_time")
+    private Date receiveTime;
 
     /**
      * 评价时间
@@ -271,8 +264,8 @@ public class OmsOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OmsOrder(Long orderId, Long memberId, Long couponId, String orderSn, Date createTime, String memberUsername, BigDecimal totalAmount, BigDecimal payAmount, BigDecimal freightAmount, BigDecimal promotionAmount, BigDecimal pointsDiscountAmount, BigDecimal couponAmount, BigDecimal discountAmount, Integer payType, Integer sourceType, Integer status, Integer orderType, String logisticsCompany, String logisticsNum, Integer autoConfirmDay, Integer getPoints, Integer growth, String promotionInfo, Integer billType, String billHeader, String billContent, String billReceiverPhone, String billReceiverEmail, String receiverName, String receiverPhone, String receiverPostcode, String receiverProvince, String receiverCity, String receiverRegion, String receiverDetailAddress, String note, Integer confirmStatus, Integer deleteStatus, Date payTime, Integer usePoints, Date deliveryTime, Date receiverTime, Date commentTime, Date modifyTime) {
-        this.orderId = orderId;
+    public OmsOrder(Long id, Long memberId, Long couponId, String orderSn, Date createTime, String memberUsername, BigDecimal totalAmount, BigDecimal payAmount, BigDecimal freightAmount, BigDecimal promotionAmount, BigDecimal integrationAmount, BigDecimal couponAmount, BigDecimal discountAmount, Integer payType, Integer sourceType, Integer status, Integer orderType, String deliveryCompany, String deliverySn, Integer autoConfirmDay, Integer integration, Integer growth, String promotionInfo, Integer billType, String billHeader, String billContent, String billReceiverPhone, String billReceiverEmail, String receiverName, String receiverPhone, String receiverPostCode, String receiverProvince, String receiverCity, String receiverRegion, String receiverDetailAddress, String note, Integer confirmStatus, Integer deleteStatus, Integer useIntegration, Date paymentTime, Date deliveryTime, Date receiveTime, Date commentTime, Date modifyTime) {
+        this.id = id;
         this.memberId = memberId;
         this.couponId = couponId;
         this.orderSn = orderSn;
@@ -282,17 +275,17 @@ public class OmsOrder implements Serializable {
         this.payAmount = payAmount;
         this.freightAmount = freightAmount;
         this.promotionAmount = promotionAmount;
-        this.pointsDiscountAmount = pointsDiscountAmount;
+        this.integrationAmount = integrationAmount;
         this.couponAmount = couponAmount;
         this.discountAmount = discountAmount;
         this.payType = payType;
         this.sourceType = sourceType;
         this.status = status;
         this.orderType = orderType;
-        this.logisticsCompany = logisticsCompany;
-        this.logisticsNum = logisticsNum;
+        this.deliveryCompany = deliveryCompany;
+        this.deliverySn = deliverySn;
         this.autoConfirmDay = autoConfirmDay;
-        this.getPoints = getPoints;
+        this.integration = integration;
         this.growth = growth;
         this.promotionInfo = promotionInfo;
         this.billType = billType;
@@ -302,7 +295,7 @@ public class OmsOrder implements Serializable {
         this.billReceiverEmail = billReceiverEmail;
         this.receiverName = receiverName;
         this.receiverPhone = receiverPhone;
-        this.receiverPostcode = receiverPostcode;
+        this.receiverPostCode = receiverPostCode;
         this.receiverProvince = receiverProvince;
         this.receiverCity = receiverCity;
         this.receiverRegion = receiverRegion;
@@ -310,10 +303,10 @@ public class OmsOrder implements Serializable {
         this.note = note;
         this.confirmStatus = confirmStatus;
         this.deleteStatus = deleteStatus;
-        this.payTime = payTime;
-        this.usePoints = usePoints;
+        this.useIntegration = useIntegration;
+        this.paymentTime = paymentTime;
         this.deliveryTime = deliveryTime;
-        this.receiverTime = receiverTime;
+        this.receiveTime = receiveTime;
         this.commentTime = commentTime;
         this.modifyTime = modifyTime;
     }
@@ -325,52 +318,44 @@ public class OmsOrder implements Serializable {
     /**
      * 获取订单id
      *
-     * @return order_id - 订单id
+     * @return id - 订单id
      */
-    public Long getOrderId() {
-        return orderId;
+    public Long getId() {
+        return id;
     }
 
     /**
      * 设置订单id
      *
-     * @param orderId 订单id
+     * @param id 订单id
      */
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取用户id
-     *
-     * @return member_id - 用户id
+     * @return member_id
      */
     public Long getMemberId() {
         return memberId;
     }
 
     /**
-     * 设置用户id
-     *
-     * @param memberId 用户id
+     * @param memberId
      */
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
 
     /**
-     * 获取优惠券id
-     *
-     * @return coupon_id - 优惠券id
+     * @return coupon_id
      */
     public Long getCouponId() {
         return couponId;
     }
 
     /**
-     * 设置优惠券id
-     *
-     * @param couponId 优惠券id
+     * @param couponId
      */
     public void setCouponId(Long couponId) {
         this.couponId = couponId;
@@ -413,18 +398,18 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取用户账号
+     * 获取用户帐号
      *
-     * @return member_username - 用户账号
+     * @return member_username - 用户帐号
      */
     public String getMemberUsername() {
         return memberUsername;
     }
 
     /**
-     * 设置用户账号
+     * 设置用户帐号
      *
-     * @param memberUsername 用户账号
+     * @param memberUsername 用户帐号
      */
     public void setMemberUsername(String memberUsername) {
         this.memberUsername = memberUsername == null ? null : memberUsername.trim();
@@ -449,18 +434,18 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取应付金额（实际支付金额)
+     * 获取应付金额（实际支付金额）
      *
-     * @return pay_amount - 应付金额（实际支付金额)
+     * @return pay_amount - 应付金额（实际支付金额）
      */
     public BigDecimal getPayAmount() {
         return payAmount;
     }
 
     /**
-     * 设置应付金额（实际支付金额)
+     * 设置应付金额（实际支付金额）
      *
-     * @param payAmount 应付金额（实际支付金额)
+     * @param payAmount 应付金额（实际支付金额）
      */
     public void setPayAmount(BigDecimal payAmount) {
         this.payAmount = payAmount;
@@ -485,18 +470,18 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取促销优惠金额（促销价，满减，会员价)
+     * 获取促销优化金额（促销价、满减、阶梯价）
      *
-     * @return promotion_amount - 促销优惠金额（促销价，满减，会员价)
+     * @return promotion_amount - 促销优化金额（促销价、满减、阶梯价）
      */
     public BigDecimal getPromotionAmount() {
         return promotionAmount;
     }
 
     /**
-     * 设置促销优惠金额（促销价，满减，会员价)
+     * 设置促销优化金额（促销价、满减、阶梯价）
      *
-     * @param promotionAmount 促销优惠金额（促销价，满减，会员价)
+     * @param promotionAmount 促销优化金额（促销价、满减、阶梯价）
      */
     public void setPromotionAmount(BigDecimal promotionAmount) {
         this.promotionAmount = promotionAmount;
@@ -505,19 +490,19 @@ public class OmsOrder implements Serializable {
     /**
      * 获取积分抵扣金额
      *
-     * @return points_discount_amount - 积分抵扣金额
+     * @return integration_amount - 积分抵扣金额
      */
-    public BigDecimal getPointsDiscountAmount() {
-        return pointsDiscountAmount;
+    public BigDecimal getIntegrationAmount() {
+        return integrationAmount;
     }
 
     /**
      * 设置积分抵扣金额
      *
-     * @param pointsDiscountAmount 积分抵扣金额
+     * @param integrationAmount 积分抵扣金额
      */
-    public void setPointsDiscountAmount(BigDecimal pointsDiscountAmount) {
-        this.pointsDiscountAmount = pointsDiscountAmount;
+    public void setIntegrationAmount(BigDecimal integrationAmount) {
+        this.integrationAmount = integrationAmount;
     }
 
     /**
@@ -539,54 +524,54 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取管理员后台调整金额
+     * 获取管理员后台调整订单使用的折扣金额
      *
-     * @return discount_amount - 管理员后台调整金额
+     * @return discount_amount - 管理员后台调整订单使用的折扣金额
      */
     public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
     /**
-     * 设置管理员后台调整金额
+     * 设置管理员后台调整订单使用的折扣金额
      *
-     * @param discountAmount 管理员后台调整金额
+     * @param discountAmount 管理员后台调整订单使用的折扣金额
      */
     public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 
     /**
-     * 获取支付类型：0->未支付；1->支付宝；2->微信；
+     * 获取支付方式：0->未支付；1->支付宝；2->微信
      *
-     * @return pay_type - 支付类型：0->未支付；1->支付宝；2->微信；
+     * @return pay_type - 支付方式：0->未支付；1->支付宝；2->微信
      */
     public Integer getPayType() {
         return payType;
     }
 
     /**
-     * 设置支付类型：0->未支付；1->支付宝；2->微信；
+     * 设置支付方式：0->未支付；1->支付宝；2->微信
      *
-     * @param payType 支付类型：0->未支付；1->支付宝；2->微信；
+     * @param payType 支付方式：0->未支付；1->支付宝；2->微信
      */
     public void setPayType(Integer payType) {
         this.payType = payType;
     }
 
     /**
-     * 获取订单来源:0->PC订单;1->app订单
+     * 获取订单来源：0->PC订单；1->app订单
      *
-     * @return source_type - 订单来源:0->PC订单;1->app订单
+     * @return source_type - 订单来源：0->PC订单；1->app订单
      */
     public Integer getSourceType() {
         return sourceType;
     }
 
     /**
-     * 设置订单来源:0->PC订单;1->app订单
+     * 设置订单来源：0->PC订单；1->app订单
      *
-     * @param sourceType 订单来源:0->PC订单;1->app订单
+     * @param sourceType 订单来源：0->PC订单；1->app订单
      */
     public void setSourceType(Integer sourceType) {
         this.sourceType = sourceType;
@@ -611,108 +596,108 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取订单类型:0->正常订单;1->秒杀订单
+     * 获取订单类型：0->正常订单；1->秒杀订单
      *
-     * @return order_type - 订单类型:0->正常订单;1->秒杀订单
+     * @return order_type - 订单类型：0->正常订单；1->秒杀订单
      */
     public Integer getOrderType() {
         return orderType;
     }
 
     /**
-     * 设置订单类型:0->正常订单;1->秒杀订单
+     * 设置订单类型：0->正常订单；1->秒杀订单
      *
-     * @param orderType 订单类型:0->正常订单;1->秒杀订单
+     * @param orderType 订单类型：0->正常订单；1->秒杀订单
      */
     public void setOrderType(Integer orderType) {
         this.orderType = orderType;
     }
 
     /**
-     * 获取物流公司
+     * 获取物流公司(配送方式)
      *
-     * @return logistics_company - 物流公司
+     * @return delivery_company - 物流公司(配送方式)
      */
-    public String getLogisticsCompany() {
-        return logisticsCompany;
+    public String getDeliveryCompany() {
+        return deliveryCompany;
     }
 
     /**
-     * 设置物流公司
+     * 设置物流公司(配送方式)
      *
-     * @param logisticsCompany 物流公司
+     * @param deliveryCompany 物流公司(配送方式)
      */
-    public void setLogisticsCompany(String logisticsCompany) {
-        this.logisticsCompany = logisticsCompany == null ? null : logisticsCompany.trim();
+    public void setDeliveryCompany(String deliveryCompany) {
+        this.deliveryCompany = deliveryCompany == null ? null : deliveryCompany.trim();
     }
 
     /**
      * 获取物流单号
      *
-     * @return logistics_num - 物流单号
+     * @return delivery_sn - 物流单号
      */
-    public String getLogisticsNum() {
-        return logisticsNum;
+    public String getDeliverySn() {
+        return deliverySn;
     }
 
     /**
      * 设置物流单号
      *
-     * @param logisticsNum 物流单号
+     * @param deliverySn 物流单号
      */
-    public void setLogisticsNum(String logisticsNum) {
-        this.logisticsNum = logisticsNum == null ? null : logisticsNum.trim();
+    public void setDeliverySn(String deliverySn) {
+        this.deliverySn = deliverySn == null ? null : deliverySn.trim();
     }
 
     /**
-     * 获取自动收货时间（天）
+     * 获取自动确认时间（天）
      *
-     * @return auto_confirm_day - 自动收货时间（天）
+     * @return auto_confirm_day - 自动确认时间（天）
      */
     public Integer getAutoConfirmDay() {
         return autoConfirmDay;
     }
 
     /**
-     * 设置自动收货时间（天）
+     * 设置自动确认时间（天）
      *
-     * @param autoConfirmDay 自动收货时间（天）
+     * @param autoConfirmDay 自动确认时间（天）
      */
     public void setAutoConfirmDay(Integer autoConfirmDay) {
         this.autoConfirmDay = autoConfirmDay;
     }
 
     /**
-     * 获取获得积分
+     * 获取可以获得的积分
      *
-     * @return get_points - 获得积分
+     * @return integration - 可以获得的积分
      */
-    public Integer getGetPoints() {
-        return getPoints;
+    public Integer getIntegration() {
+        return integration;
     }
 
     /**
-     * 设置获得积分
+     * 设置可以获得的积分
      *
-     * @param getPoints 获得积分
+     * @param integration 可以获得的积分
      */
-    public void setGetPoints(Integer getPoints) {
-        this.getPoints = getPoints;
+    public void setIntegration(Integer integration) {
+        this.integration = integration;
     }
 
     /**
-     * 获取获得成长值
+     * 获取可以活动的成长值
      *
-     * @return growth - 获得成长值
+     * @return growth - 可以活动的成长值
      */
     public Integer getGrowth() {
         return growth;
     }
 
     /**
-     * 设置获得成长值
+     * 设置可以活动的成长值
      *
-     * @param growth 获得成长值
+     * @param growth 可以活动的成长值
      */
     public void setGrowth(Integer growth) {
         this.growth = growth;
@@ -737,18 +722,18 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取发票类型：0->不开发票;1->电子发票;2->纸质发票
+     * 获取发票类型：0->不开发票；1->电子发票；2->纸质发票
      *
-     * @return bill_type - 发票类型：0->不开发票;1->电子发票;2->纸质发票
+     * @return bill_type - 发票类型：0->不开发票；1->电子发票；2->纸质发票
      */
     public Integer getBillType() {
         return billType;
     }
 
     /**
-     * 设置发票类型：0->不开发票;1->电子发票;2->纸质发票
+     * 设置发票类型：0->不开发票；1->电子发票；2->纸质发票
      *
-     * @param billType 发票类型：0->不开发票;1->电子发票;2->纸质发票
+     * @param billType 发票类型：0->不开发票；1->电子发票；2->纸质发票
      */
     public void setBillType(Integer billType) {
         this.billType = billType;
@@ -845,18 +830,18 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取收货人你电话
+     * 获取收货人电话
      *
-     * @return receiver_phone - 收货人你电话
+     * @return receiver_phone - 收货人电话
      */
     public String getReceiverPhone() {
         return receiverPhone;
     }
 
     /**
-     * 设置收货人你电话
+     * 设置收货人电话
      *
-     * @param receiverPhone 收货人你电话
+     * @param receiverPhone 收货人电话
      */
     public void setReceiverPhone(String receiverPhone) {
         this.receiverPhone = receiverPhone == null ? null : receiverPhone.trim();
@@ -865,34 +850,34 @@ public class OmsOrder implements Serializable {
     /**
      * 获取收货人邮编
      *
-     * @return receiver_postcode - 收货人邮编
+     * @return receiver_post_code - 收货人邮编
      */
-    public String getReceiverPostcode() {
-        return receiverPostcode;
+    public String getReceiverPostCode() {
+        return receiverPostCode;
     }
 
     /**
      * 设置收货人邮编
      *
-     * @param receiverPostcode 收货人邮编
+     * @param receiverPostCode 收货人邮编
      */
-    public void setReceiverPostcode(String receiverPostcode) {
-        this.receiverPostcode = receiverPostcode == null ? null : receiverPostcode.trim();
+    public void setReceiverPostCode(String receiverPostCode) {
+        this.receiverPostCode = receiverPostCode == null ? null : receiverPostCode.trim();
     }
 
     /**
-     * 获取收货人省份/直辖市
+     * 获取省份/直辖市
      *
-     * @return receiver_province - 收货人省份/直辖市
+     * @return receiver_province - 省份/直辖市
      */
     public String getReceiverProvince() {
         return receiverProvince;
     }
 
     /**
-     * 设置收货人省份/直辖市
+     * 设置省份/直辖市
      *
-     * @param receiverProvince 收货人省份/直辖市
+     * @param receiverProvince 省份/直辖市
      */
     public void setReceiverProvince(String receiverProvince) {
         this.receiverProvince = receiverProvince == null ? null : receiverProvince.trim();
@@ -971,75 +956,75 @@ public class OmsOrder implements Serializable {
     }
 
     /**
-     * 获取确认收货状态:0->未确认；1->已确认
+     * 获取确认收货状态：0->未确认；1->已确认
      *
-     * @return confirm_status - 确认收货状态:0->未确认；1->已确认
+     * @return confirm_status - 确认收货状态：0->未确认；1->已确认
      */
     public Integer getConfirmStatus() {
         return confirmStatus;
     }
 
     /**
-     * 设置确认收货状态:0->未确认；1->已确认
+     * 设置确认收货状态：0->未确认；1->已确认
      *
-     * @param confirmStatus 确认收货状态:0->未确认；1->已确认
+     * @param confirmStatus 确认收货状态：0->未确认；1->已确认
      */
     public void setConfirmStatus(Integer confirmStatus) {
         this.confirmStatus = confirmStatus;
     }
 
     /**
-     * 获取删除状态:0->未删除；1->已删除
+     * 获取删除状态：0->未删除；1->已删除
      *
-     * @return delete_status - 删除状态:0->未删除；1->已删除
+     * @return delete_status - 删除状态：0->未删除；1->已删除
      */
     public Integer getDeleteStatus() {
         return deleteStatus;
     }
 
     /**
-     * 设置删除状态:0->未删除；1->已删除
+     * 设置删除状态：0->未删除；1->已删除
      *
-     * @param deleteStatus 删除状态:0->未删除；1->已删除
+     * @param deleteStatus 删除状态：0->未删除；1->已删除
      */
     public void setDeleteStatus(Integer deleteStatus) {
         this.deleteStatus = deleteStatus;
     }
 
     /**
-     * 获取支付时间
-     *
-     * @return pay_time - 支付时间
-     */
-    public Date getPayTime() {
-        return payTime;
-    }
-
-    /**
-     * 设置支付时间
-     *
-     * @param payTime 支付时间
-     */
-    public void setPayTime(Date payTime) {
-        this.payTime = payTime;
-    }
-
-    /**
      * 获取下单时使用的积分
      *
-     * @return use_points - 下单时使用的积分
+     * @return use_integration - 下单时使用的积分
      */
-    public Integer getUsePoints() {
-        return usePoints;
+    public Integer getUseIntegration() {
+        return useIntegration;
     }
 
     /**
      * 设置下单时使用的积分
      *
-     * @param usePoints 下单时使用的积分
+     * @param useIntegration 下单时使用的积分
      */
-    public void setUsePoints(Integer usePoints) {
-        this.usePoints = usePoints;
+    public void setUseIntegration(Integer useIntegration) {
+        this.useIntegration = useIntegration;
+    }
+
+    /**
+     * 获取支付时间
+     *
+     * @return payment_time - 支付时间
+     */
+    public Date getPaymentTime() {
+        return paymentTime;
+    }
+
+    /**
+     * 设置支付时间
+     *
+     * @param paymentTime 支付时间
+     */
+    public void setPaymentTime(Date paymentTime) {
+        this.paymentTime = paymentTime;
     }
 
     /**
@@ -1063,19 +1048,19 @@ public class OmsOrder implements Serializable {
     /**
      * 获取确认收货时间
      *
-     * @return receiver_time - 确认收货时间
+     * @return receive_time - 确认收货时间
      */
-    public Date getReceiverTime() {
-        return receiverTime;
+    public Date getReceiveTime() {
+        return receiveTime;
     }
 
     /**
      * 设置确认收货时间
      *
-     * @param receiverTime 确认收货时间
+     * @param receiveTime 确认收货时间
      */
-    public void setReceiverTime(Date receiverTime) {
-        this.receiverTime = receiverTime;
+    public void setReceiveTime(Date receiveTime) {
+        this.receiveTime = receiveTime;
     }
 
     /**
@@ -1120,7 +1105,7 @@ public class OmsOrder implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderId=").append(orderId);
+        sb.append(", id=").append(id);
         sb.append(", memberId=").append(memberId);
         sb.append(", couponId=").append(couponId);
         sb.append(", orderSn=").append(orderSn);
@@ -1130,17 +1115,17 @@ public class OmsOrder implements Serializable {
         sb.append(", payAmount=").append(payAmount);
         sb.append(", freightAmount=").append(freightAmount);
         sb.append(", promotionAmount=").append(promotionAmount);
-        sb.append(", pointsDiscountAmount=").append(pointsDiscountAmount);
+        sb.append(", integrationAmount=").append(integrationAmount);
         sb.append(", couponAmount=").append(couponAmount);
         sb.append(", discountAmount=").append(discountAmount);
         sb.append(", payType=").append(payType);
         sb.append(", sourceType=").append(sourceType);
         sb.append(", status=").append(status);
         sb.append(", orderType=").append(orderType);
-        sb.append(", logisticsCompany=").append(logisticsCompany);
-        sb.append(", logisticsNum=").append(logisticsNum);
+        sb.append(", deliveryCompany=").append(deliveryCompany);
+        sb.append(", deliverySn=").append(deliverySn);
         sb.append(", autoConfirmDay=").append(autoConfirmDay);
-        sb.append(", getPoints=").append(getPoints);
+        sb.append(", integration=").append(integration);
         sb.append(", growth=").append(growth);
         sb.append(", promotionInfo=").append(promotionInfo);
         sb.append(", billType=").append(billType);
@@ -1150,7 +1135,7 @@ public class OmsOrder implements Serializable {
         sb.append(", billReceiverEmail=").append(billReceiverEmail);
         sb.append(", receiverName=").append(receiverName);
         sb.append(", receiverPhone=").append(receiverPhone);
-        sb.append(", receiverPostcode=").append(receiverPostcode);
+        sb.append(", receiverPostCode=").append(receiverPostCode);
         sb.append(", receiverProvince=").append(receiverProvince);
         sb.append(", receiverCity=").append(receiverCity);
         sb.append(", receiverRegion=").append(receiverRegion);
@@ -1158,10 +1143,10 @@ public class OmsOrder implements Serializable {
         sb.append(", note=").append(note);
         sb.append(", confirmStatus=").append(confirmStatus);
         sb.append(", deleteStatus=").append(deleteStatus);
-        sb.append(", payTime=").append(payTime);
-        sb.append(", usePoints=").append(usePoints);
+        sb.append(", useIntegration=").append(useIntegration);
+        sb.append(", paymentTime=").append(paymentTime);
         sb.append(", deliveryTime=").append(deliveryTime);
-        sb.append(", receiverTime=").append(receiverTime);
+        sb.append(", receiveTime=").append(receiveTime);
         sb.append(", commentTime=").append(commentTime);
         sb.append(", modifyTime=").append(modifyTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

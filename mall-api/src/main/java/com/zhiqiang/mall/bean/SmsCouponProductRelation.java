@@ -6,17 +6,12 @@ import javax.persistence.*;
 @Table(name = "sms_coupon_product_relation")
 public class SmsCouponProductRelation implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * 优惠券id
-     */
     @Column(name = "coupon_id")
     private Long couponId;
 
-    /**
-     * 商品id
-     */
     @Column(name = "product_id")
     private Long productId;
 
@@ -27,7 +22,7 @@ public class SmsCouponProductRelation implements Serializable {
     private String productName;
 
     /**
-     * 商品条码
+     * 商品编码
      */
     @Column(name = "product_sn")
     private String productSn;
@@ -61,36 +56,28 @@ public class SmsCouponProductRelation implements Serializable {
     }
 
     /**
-     * 获取优惠券id
-     *
-     * @return coupon_id - 优惠券id
+     * @return coupon_id
      */
     public Long getCouponId() {
         return couponId;
     }
 
     /**
-     * 设置优惠券id
-     *
-     * @param couponId 优惠券id
+     * @param couponId
      */
     public void setCouponId(Long couponId) {
         this.couponId = couponId;
     }
 
     /**
-     * 获取商品id
-     *
-     * @return product_id - 商品id
+     * @return product_id
      */
     public Long getProductId() {
         return productId;
     }
 
     /**
-     * 设置商品id
-     *
-     * @param productId 商品id
+     * @param productId
      */
     public void setProductId(Long productId) {
         this.productId = productId;
@@ -115,18 +102,18 @@ public class SmsCouponProductRelation implements Serializable {
     }
 
     /**
-     * 获取商品条码
+     * 获取商品编码
      *
-     * @return product_sn - 商品条码
+     * @return product_sn - 商品编码
      */
     public String getProductSn() {
         return productSn;
     }
 
     /**
-     * 设置商品条码
+     * 设置商品编码
      *
-     * @param productSn 商品条码
+     * @param productSn 商品编码
      */
     public void setProductSn(String productSn) {
         this.productSn = productSn == null ? null : productSn.trim();

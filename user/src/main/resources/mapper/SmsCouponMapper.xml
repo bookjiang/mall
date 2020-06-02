@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="coupon_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="platform" javaType="java.lang.Integer" jdbcType="INTEGER" />
@@ -30,8 +30,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    coupon_id, type, name, platform, count, amount, per_limit, min_point, start_time, 
-    end_time, use_type, note, publish_count, use_count, receive_count, enable_time, code, 
-    member_level
+    id, type, name, platform, count, amount, per_limit, min_point, start_time, end_time, 
+    use_type, note, publish_count, use_count, receive_count, enable_time, code, member_level
   </sql>
 </mapper>

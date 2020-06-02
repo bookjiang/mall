@@ -1,6 +1,8 @@
 package com.zhiqiang.mall.service;
 
-import com.zhiqiang.mall.bean.PmsProductCategoryWithChildrenItem;
+
+
+import com.zhiqiang.mall.model.PmsProductCategoryWithChildrenItem;
 
 import java.util.List;
 

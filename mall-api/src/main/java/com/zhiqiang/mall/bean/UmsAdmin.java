@@ -17,21 +17,13 @@ import javax.validation.constraints.Size;
 @Table(name = "ums_admin")
 public class UmsAdmin implements Serializable {
     @Id
-    @Column(name = "admin_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "管理员id")
-
     private Long id;
 
-    /**
-     * 用户名
-     */
     @NotEmpty(message = "用户名不能为空")
     private String username;
 
-    /**
-     * 密码
-     */
     @Size(min = 6, message = "密码必须至少是6位")
     @Pattern(regexp = "^.*(?=.{6,})(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).*$", message = "密码需含有大写，小写，数字")
     private String password;
@@ -95,7 +87,7 @@ public class UmsAdmin implements Serializable {
     }
 
     /**
-     * @return admin_id
+     * @return id
      */
     public Long getId() {
         return id;
@@ -109,36 +101,28 @@ public class UmsAdmin implements Serializable {
     }
 
     /**
-     * 获取用户名
-     *
-     * @return username - 用户名
+     * @return username
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * 设置用户名
-     *
-     * @param username 用户名
+     * @param username
      */
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
     }
 
     /**
-     * 获取密码
-     *
-     * @return password - 密码
+     * @return password
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * 设置密码
-     *
-     * @param password 密码
+     * @param password
      */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
@@ -276,7 +260,7 @@ public class UmsAdmin implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", adminId=").append(id);
+        sb.append(", id=").append(id);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
         sb.append(", icon=").append(icon);

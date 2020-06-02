@@ -6,19 +6,19 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="order_setting_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="sales_close_time" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="normal_close_time" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="confirm_close_time" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="after_sales_time" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="auto_comment_time" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="flash_order_overtime" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="normal_order_overtime" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="confirm_overtime" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="finish_overtime" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="comment_overtime" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    order_setting_id, sales_close_time, normal_close_time, confirm_close_time, after_sales_time, 
-    auto_comment_time
+    id, flash_order_overtime, normal_order_overtime, confirm_overtime, finish_overtime, 
+    comment_overtime
   </sql>
 </mapper>

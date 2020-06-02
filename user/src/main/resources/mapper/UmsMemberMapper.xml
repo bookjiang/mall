@@ -6,13 +6,13 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="member_level_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="icon" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="gender" javaType="java.lang.Integer" jdbcType="INTEGER" />
@@ -23,16 +23,16 @@
       <arg column="source_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="integration" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="luckey_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="history_integration" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="is_vip" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    member_id, member_level_id, username, nickname, status, phone, password, create_time, 
-    icon, gender, birthday, city, job, personalized_signature, source_type, integration, 
-    growth, history_integration, is_vip
+    id, member_level_id, username, password, nickname, phone, status, create_time, icon, 
+    gender, birthday, city, job, personalized_signature, source_type, integration, growth, 
+    luckey_count, history_integration
   </sql>
 </mapper>

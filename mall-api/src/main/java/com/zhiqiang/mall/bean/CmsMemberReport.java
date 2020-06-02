@@ -6,8 +6,14 @@ import javax.persistence.*;
 
 @Table(name = "cms_member_report")
 public class CmsMemberReport implements Serializable {
-    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * 举报类型：0->商品评价；1->话题内容；2->用户评论
+     */
+    @Column(name = "report_type")
+    private Integer reportType;
 
     /**
      * 举报人
@@ -15,27 +21,9 @@ public class CmsMemberReport implements Serializable {
     @Column(name = "report_member_name")
     private String reportMemberName;
 
-    /**
-     * 创建时间
-     */
     @Column(name = "create_time")
     private Date createTime;
 
-    /**
-     * 举报类型：0->对评价举报；1->对其他举报
-     */
-    @Column(name = "report_type")
-    private Integer reportType;
-
-    /**
-     * 被举报评价id(当对其他举报时，此项默认空）
-     */
-    @Column(name = "comment_id")
-    private Long commentId;
-
-    /**
-     * 举报对象
-     */
     @Column(name = "report_object")
     private String reportObject;
 
@@ -53,39 +41,17 @@ public class CmsMemberReport implements Serializable {
 
     private String note;
 
-    /**
-     * 处理管理员admin_id
-     */
-    @Column(name = "handle_man")
-    private Long handleMan;
-
-    /**
-     * 举报内容
-     */
-    @Column(name = "report_content")
-    private String reportContent;
-
-    /**
-     * 处理回复
-     */
-    @Column(name = "handle_replay")
-    private String handleReplay;
-
     private static final long serialVersionUID = 1L;
 
-    public CmsMemberReport(Long id, String reportMemberName, Date createTime, Integer reportType, Long commentId, String reportObject, Integer reportStatus, Integer handleStatus, String note, Long handleMan, String reportContent, String handleReplay) {
+    public CmsMemberReport(Long id, Integer reportType, String reportMemberName, Date createTime, String reportObject, Integer reportStatus, Integer handleStatus, String note) {
         this.id = id;
+        this.reportType = reportType;
         this.reportMemberName = reportMemberName;
         this.createTime = createTime;
-        this.reportType = reportType;
-        this.commentId = commentId;
         this.reportObject = reportObject;
         this.reportStatus = reportStatus;
         this.handleStatus = handleStatus;
         this.note = note;
-        this.handleMan = handleMan;
-        this.reportContent = reportContent;
-        this.handleReplay = handleReplay;
     }
 
     public CmsMemberReport() {
@@ -107,6 +73,24 @@ public class CmsMemberReport implements Serializable {
     }
 
     /**
+     * 获取举报类型：0->商品评价；1->话题内容；2->用户评论
+     *
+     * @return report_type - 举报类型：0->商品评价；1->话题内容；2->用户评论
+     */
+    public Integer getReportType() {
+        return reportType;
+    }
+
+    /**
+     * 设置举报类型：0->商品评价；1->话题内容；2->用户评论
+     *
+     * @param reportType 举报类型：0->商品评价；1->话题内容；2->用户评论
+     */
+    public void setReportType(Integer reportType) {
+        this.reportType = reportType;
+    }
+
+    /**
      * 获取举报人
      *
      * @return report_member_name - 举报人
@@ -125,72 +109,28 @@ public class CmsMemberReport implements Serializable {
     }
 
     /**
-     * 获取创建时间
-     *
-     * @return create_time - 创建时间
+     * @return create_time
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 设置创建时间
-     *
-     * @param createTime 创建时间
+     * @param createTime
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 获取举报类型：0->对评价举报；1->对其他举报
-     *
-     * @return report_type - 举报类型：0->对评价举报；1->对其他举报
-     */
-    public Integer getReportType() {
-        return reportType;
-    }
-
-    /**
-     * 设置举报类型：0->对评价举报；1->对其他举报
-     *
-     * @param reportType 举报类型：0->对评价举报；1->对其他举报
-     */
-    public void setReportType(Integer reportType) {
-        this.reportType = reportType;
-    }
-
-    /**
-     * 获取被举报评价id(当对其他举报时，此项默认空）
-     *
-     * @return comment_id - 被举报评价id(当对其他举报时，此项默认空）
-     */
-    public Long getCommentId() {
-        return commentId;
-    }
-
-    /**
-     * 设置被举报评价id(当对其他举报时，此项默认空）
-     *
-     * @param commentId 被举报评价id(当对其他举报时，此项默认空）
-     */
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
-    }
-
-    /**
-     * 获取举报对象
-     *
-     * @return report_object - 举报对象
+     * @return report_object
      */
     public String getReportObject() {
         return reportObject;
     }
 
     /**
-     * 设置举报对象
-     *
-     * @param reportObject 举报对象
+     * @param reportObject
      */
     public void setReportObject(String reportObject) {
         this.reportObject = reportObject == null ? null : reportObject.trim();
@@ -246,60 +186,6 @@ public class CmsMemberReport implements Serializable {
         this.note = note == null ? null : note.trim();
     }
 
-    /**
-     * 获取处理管理员admin_id
-     *
-     * @return handle_man - 处理管理员admin_id
-     */
-    public Long getHandleMan() {
-        return handleMan;
-    }
-
-    /**
-     * 设置处理管理员admin_id
-     *
-     * @param handleMan 处理管理员admin_id
-     */
-    public void setHandleMan(Long handleMan) {
-        this.handleMan = handleMan;
-    }
-
-    /**
-     * 获取举报内容
-     *
-     * @return report_content - 举报内容
-     */
-    public String getReportContent() {
-        return reportContent;
-    }
-
-    /**
-     * 设置举报内容
-     *
-     * @param reportContent 举报内容
-     */
-    public void setReportContent(String reportContent) {
-        this.reportContent = reportContent == null ? null : reportContent.trim();
-    }
-
-    /**
-     * 获取处理回复
-     *
-     * @return handle_replay - 处理回复
-     */
-    public String getHandleReplay() {
-        return handleReplay;
-    }
-
-    /**
-     * 设置处理回复
-     *
-     * @param handleReplay 处理回复
-     */
-    public void setHandleReplay(String handleReplay) {
-        this.handleReplay = handleReplay == null ? null : handleReplay.trim();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -307,17 +193,13 @@ public class CmsMemberReport implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
+        sb.append(", reportType=").append(reportType);
         sb.append(", reportMemberName=").append(reportMemberName);
         sb.append(", createTime=").append(createTime);
-        sb.append(", reportType=").append(reportType);
-        sb.append(", commentId=").append(commentId);
         sb.append(", reportObject=").append(reportObject);
         sb.append(", reportStatus=").append(reportStatus);
         sb.append(", handleStatus=").append(handleStatus);
         sb.append(", note=").append(note);
-        sb.append(", handleMan=").append(handleMan);
-        sb.append(", reportContent=").append(reportContent);
-        sb.append(", handleReplay=").append(handleReplay);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

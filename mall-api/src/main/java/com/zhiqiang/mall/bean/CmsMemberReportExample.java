@@ -165,6 +165,66 @@ public class CmsMemberReportExample {
             return (Criteria) this;
         }
 
+        public Criteria andReportTypeIsNull() {
+            addCriterion("report_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeIsNotNull() {
+            addCriterion("report_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeEqualTo(Integer value) {
+            addCriterion("report_type =", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeNotEqualTo(Integer value) {
+            addCriterion("report_type <>", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeGreaterThan(Integer value) {
+            addCriterion("report_type >", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("report_type >=", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeLessThan(Integer value) {
+            addCriterion("report_type <", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("report_type <=", value, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeIn(List<Integer> values) {
+            addCriterion("report_type in", values, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeNotIn(List<Integer> values) {
+            addCriterion("report_type not in", values, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeBetween(Integer value1, Integer value2) {
+            addCriterion("report_type between", value1, value2, "reportType");
+            return (Criteria) this;
+        }
+
+        public Criteria andReportTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("report_type not between", value1, value2, "reportType");
+            return (Criteria) this;
+        }
+
         public Criteria andReportMemberNameIsNull() {
             addCriterion("report_member_name is null");
             return (Criteria) this;
@@ -292,126 +352,6 @@ public class CmsMemberReportExample {
 
         public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
             addCriterion("create_time not between", value1, value2, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeIsNull() {
-            addCriterion("report_type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeIsNotNull() {
-            addCriterion("report_type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeEqualTo(Integer value) {
-            addCriterion("report_type =", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeNotEqualTo(Integer value) {
-            addCriterion("report_type <>", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeGreaterThan(Integer value) {
-            addCriterion("report_type >", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("report_type >=", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeLessThan(Integer value) {
-            addCriterion("report_type <", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("report_type <=", value, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeIn(List<Integer> values) {
-            addCriterion("report_type in", values, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeNotIn(List<Integer> values) {
-            addCriterion("report_type not in", values, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeBetween(Integer value1, Integer value2) {
-            addCriterion("report_type between", value1, value2, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andReportTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("report_type not between", value1, value2, "reportType");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdIsNull() {
-            addCriterion("comment_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdIsNotNull() {
-            addCriterion("comment_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdEqualTo(Long value) {
-            addCriterion("comment_id =", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdNotEqualTo(Long value) {
-            addCriterion("comment_id <>", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdGreaterThan(Long value) {
-            addCriterion("comment_id >", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("comment_id >=", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdLessThan(Long value) {
-            addCriterion("comment_id <", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdLessThanOrEqualTo(Long value) {
-            addCriterion("comment_id <=", value, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdIn(List<Long> values) {
-            addCriterion("comment_id in", values, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdNotIn(List<Long> values) {
-            addCriterion("comment_id not in", values, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdBetween(Long value1, Long value2) {
-            addCriterion("comment_id between", value1, value2, "commentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentIdNotBetween(Long value1, Long value2) {
-            addCriterion("comment_id not between", value1, value2, "commentId");
             return (Criteria) this;
         }
 
@@ -672,66 +612,6 @@ public class CmsMemberReportExample {
 
         public Criteria andNoteNotBetween(String value1, String value2) {
             addCriterion("note not between", value1, value2, "note");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManIsNull() {
-            addCriterion("handle_man is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManIsNotNull() {
-            addCriterion("handle_man is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManEqualTo(Long value) {
-            addCriterion("handle_man =", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManNotEqualTo(Long value) {
-            addCriterion("handle_man <>", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManGreaterThan(Long value) {
-            addCriterion("handle_man >", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManGreaterThanOrEqualTo(Long value) {
-            addCriterion("handle_man >=", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManLessThan(Long value) {
-            addCriterion("handle_man <", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManLessThanOrEqualTo(Long value) {
-            addCriterion("handle_man <=", value, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManIn(List<Long> values) {
-            addCriterion("handle_man in", values, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManNotIn(List<Long> values) {
-            addCriterion("handle_man not in", values, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManBetween(Long value1, Long value2) {
-            addCriterion("handle_man between", value1, value2, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andHandleManNotBetween(Long value1, Long value2) {
-            addCriterion("handle_man not between", value1, value2, "handleMan");
             return (Criteria) this;
         }
     }

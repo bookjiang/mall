@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.product.Dao.PmsProductDao">
+    <resultMap id="updateInfoMap" type="com.zhiqiang.mall.model.PmsProductResult" extends="com.zhiqiang.mall.user.mapper.PmsProductMapper.ResultMapWithBLOBs">
+        <result column="cateParentId" jdbcType="BIGINT" property="cateParentId" />
+        <collection property="productLadderList" columnPrefix="ladder_" resultMap="com.zhiqiang.mall.user.mapper.PmsProductLadderMapper.BaseResultMap">
+        </collection>
+        <collection property="productFullReductionList" columnPrefix="full_" resultMap="com.zhiqiang.mall.user.mapper.PmsProductFullReductionMapper.BaseResultMap">
+        </collection>
+        <collection property="memberPriceList" columnPrefix="member_" resultMap="com.zhiqiang.mall.user.mapper.PmsMemberPriceMapper.BaseResultMap">
+        </collection>
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.zhiqiang.mall.user.mapper.PmsSkuStockMapper.BaseResultMap">
+        </collection>
+        <collection property="productAttributeValueList" columnPrefix="attribute_" resultMap="com.zhiqiang.mall.user.mapper.PmsProductAttributeValueMapper.BaseResultMap">
+        </collection>
+        <collection property="subjectProductRelationList" column="{productId=id}" select="selectSubjectProductRelationByProductId"/>
+        <collection property="prefrenceAreaProductRelationList" column="{productId=id}" select="selectPrefrenceAreaProductRelationByProductId"/>
+
+    </resultMap>
+
+    <select id="getUpdateInfo" resultMap="updateInfoMap">
+        SELECT *,
+            pc.parent_id as cateParentId,
+            l.id as ladder_id,l.product_id  as ladder_product_id,l.discount  as ladder_discount,l.count  as ladder_count,l.price  as ladder_price,
+            pf.id  as full_id,pf.product_id  as full_product_id,pf.full_price as  full_full_price,pf.reduce_price  as full_reduce_price,
+            m.id  as member_id,m.product_id as  member_product_id,m.member_level_id as  member_member_level_id,m.member_price  as member_member_price,m.member_level_name  as member_member_level_name,
+            s.id  as sku_id,s.product_id as  sku_product_id,s.price as  sku_price,s.low_stock  as sku_low_stock,s.pic as  sku_pic,s.sale as  sku_sale,s.sku_code as  sku_sku_code,s.stock  as sku_stock,s.sp_data as  sku_sp_data,s.promotion_price sku_promotion_price,s.lock_stock sku_lock_stock,
+            a.id  as attribute_id,a.product_id  as attribute_product_id,a.product_attribute_id  as attribute_product_attribute_id,a.value  as attribute_value
+        FROM pms_product p
+        LEFT JOIN pms_product_category pc on pc.id = p.product_category_id
+        LEFT JOIN pms_product_ladder l ON p.id = l.product_id
+        LEFT JOIN pms_product_full_reduction pf ON pf.product_id=p.id
+        LEFT JOIN pms_member_price m ON m.product_id = p.id
+        LEFT JOIN pms_sku_stock s ON s.product_id = p.id
+        LEFT JOIN pms_product_attribute_value a ON a.product_id=p.id
+        WHERE p.id=#{id};
+    </select>
+    <select id="selectSubjectProductRelationByProductId" resultMap="com.zhiqiang.mall.user.mapper.CmsSubjectProductRelationMapper.BaseResultMap">
+        select * from cms_subject_product_relation where product_id=#{productId}
+    </select>
+    <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="com.zhiqiang.mall.user.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap">
+        select * from cms_prefrence_area_product_relation where product_id=#{productId}
+    </select>
+
+</mapper>

@@ -6,7 +6,25 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="operate_log_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="price_old" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="price_new" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="sale_price_old" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="sale_price_new" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="gift_point_old" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="gift_point_new" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_point_limit_old" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_point_limit_new" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="operate_man" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, product_id, price_old, price_new, sale_price_old, sale_price_new, gift_point_old, 
+    gift_point_new, use_point_limit_old, use_point_limit_new, operate_man, create_time
+  </sql>
 </mapper>

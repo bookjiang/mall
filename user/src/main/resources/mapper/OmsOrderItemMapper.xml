@@ -6,36 +6,36 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="order_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="order_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_brand" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="sku_sn" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="product_quantity" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="promotion_info" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_sku_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="promotion_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="promotion_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="coupon_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="points_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="integration_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="real_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="get_points" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="get_growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="product_attribute" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gift_integration" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="gift_growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_attr" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    order_item_id, order_id, order_sn, product_id, product_pic, product_name, product_sn, 
-    product_classify_id, brand_name, sku_id, sku_sn, price, product_quantity, promotion_info, 
-    promotion_amount, coupon_amount, points_amount, real_amount, get_points, get_growth, 
-    product_attribute
+    id, order_id, order_sn, product_id, product_pic, product_name, product_brand, product_sn, 
+    product_price, product_quantity, product_sku_id, product_sku_code, product_category_id, 
+    promotion_name, promotion_amount, coupon_amount, integration_amount, real_amount, 
+    gift_integration, gift_growth, product_attr
   </sql>
 </mapper>

@@ -8,17 +8,14 @@ import javax.persistence.*;
 @Table(name = "sms_coupon")
 public class SmsCoupon implements Serializable {
     @Id
-    @Column(name = "coupon_id")
-    private Long couponId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 优惠卷类型；0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券
      */
     private Integer type;
 
-    /**
-     * 名称
-     */
     private String name;
 
     /**
@@ -48,15 +45,9 @@ public class SmsCoupon implements Serializable {
     @Column(name = "min_point")
     private BigDecimal minPoint;
 
-    /**
-     * 开始使用时间
-     */
     @Column(name = "start_time")
     private Date startTime;
 
-    /**
-     * 结束使用时间
-     */
     @Column(name = "end_time")
     private Date endTime;
 
@@ -101,15 +92,15 @@ public class SmsCoupon implements Serializable {
     private String code;
 
     /**
-     * 可领取的会员类型：0->无限制
+     * 可领取的会员类型：0->无限时
      */
     @Column(name = "member_level")
     private Integer memberLevel;
 
     private static final long serialVersionUID = 1L;
 
-    public SmsCoupon(Long couponId, Integer type, String name, Integer platform, Integer count, BigDecimal amount, Integer perLimit, BigDecimal minPoint, Date startTime, Date endTime, Integer useType, String note, Integer publishCount, Integer useCount, Integer receiveCount, Date enableTime, String code, Integer memberLevel) {
-        this.couponId = couponId;
+    public SmsCoupon(Long id, Integer type, String name, Integer platform, Integer count, BigDecimal amount, Integer perLimit, BigDecimal minPoint, Date startTime, Date endTime, Integer useType, String note, Integer publishCount, Integer useCount, Integer receiveCount, Date enableTime, String code, Integer memberLevel) {
+        this.id = id;
         this.type = type;
         this.name = name;
         this.platform = platform;
@@ -134,17 +125,17 @@ public class SmsCoupon implements Serializable {
     }
 
     /**
-     * @return coupon_id
+     * @return id
      */
-    public Long getCouponId() {
-        return couponId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param couponId
+     * @param id
      */
-    public void setCouponId(Long couponId) {
-        this.couponId = couponId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -166,18 +157,14 @@ public class SmsCoupon implements Serializable {
     }
 
     /**
-     * 获取名称
-     *
-     * @return name - 名称
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置名称
-     *
-     * @param name 名称
+     * @param name
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
@@ -274,36 +261,28 @@ public class SmsCoupon implements Serializable {
     }
 
     /**
-     * 获取开始使用时间
-     *
-     * @return start_time - 开始使用时间
+     * @return start_time
      */
     public Date getStartTime() {
         return startTime;
     }
 
     /**
-     * 设置开始使用时间
-     *
-     * @param startTime 开始使用时间
+     * @param startTime
      */
     public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
     /**
-     * 获取结束使用时间
-     *
-     * @return end_time - 结束使用时间
+     * @return end_time
      */
     public Date getEndTime() {
         return endTime;
     }
 
     /**
-     * 设置结束使用时间
-     *
-     * @param endTime 结束使用时间
+     * @param endTime
      */
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
@@ -436,18 +415,18 @@ public class SmsCoupon implements Serializable {
     }
 
     /**
-     * 获取可领取的会员类型：0->无限制
+     * 获取可领取的会员类型：0->无限时
      *
-     * @return member_level - 可领取的会员类型：0->无限制
+     * @return member_level - 可领取的会员类型：0->无限时
      */
     public Integer getMemberLevel() {
         return memberLevel;
     }
 
     /**
-     * 设置可领取的会员类型：0->无限制
+     * 设置可领取的会员类型：0->无限时
      *
-     * @param memberLevel 可领取的会员类型：0->无限制
+     * @param memberLevel 可领取的会员类型：0->无限时
      */
     public void setMemberLevel(Integer memberLevel) {
         this.memberLevel = memberLevel;
@@ -459,7 +438,7 @@ public class SmsCoupon implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", couponId=").append(couponId);
+        sb.append(", id=").append(id);
         sb.append(", type=").append(type);
         sb.append(", name=").append(name);
         sb.append(", platform=").append(platform);

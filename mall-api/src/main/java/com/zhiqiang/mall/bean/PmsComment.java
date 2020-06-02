@@ -7,29 +7,20 @@ import javax.persistence.*;
 @Table(name = "pms_comment")
 public class PmsComment implements Serializable {
     @Id
-    @Column(name = "comment_id")
-    private Long commentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 商品id
-     */
     @Column(name = "product_id")
     private Long productId;
 
-    /**
-     * 用户名称
-     */
-    @Column(name = "nick_name")
-    private String nickName;
+    @Column(name = "member_nick_name")
+    private String memberNickName;
 
-    /**
-     * 商品名称
-     */
     @Column(name = "product_name")
     private String productName;
 
     /**
-     * 评价星级:0->5
+     * 评价星数：0->5
      */
     private Integer star;
 
@@ -39,15 +30,9 @@ public class PmsComment implements Serializable {
     @Column(name = "member_ip")
     private String memberIp;
 
-    /**
-     * 创建时间
-     */
     @Column(name = "create_time")
     private Date createTime;
 
-    /**
-     * 是否显示
-     */
     @Column(name = "show_status")
     private Integer showStatus;
 
@@ -57,54 +42,42 @@ public class PmsComment implements Serializable {
     @Column(name = "product_attribute")
     private String productAttribute;
 
-    /**
-     * 收藏数
-     */
-    @Column(name = "collect_num")
-    private Integer collectNum;
+    @Column(name = "collect_couont")
+    private Integer collectCouont;
+
+    @Column(name = "read_count")
+    private Integer readCount;
 
     /**
-     * 阅读数
-     */
-    @Column(name = "read_num")
-    private Integer readNum;
-
-    /**
-     * 上传图片地址，逗号隔开
+     * 上传图片地址，以逗号隔开
      */
     private String pics;
 
     /**
-     * 评论用户头像（暂时不考虑用）
+     * 评论用户头像
      */
     @Column(name = "member_icon")
     private String memberIcon;
 
-    /**
-     * 回复数
-     */
     @Column(name = "replay_count")
     private Integer replayCount;
 
-    /**
-     * 内容
-     */
     private String content;
 
     private static final long serialVersionUID = 1L;
 
-    public PmsComment(Long commentId, Long productId, String nickName, String productName, Integer star, String memberIp, Date createTime, Integer showStatus, String productAttribute, Integer collectNum, Integer readNum, String pics, String memberIcon, Integer replayCount, String content) {
-        this.commentId = commentId;
+    public PmsComment(Long id, Long productId, String memberNickName, String productName, Integer star, String memberIp, Date createTime, Integer showStatus, String productAttribute, Integer collectCouont, Integer readCount, String pics, String memberIcon, Integer replayCount, String content) {
+        this.id = id;
         this.productId = productId;
-        this.nickName = nickName;
+        this.memberNickName = memberNickName;
         this.productName = productName;
         this.star = star;
         this.memberIp = memberIp;
         this.createTime = createTime;
         this.showStatus = showStatus;
         this.productAttribute = productAttribute;
-        this.collectNum = collectNum;
-        this.readNum = readNum;
+        this.collectCouont = collectCouont;
+        this.readCount = readCount;
         this.pics = pics;
         this.memberIcon = memberIcon;
         this.replayCount = replayCount;
@@ -116,86 +89,74 @@ public class PmsComment implements Serializable {
     }
 
     /**
-     * @return comment_id
+     * @return id
      */
-    public Long getCommentId() {
-        return commentId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param commentId
+     * @param id
      */
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取商品id
-     *
-     * @return product_id - 商品id
+     * @return product_id
      */
     public Long getProductId() {
         return productId;
     }
 
     /**
-     * 设置商品id
-     *
-     * @param productId 商品id
+     * @param productId
      */
     public void setProductId(Long productId) {
         this.productId = productId;
     }
 
     /**
-     * 获取用户名称
-     *
-     * @return nick_name - 用户名称
+     * @return member_nick_name
      */
-    public String getNickName() {
-        return nickName;
+    public String getMemberNickName() {
+        return memberNickName;
     }
 
     /**
-     * 设置用户名称
-     *
-     * @param nickName 用户名称
+     * @param memberNickName
      */
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setMemberNickName(String memberNickName) {
+        this.memberNickName = memberNickName == null ? null : memberNickName.trim();
     }
 
     /**
-     * 获取商品名称
-     *
-     * @return product_name - 商品名称
+     * @return product_name
      */
     public String getProductName() {
         return productName;
     }
 
     /**
-     * 设置商品名称
-     *
-     * @param productName 商品名称
+     * @param productName
      */
     public void setProductName(String productName) {
         this.productName = productName == null ? null : productName.trim();
     }
 
     /**
-     * 获取评价星级:0->5
+     * 获取评价星数：0->5
      *
-     * @return star - 评价星级:0->5
+     * @return star - 评价星数：0->5
      */
     public Integer getStar() {
         return star;
     }
 
     /**
-     * 设置评价星级:0->5
+     * 设置评价星数：0->5
      *
-     * @param star 评价星级:0->5
+     * @param star 评价星数：0->5
      */
     public void setStar(Integer star) {
         this.star = star;
@@ -220,36 +181,28 @@ public class PmsComment implements Serializable {
     }
 
     /**
-     * 获取创建时间
-     *
-     * @return create_time - 创建时间
+     * @return create_time
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 设置创建时间
-     *
-     * @param createTime 创建时间
+     * @param createTime
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 获取是否显示
-     *
-     * @return show_status - 是否显示
+     * @return show_status
      */
     public Integer getShowStatus() {
         return showStatus;
     }
 
     /**
-     * 设置是否显示
-     *
-     * @param showStatus 是否显示
+     * @param showStatus
      */
     public void setShowStatus(Integer showStatus) {
         this.showStatus = showStatus;
@@ -274,108 +227,92 @@ public class PmsComment implements Serializable {
     }
 
     /**
-     * 获取收藏数
-     *
-     * @return collect_num - 收藏数
+     * @return collect_couont
      */
-    public Integer getCollectNum() {
-        return collectNum;
+    public Integer getCollectCouont() {
+        return collectCouont;
     }
 
     /**
-     * 设置收藏数
-     *
-     * @param collectNum 收藏数
+     * @param collectCouont
      */
-    public void setCollectNum(Integer collectNum) {
-        this.collectNum = collectNum;
+    public void setCollectCouont(Integer collectCouont) {
+        this.collectCouont = collectCouont;
     }
 
     /**
-     * 获取阅读数
-     *
-     * @return read_num - 阅读数
+     * @return read_count
      */
-    public Integer getReadNum() {
-        return readNum;
+    public Integer getReadCount() {
+        return readCount;
     }
 
     /**
-     * 设置阅读数
-     *
-     * @param readNum 阅读数
+     * @param readCount
      */
-    public void setReadNum(Integer readNum) {
-        this.readNum = readNum;
+    public void setReadCount(Integer readCount) {
+        this.readCount = readCount;
     }
 
     /**
-     * 获取上传图片地址，逗号隔开
+     * 获取上传图片地址，以逗号隔开
      *
-     * @return pics - 上传图片地址，逗号隔开
+     * @return pics - 上传图片地址，以逗号隔开
      */
     public String getPics() {
         return pics;
     }
 
     /**
-     * 设置上传图片地址，逗号隔开
+     * 设置上传图片地址，以逗号隔开
      *
-     * @param pics 上传图片地址，逗号隔开
+     * @param pics 上传图片地址，以逗号隔开
      */
     public void setPics(String pics) {
         this.pics = pics == null ? null : pics.trim();
     }
 
     /**
-     * 获取评论用户头像（暂时不考虑用）
+     * 获取评论用户头像
      *
-     * @return member_icon - 评论用户头像（暂时不考虑用）
+     * @return member_icon - 评论用户头像
      */
     public String getMemberIcon() {
         return memberIcon;
     }
 
     /**
-     * 设置评论用户头像（暂时不考虑用）
+     * 设置评论用户头像
      *
-     * @param memberIcon 评论用户头像（暂时不考虑用）
+     * @param memberIcon 评论用户头像
      */
     public void setMemberIcon(String memberIcon) {
         this.memberIcon = memberIcon == null ? null : memberIcon.trim();
     }
 
     /**
-     * 获取回复数
-     *
-     * @return replay_count - 回复数
+     * @return replay_count
      */
     public Integer getReplayCount() {
         return replayCount;
     }
 
     /**
-     * 设置回复数
-     *
-     * @param replayCount 回复数
+     * @param replayCount
      */
     public void setReplayCount(Integer replayCount) {
         this.replayCount = replayCount;
     }
 
     /**
-     * 获取内容
-     *
-     * @return content - 内容
+     * @return content
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * 设置内容
-     *
-     * @param content 内容
+     * @param content
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
@@ -387,17 +324,17 @@ public class PmsComment implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", commentId=").append(commentId);
+        sb.append(", id=").append(id);
         sb.append(", productId=").append(productId);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", memberNickName=").append(memberNickName);
         sb.append(", productName=").append(productName);
         sb.append(", star=").append(star);
         sb.append(", memberIp=").append(memberIp);
         sb.append(", createTime=").append(createTime);
         sb.append(", showStatus=").append(showStatus);
         sb.append(", productAttribute=").append(productAttribute);
-        sb.append(", collectNum=").append(collectNum);
-        sb.append(", readNum=").append(readNum);
+        sb.append(", collectCouont=").append(collectCouont);
+        sb.append(", readCount=").append(readCount);
         sb.append(", pics=").append(pics);
         sb.append(", memberIcon=").append(memberIcon);
         sb.append(", replayCount=").append(replayCount);

@@ -105,63 +105,63 @@ public class PmsCommentExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andCommentIdIsNull() {
-            addCriterion("comment_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdIsNotNull() {
-            addCriterion("comment_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdEqualTo(Long value) {
-            addCriterion("comment_id =", value, "commentId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotEqualTo(Long value) {
-            addCriterion("comment_id <>", value, "commentId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdGreaterThan(Long value) {
-            addCriterion("comment_id >", value, "commentId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("comment_id >=", value, "commentId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdLessThan(Long value) {
-            addCriterion("comment_id <", value, "commentId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdLessThanOrEqualTo(Long value) {
-            addCriterion("comment_id <=", value, "commentId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdIn(List<Long> values) {
-            addCriterion("comment_id in", values, "commentId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotIn(List<Long> values) {
-            addCriterion("comment_id not in", values, "commentId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdBetween(Long value1, Long value2) {
-            addCriterion("comment_id between", value1, value2, "commentId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotBetween(Long value1, Long value2) {
-            addCriterion("comment_id not between", value1, value2, "commentId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -225,73 +225,73 @@ public class PmsCommentExample {
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIsNull() {
-            addCriterion("nick_name is null");
+        public Criteria andMemberNickNameIsNull() {
+            addCriterion("member_nick_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIsNotNull() {
-            addCriterion("nick_name is not null");
+        public Criteria andMemberNickNameIsNotNull() {
+            addCriterion("member_nick_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameEqualTo(String value) {
-            addCriterion("nick_name =", value, "nickName");
+        public Criteria andMemberNickNameEqualTo(String value) {
+            addCriterion("member_nick_name =", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotEqualTo(String value) {
-            addCriterion("nick_name <>", value, "nickName");
+        public Criteria andMemberNickNameNotEqualTo(String value) {
+            addCriterion("member_nick_name <>", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameGreaterThan(String value) {
-            addCriterion("nick_name >", value, "nickName");
+        public Criteria andMemberNickNameGreaterThan(String value) {
+            addCriterion("member_nick_name >", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameGreaterThanOrEqualTo(String value) {
-            addCriterion("nick_name >=", value, "nickName");
+        public Criteria andMemberNickNameGreaterThanOrEqualTo(String value) {
+            addCriterion("member_nick_name >=", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLessThan(String value) {
-            addCriterion("nick_name <", value, "nickName");
+        public Criteria andMemberNickNameLessThan(String value) {
+            addCriterion("member_nick_name <", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLessThanOrEqualTo(String value) {
-            addCriterion("nick_name <=", value, "nickName");
+        public Criteria andMemberNickNameLessThanOrEqualTo(String value) {
+            addCriterion("member_nick_name <=", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameLike(String value) {
-            addCriterion("nick_name like", value, "nickName");
+        public Criteria andMemberNickNameLike(String value) {
+            addCriterion("member_nick_name like", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotLike(String value) {
-            addCriterion("nick_name not like", value, "nickName");
+        public Criteria andMemberNickNameNotLike(String value) {
+            addCriterion("member_nick_name not like", value, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameIn(List<String> values) {
-            addCriterion("nick_name in", values, "nickName");
+        public Criteria andMemberNickNameIn(List<String> values) {
+            addCriterion("member_nick_name in", values, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotIn(List<String> values) {
-            addCriterion("nick_name not in", values, "nickName");
+        public Criteria andMemberNickNameNotIn(List<String> values) {
+            addCriterion("member_nick_name not in", values, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameBetween(String value1, String value2) {
-            addCriterion("nick_name between", value1, value2, "nickName");
+        public Criteria andMemberNickNameBetween(String value1, String value2) {
+            addCriterion("member_nick_name between", value1, value2, "memberNickName");
             return (Criteria) this;
         }
 
-        public Criteria andNickNameNotBetween(String value1, String value2) {
-            addCriterion("nick_name not between", value1, value2, "nickName");
+        public Criteria andMemberNickNameNotBetween(String value1, String value2) {
+            addCriterion("member_nick_name not between", value1, value2, "memberNickName");
             return (Criteria) this;
         }
 
@@ -685,123 +685,123 @@ public class PmsCommentExample {
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumIsNull() {
-            addCriterion("collect_num is null");
+        public Criteria andCollectCouontIsNull() {
+            addCriterion("collect_couont is null");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumIsNotNull() {
-            addCriterion("collect_num is not null");
+        public Criteria andCollectCouontIsNotNull() {
+            addCriterion("collect_couont is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumEqualTo(Integer value) {
-            addCriterion("collect_num =", value, "collectNum");
+        public Criteria andCollectCouontEqualTo(Integer value) {
+            addCriterion("collect_couont =", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumNotEqualTo(Integer value) {
-            addCriterion("collect_num <>", value, "collectNum");
+        public Criteria andCollectCouontNotEqualTo(Integer value) {
+            addCriterion("collect_couont <>", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumGreaterThan(Integer value) {
-            addCriterion("collect_num >", value, "collectNum");
+        public Criteria andCollectCouontGreaterThan(Integer value) {
+            addCriterion("collect_couont >", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumGreaterThanOrEqualTo(Integer value) {
-            addCriterion("collect_num >=", value, "collectNum");
+        public Criteria andCollectCouontGreaterThanOrEqualTo(Integer value) {
+            addCriterion("collect_couont >=", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumLessThan(Integer value) {
-            addCriterion("collect_num <", value, "collectNum");
+        public Criteria andCollectCouontLessThan(Integer value) {
+            addCriterion("collect_couont <", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumLessThanOrEqualTo(Integer value) {
-            addCriterion("collect_num <=", value, "collectNum");
+        public Criteria andCollectCouontLessThanOrEqualTo(Integer value) {
+            addCriterion("collect_couont <=", value, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumIn(List<Integer> values) {
-            addCriterion("collect_num in", values, "collectNum");
+        public Criteria andCollectCouontIn(List<Integer> values) {
+            addCriterion("collect_couont in", values, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumNotIn(List<Integer> values) {
-            addCriterion("collect_num not in", values, "collectNum");
+        public Criteria andCollectCouontNotIn(List<Integer> values) {
+            addCriterion("collect_couont not in", values, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumBetween(Integer value1, Integer value2) {
-            addCriterion("collect_num between", value1, value2, "collectNum");
+        public Criteria andCollectCouontBetween(Integer value1, Integer value2) {
+            addCriterion("collect_couont between", value1, value2, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andCollectNumNotBetween(Integer value1, Integer value2) {
-            addCriterion("collect_num not between", value1, value2, "collectNum");
+        public Criteria andCollectCouontNotBetween(Integer value1, Integer value2) {
+            addCriterion("collect_couont not between", value1, value2, "collectCouont");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumIsNull() {
-            addCriterion("read_num is null");
+        public Criteria andReadCountIsNull() {
+            addCriterion("read_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumIsNotNull() {
-            addCriterion("read_num is not null");
+        public Criteria andReadCountIsNotNull() {
+            addCriterion("read_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumEqualTo(Integer value) {
-            addCriterion("read_num =", value, "readNum");
+        public Criteria andReadCountEqualTo(Integer value) {
+            addCriterion("read_count =", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumNotEqualTo(Integer value) {
-            addCriterion("read_num <>", value, "readNum");
+        public Criteria andReadCountNotEqualTo(Integer value) {
+            addCriterion("read_count <>", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumGreaterThan(Integer value) {
-            addCriterion("read_num >", value, "readNum");
+        public Criteria andReadCountGreaterThan(Integer value) {
+            addCriterion("read_count >", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumGreaterThanOrEqualTo(Integer value) {
-            addCriterion("read_num >=", value, "readNum");
+        public Criteria andReadCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("read_count >=", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumLessThan(Integer value) {
-            addCriterion("read_num <", value, "readNum");
+        public Criteria andReadCountLessThan(Integer value) {
+            addCriterion("read_count <", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumLessThanOrEqualTo(Integer value) {
-            addCriterion("read_num <=", value, "readNum");
+        public Criteria andReadCountLessThanOrEqualTo(Integer value) {
+            addCriterion("read_count <=", value, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumIn(List<Integer> values) {
-            addCriterion("read_num in", values, "readNum");
+        public Criteria andReadCountIn(List<Integer> values) {
+            addCriterion("read_count in", values, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumNotIn(List<Integer> values) {
-            addCriterion("read_num not in", values, "readNum");
+        public Criteria andReadCountNotIn(List<Integer> values) {
+            addCriterion("read_count not in", values, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumBetween(Integer value1, Integer value2) {
-            addCriterion("read_num between", value1, value2, "readNum");
+        public Criteria andReadCountBetween(Integer value1, Integer value2) {
+            addCriterion("read_count between", value1, value2, "readCount");
             return (Criteria) this;
         }
 
-        public Criteria andReadNumNotBetween(Integer value1, Integer value2) {
-            addCriterion("read_num not between", value1, value2, "readNum");
+        public Criteria andReadCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("read_count not between", value1, value2, "readCount");
             return (Criteria) this;
         }
 

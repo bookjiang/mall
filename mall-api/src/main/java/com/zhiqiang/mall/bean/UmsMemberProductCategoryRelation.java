@@ -6,20 +6,21 @@ import javax.persistence.*;
 @Table(name = "ums_member_product_category_relation")
 public class UmsMemberProductCategoryRelation implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "member_id")
     private Long memberId;
 
-    @Column(name = "product_classify_id")
-    private Long productClassifyId;
+    @Column(name = "product_category_id")
+    private Long productCategoryId;
 
     private static final long serialVersionUID = 1L;
 
-    public UmsMemberProductCategoryRelation(Long id, Long memberId, Long productClassifyId) {
+    public UmsMemberProductCategoryRelation(Long id, Long memberId, Long productCategoryId) {
         this.id = id;
         this.memberId = memberId;
-        this.productClassifyId = productClassifyId;
+        this.productCategoryId = productCategoryId;
     }
 
     public UmsMemberProductCategoryRelation() {
@@ -55,17 +56,17 @@ public class UmsMemberProductCategoryRelation implements Serializable {
     }
 
     /**
-     * @return product_classify_id
+     * @return product_category_id
      */
-    public Long getProductClassifyId() {
-        return productClassifyId;
+    public Long getProductCategoryId() {
+        return productCategoryId;
     }
 
     /**
-     * @param productClassifyId
+     * @param productCategoryId
      */
-    public void setProductClassifyId(Long productClassifyId) {
-        this.productClassifyId = productClassifyId;
+    public void setProductCategoryId(Long productCategoryId) {
+        this.productCategoryId = productCategoryId;
     }
 
     @Override
@@ -76,7 +77,7 @@ public class UmsMemberProductCategoryRelation implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", memberId=").append(memberId);
-        sb.append(", productClassifyId=").append(productClassifyId);
+        sb.append(", productCategoryId=").append(productCategoryId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

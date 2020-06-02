@@ -114,6 +114,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         //设置过期时间，24小时
         jedis.expire(username,86400);
         jedis.close();  //用完还是需要关闭的
+
         return token;
     }
 

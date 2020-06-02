@@ -105,63 +105,63 @@ public class UmsAdminExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAdminIdIsNull() {
-            addCriterion("admin_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdIsNotNull() {
-            addCriterion("admin_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdEqualTo(Long value) {
-            addCriterion("admin_id =", value, "adminId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdNotEqualTo(Long value) {
-            addCriterion("admin_id <>", value, "adminId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdGreaterThan(Long value) {
-            addCriterion("admin_id >", value, "adminId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("admin_id >=", value, "adminId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdLessThan(Long value) {
-            addCriterion("admin_id <", value, "adminId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdLessThanOrEqualTo(Long value) {
-            addCriterion("admin_id <=", value, "adminId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdIn(List<Long> values) {
-            addCriterion("admin_id in", values, "adminId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdNotIn(List<Long> values) {
-            addCriterion("admin_id not in", values, "adminId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdBetween(Long value1, Long value2) {
-            addCriterion("admin_id between", value1, value2, "adminId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAdminIdNotBetween(Long value1, Long value2) {
-            addCriterion("admin_id not between", value1, value2, "adminId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 

@@ -6,14 +6,16 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="member_level_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="growth_point_low" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="growth_point_high" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="growth_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="default_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="free_freight_ticket" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="free_freight_point" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="comment_growth_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="priviledge_free_freight" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="priviledge_sign_in" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="priviledge_comment" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="priviledge_promotion" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="priviledge_member_price" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="priviledge_birthday" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -23,8 +25,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    member_level_id, name, growth_point_low, growth_point_high, default_status, free_freight_ticket, 
-    comment_growth_point, priviledge_comment, priviledge_member_price, priviledge_birthday, 
-    note
+    id, name, growth_point, default_status, free_freight_point, comment_growth_point, 
+    priviledge_free_freight, priviledge_sign_in, priviledge_comment, priviledge_promotion, 
+    priviledge_member_price, priviledge_birthday, note
   </sql>
 </mapper>

@@ -105,63 +105,63 @@ public class OmsOrderReturnReasonExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andOrderReturnReasonIdIsNull() {
-            addCriterion("order_return_reason_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdIsNotNull() {
-            addCriterion("order_return_reason_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdEqualTo(Long value) {
-            addCriterion("order_return_reason_id =", value, "orderReturnReasonId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdNotEqualTo(Long value) {
-            addCriterion("order_return_reason_id <>", value, "orderReturnReasonId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdGreaterThan(Long value) {
-            addCriterion("order_return_reason_id >", value, "orderReturnReasonId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("order_return_reason_id >=", value, "orderReturnReasonId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdLessThan(Long value) {
-            addCriterion("order_return_reason_id <", value, "orderReturnReasonId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdLessThanOrEqualTo(Long value) {
-            addCriterion("order_return_reason_id <=", value, "orderReturnReasonId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdIn(List<Long> values) {
-            addCriterion("order_return_reason_id in", values, "orderReturnReasonId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdNotIn(List<Long> values) {
-            addCriterion("order_return_reason_id not in", values, "orderReturnReasonId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdBetween(Long value1, Long value2) {
-            addCriterion("order_return_reason_id between", value1, value2, "orderReturnReasonId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andOrderReturnReasonIdNotBetween(Long value1, Long value2) {
-            addCriterion("order_return_reason_id not between", value1, value2, "orderReturnReasonId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -235,63 +235,123 @@ public class OmsOrderReturnReasonExample {
             return (Criteria) this;
         }
 
-        public Criteria andStausIsNull() {
-            addCriterion("staus is null");
+        public Criteria andSortIsNull() {
+            addCriterion("sort is null");
             return (Criteria) this;
         }
 
-        public Criteria andStausIsNotNull() {
-            addCriterion("staus is not null");
+        public Criteria andSortIsNotNull() {
+            addCriterion("sort is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStausEqualTo(Integer value) {
-            addCriterion("staus =", value, "staus");
+        public Criteria andSortEqualTo(Integer value) {
+            addCriterion("sort =", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausNotEqualTo(Integer value) {
-            addCriterion("staus <>", value, "staus");
+        public Criteria andSortNotEqualTo(Integer value) {
+            addCriterion("sort <>", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausGreaterThan(Integer value) {
-            addCriterion("staus >", value, "staus");
+        public Criteria andSortGreaterThan(Integer value) {
+            addCriterion("sort >", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausGreaterThanOrEqualTo(Integer value) {
-            addCriterion("staus >=", value, "staus");
+        public Criteria andSortGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sort >=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausLessThan(Integer value) {
-            addCriterion("staus <", value, "staus");
+        public Criteria andSortLessThan(Integer value) {
+            addCriterion("sort <", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausLessThanOrEqualTo(Integer value) {
-            addCriterion("staus <=", value, "staus");
+        public Criteria andSortLessThanOrEqualTo(Integer value) {
+            addCriterion("sort <=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausIn(List<Integer> values) {
-            addCriterion("staus in", values, "staus");
+        public Criteria andSortIn(List<Integer> values) {
+            addCriterion("sort in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausNotIn(List<Integer> values) {
-            addCriterion("staus not in", values, "staus");
+        public Criteria andSortNotIn(List<Integer> values) {
+            addCriterion("sort not in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausBetween(Integer value1, Integer value2) {
-            addCriterion("staus between", value1, value2, "staus");
+        public Criteria andSortBetween(Integer value1, Integer value2) {
+            addCriterion("sort between", value1, value2, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andStausNotBetween(Integer value1, Integer value2) {
-            addCriterion("staus not between", value1, value2, "staus");
+        public Criteria andSortNotBetween(Integer value1, Integer value2) {
+            addCriterion("sort not between", value1, value2, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusEqualTo(Integer value) {
+            addCriterion("status =", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotEqualTo(Integer value) {
+            addCriterion("status <>", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThan(Integer value) {
+            addCriterion("status >", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("status >=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThan(Integer value) {
+            addCriterion("status <", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("status <=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIn(List<Integer> values) {
+            addCriterion("status in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotIn(List<Integer> values) {
+            addCriterion("status not in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
+            addCriterion("status between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
 

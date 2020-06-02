@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "oms_company_address")
 public class OmsCompanyAddress implements Serializable {
     @Id
-    @Column(name = "address_id")
-    private Long addressId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 地址名称
@@ -22,18 +22,18 @@ public class OmsCompanyAddress implements Serializable {
     private Integer sendStatus;
 
     /**
-     * 是否默认收货地址:0->否;1->是
+     * 是否默认收货地址：0->否；1->是
      */
     @Column(name = "receive_status")
     private Integer receiveStatus;
 
     /**
-     * 收发货姓名
+     * 收发货人姓名
      */
     private String name;
 
     /**
-     * 收发货电话
+     * 收货人电话
      */
     private String phone;
 
@@ -60,8 +60,8 @@ public class OmsCompanyAddress implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OmsCompanyAddress(Long addressId, String addressName, Integer sendStatus, Integer receiveStatus, String name, String phone, String province, String city, String region, String detailAddress) {
-        this.addressId = addressId;
+    public OmsCompanyAddress(Long id, String addressName, Integer sendStatus, Integer receiveStatus, String name, String phone, String province, String city, String region, String detailAddress) {
+        this.id = id;
         this.addressName = addressName;
         this.sendStatus = sendStatus;
         this.receiveStatus = receiveStatus;
@@ -78,17 +78,17 @@ public class OmsCompanyAddress implements Serializable {
     }
 
     /**
-     * @return address_id
+     * @return id
      */
-    public Long getAddressId() {
-        return addressId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param addressId
+     * @param id
      */
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -128,54 +128,54 @@ public class OmsCompanyAddress implements Serializable {
     }
 
     /**
-     * 获取是否默认收货地址:0->否;1->是
+     * 获取是否默认收货地址：0->否；1->是
      *
-     * @return receive_status - 是否默认收货地址:0->否;1->是
+     * @return receive_status - 是否默认收货地址：0->否；1->是
      */
     public Integer getReceiveStatus() {
         return receiveStatus;
     }
 
     /**
-     * 设置是否默认收货地址:0->否;1->是
+     * 设置是否默认收货地址：0->否；1->是
      *
-     * @param receiveStatus 是否默认收货地址:0->否;1->是
+     * @param receiveStatus 是否默认收货地址：0->否；1->是
      */
     public void setReceiveStatus(Integer receiveStatus) {
         this.receiveStatus = receiveStatus;
     }
 
     /**
-     * 获取收发货姓名
+     * 获取收发货人姓名
      *
-     * @return name - 收发货姓名
+     * @return name - 收发货人姓名
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置收发货姓名
+     * 设置收发货人姓名
      *
-     * @param name 收发货姓名
+     * @param name 收发货人姓名
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * 获取收发货电话
+     * 获取收货人电话
      *
-     * @return phone - 收发货电话
+     * @return phone - 收货人电话
      */
     public String getPhone() {
         return phone;
     }
 
     /**
-     * 设置收发货电话
+     * 设置收货人电话
      *
-     * @param phone 收发货电话
+     * @param phone 收货人电话
      */
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
@@ -259,7 +259,7 @@ public class OmsCompanyAddress implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", addressId=").append(addressId);
+        sb.append(", id=").append(id);
         sb.append(", addressName=").append(addressName);
         sb.append(", sendStatus=").append(sendStatus);
         sb.append(", receiveStatus=").append(receiveStatus);

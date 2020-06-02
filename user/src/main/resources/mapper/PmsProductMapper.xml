@@ -6,41 +6,44 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="feight_template_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pic" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="reference_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="growth_value" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="member_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="point_limit" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="publish_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="new_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="recommand_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="service" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="discount_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="freight_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="member_price" javaType="java.lang.Long" jdbcType="DECIMAL" />
-      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="check_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="sales" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="verify_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sale" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="promotion_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="gift_growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="gift_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_point_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sub_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="original_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="preview_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="service_ids" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="album" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="album_pics" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="detail_title" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="sale_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="sale_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="sale_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="product_classify_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="promotion_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="promotion_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="promotion_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="promotion_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_category_name" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsProduct">
@@ -48,43 +51,46 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="product_classify_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="feight_template_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_attribute_category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pic" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="reference_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="growth_value" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="member_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="point_limit" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="publish_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="new_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="recommand_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="service" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="discount_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="product_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="freight_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="member_price" javaType="java.lang.Long" jdbcType="DECIMAL" />
-      <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="check_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="sales" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="verify_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sale" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="promotion_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="gift_growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="gift_point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_point_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sub_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="original_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="low_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="unit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="preview_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="service_ids" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="keywords" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="album" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="album_pics" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="detail_title" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="sale_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="sale_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="sale_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="product_classify_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="promotion_start_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="promotion_end_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="promotion_per_limit" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="promotion_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="brand_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_category_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
-      <arg column="detail_description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+      <arg column="detail_desc" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
       <arg column="detail_html" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
       <arg column="detail_mobile_html" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
     </constructor>
@@ -93,16 +99,17 @@
     <!--
       WARNING - @mbg.generated
     -->
-    product_id, product_classify_id,product_attribute_category_id, name, keywords, brand_id, product_sn, reference_price,
-    price, stock, low_stock, weight, unit, growth_value, member_point, point_limit, publish_status, 
-    new_status, recommand_status, service, discount_type, product_pic, freight_id, member_price, 
-    delete_status, check_status, sales, note, album, detail_title, sale_start_time, sale_end_time, 
-    sale_per_limit, product_classify_name, brand_name
+    id, brand_id, product_category_id, feight_template_id, product_attribute_category_id, 
+    name, pic, product_sn, delete_status, publish_status, new_status, recommand_status, 
+    verify_status, sort, sale, price, promotion_price, gift_growth, gift_point, use_point_limit, 
+    sub_title, original_price, stock, low_stock, unit, weight, preview_status, service_ids, 
+    keywords, note, album_pics, detail_title, promotion_start_time, promotion_end_time, 
+    promotion_per_limit, promotion_type, brand_name, product_category_name
   </sql>
   <sql id="Blob_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    description, detail_description, detail_html, detail_mobile_html
+    description, detail_desc, detail_html, detail_mobile_html
   </sql>
 </mapper>

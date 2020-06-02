@@ -1,30 +1,19 @@
 package com.zhiqiang.mall.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.*;
 
 @Table(name = "ums_member_level")
 public class UmsMemberLevel implements Serializable {
     @Id
-    @Column(name = "member_level_id")
-    private Long memberLevelId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 名称
-     */
     private String name;
 
-    /**
-     * 最低成长值
-     */
-    @Column(name = "growth_point_low")
-    private Integer growthPointLow;
-
-    /**
-     * 最高成长值
-     */
-    @Column(name = "growth_point_high")
-    private Integer growthPointHigh;
+    @Column(name = "growth_point")
+    private Integer growthPoint;
 
     /**
      * 是否为默认等级：0->不是；1->是
@@ -33,10 +22,10 @@ public class UmsMemberLevel implements Serializable {
     private Integer defaultStatus;
 
     /**
-     * 免运费券数量
+     * 免运费标准
      */
-    @Column(name = "free_freight_ticket")
-    private Integer freeFreightTicket;
+    @Column(name = "free_freight_point")
+    private BigDecimal freeFreightPoint;
 
     /**
      * 每次评价获取的成长值
@@ -45,10 +34,28 @@ public class UmsMemberLevel implements Serializable {
     private Integer commentGrowthPoint;
 
     /**
+     * 是否有免邮特权
+     */
+    @Column(name = "priviledge_free_freight")
+    private Integer priviledgeFreeFreight;
+
+    /**
+     * 是否有签到特权
+     */
+    @Column(name = "priviledge_sign_in")
+    private Integer priviledgeSignIn;
+
+    /**
      * 是否有评论获奖励特权
      */
     @Column(name = "priviledge_comment")
     private Integer priviledgeComment;
+
+    /**
+     * 是否有专享活动特权
+     */
+    @Column(name = "priviledge_promotion")
+    private Integer priviledgePromotion;
 
     /**
      * 是否有会员价格特权
@@ -66,15 +73,17 @@ public class UmsMemberLevel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public UmsMemberLevel(Long memberLevelId, String name, Integer growthPointLow, Integer growthPointHigh, Integer defaultStatus, Integer freeFreightTicket, Integer commentGrowthPoint, Integer priviledgeComment, Integer priviledgeMemberPrice, Integer priviledgeBirthday, String note) {
-        this.memberLevelId = memberLevelId;
+    public UmsMemberLevel(Long id, String name, Integer growthPoint, Integer defaultStatus, BigDecimal freeFreightPoint, Integer commentGrowthPoint, Integer priviledgeFreeFreight, Integer priviledgeSignIn, Integer priviledgeComment, Integer priviledgePromotion, Integer priviledgeMemberPrice, Integer priviledgeBirthday, String note) {
+        this.id = id;
         this.name = name;
-        this.growthPointLow = growthPointLow;
-        this.growthPointHigh = growthPointHigh;
+        this.growthPoint = growthPoint;
         this.defaultStatus = defaultStatus;
-        this.freeFreightTicket = freeFreightTicket;
+        this.freeFreightPoint = freeFreightPoint;
         this.commentGrowthPoint = commentGrowthPoint;
+        this.priviledgeFreeFreight = priviledgeFreeFreight;
+        this.priviledgeSignIn = priviledgeSignIn;
         this.priviledgeComment = priviledgeComment;
+        this.priviledgePromotion = priviledgePromotion;
         this.priviledgeMemberPrice = priviledgeMemberPrice;
         this.priviledgeBirthday = priviledgeBirthday;
         this.note = note;
@@ -85,71 +94,45 @@ public class UmsMemberLevel implements Serializable {
     }
 
     /**
-     * @return member_level_id
+     * @return id
      */
-    public Long getMemberLevelId() {
-        return memberLevelId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param memberLevelId
+     * @param id
      */
-    public void setMemberLevelId(Long memberLevelId) {
-        this.memberLevelId = memberLevelId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取名称
-     *
-     * @return name - 名称
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置名称
-     *
-     * @param name 名称
+     * @param name
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * 获取最低成长值
-     *
-     * @return growth_point_low - 最低成长值
+     * @return growth_point
      */
-    public Integer getGrowthPointLow() {
-        return growthPointLow;
+    public Integer getGrowthPoint() {
+        return growthPoint;
     }
 
     /**
-     * 设置最低成长值
-     *
-     * @param growthPointLow 最低成长值
+     * @param growthPoint
      */
-    public void setGrowthPointLow(Integer growthPointLow) {
-        this.growthPointLow = growthPointLow;
-    }
-
-    /**
-     * 获取最高成长值
-     *
-     * @return growth_point_high - 最高成长值
-     */
-    public Integer getGrowthPointHigh() {
-        return growthPointHigh;
-    }
-
-    /**
-     * 设置最高成长值
-     *
-     * @param growthPointHigh 最高成长值
-     */
-    public void setGrowthPointHigh(Integer growthPointHigh) {
-        this.growthPointHigh = growthPointHigh;
+    public void setGrowthPoint(Integer growthPoint) {
+        this.growthPoint = growthPoint;
     }
 
     /**
@@ -171,21 +154,21 @@ public class UmsMemberLevel implements Serializable {
     }
 
     /**
-     * 获取免运费券数量
+     * 获取免运费标准
      *
-     * @return free_freight_ticket - 免运费券数量
+     * @return free_freight_point - 免运费标准
      */
-    public Integer getFreeFreightTicket() {
-        return freeFreightTicket;
+    public BigDecimal getFreeFreightPoint() {
+        return freeFreightPoint;
     }
 
     /**
-     * 设置免运费券数量
+     * 设置免运费标准
      *
-     * @param freeFreightTicket 免运费券数量
+     * @param freeFreightPoint 免运费标准
      */
-    public void setFreeFreightTicket(Integer freeFreightTicket) {
-        this.freeFreightTicket = freeFreightTicket;
+    public void setFreeFreightPoint(BigDecimal freeFreightPoint) {
+        this.freeFreightPoint = freeFreightPoint;
     }
 
     /**
@@ -207,6 +190,42 @@ public class UmsMemberLevel implements Serializable {
     }
 
     /**
+     * 获取是否有免邮特权
+     *
+     * @return priviledge_free_freight - 是否有免邮特权
+     */
+    public Integer getPriviledgeFreeFreight() {
+        return priviledgeFreeFreight;
+    }
+
+    /**
+     * 设置是否有免邮特权
+     *
+     * @param priviledgeFreeFreight 是否有免邮特权
+     */
+    public void setPriviledgeFreeFreight(Integer priviledgeFreeFreight) {
+        this.priviledgeFreeFreight = priviledgeFreeFreight;
+    }
+
+    /**
+     * 获取是否有签到特权
+     *
+     * @return priviledge_sign_in - 是否有签到特权
+     */
+    public Integer getPriviledgeSignIn() {
+        return priviledgeSignIn;
+    }
+
+    /**
+     * 设置是否有签到特权
+     *
+     * @param priviledgeSignIn 是否有签到特权
+     */
+    public void setPriviledgeSignIn(Integer priviledgeSignIn) {
+        this.priviledgeSignIn = priviledgeSignIn;
+    }
+
+    /**
      * 获取是否有评论获奖励特权
      *
      * @return priviledge_comment - 是否有评论获奖励特权
@@ -222,6 +241,24 @@ public class UmsMemberLevel implements Serializable {
      */
     public void setPriviledgeComment(Integer priviledgeComment) {
         this.priviledgeComment = priviledgeComment;
+    }
+
+    /**
+     * 获取是否有专享活动特权
+     *
+     * @return priviledge_promotion - 是否有专享活动特权
+     */
+    public Integer getPriviledgePromotion() {
+        return priviledgePromotion;
+    }
+
+    /**
+     * 设置是否有专享活动特权
+     *
+     * @param priviledgePromotion 是否有专享活动特权
+     */
+    public void setPriviledgePromotion(Integer priviledgePromotion) {
+        this.priviledgePromotion = priviledgePromotion;
     }
 
     /**
@@ -280,14 +317,16 @@ public class UmsMemberLevel implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", memberLevelId=").append(memberLevelId);
+        sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", growthPointLow=").append(growthPointLow);
-        sb.append(", growthPointHigh=").append(growthPointHigh);
+        sb.append(", growthPoint=").append(growthPoint);
         sb.append(", defaultStatus=").append(defaultStatus);
-        sb.append(", freeFreightTicket=").append(freeFreightTicket);
+        sb.append(", freeFreightPoint=").append(freeFreightPoint);
         sb.append(", commentGrowthPoint=").append(commentGrowthPoint);
+        sb.append(", priviledgeFreeFreight=").append(priviledgeFreeFreight);
+        sb.append(", priviledgeSignIn=").append(priviledgeSignIn);
         sb.append(", priviledgeComment=").append(priviledgeComment);
+        sb.append(", priviledgePromotion=").append(priviledgePromotion);
         sb.append(", priviledgeMemberPrice=").append(priviledgeMemberPrice);
         sb.append(", priviledgeBirthday=").append(priviledgeBirthday);
         sb.append(", note=").append(note);

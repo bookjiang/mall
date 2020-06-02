@@ -7,29 +7,15 @@ import javax.persistence.*;
 @Table(name = "sms_coupon_history")
 public class SmsCouponHistory implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * 优惠券id
-     */
     @Column(name = "coupon_id")
     private Long couponId;
 
-    /**
-     * 会员id
-     */
     @Column(name = "member_id")
     private Long memberId;
 
-    /**
-     * 订单id
-     */
-    @Column(name = "order_id")
-    private Long orderId;
-
-    /**
-     * 优惠券码
-     */
     @Column(name = "coupon_code")
     private String couponCode;
 
@@ -45,9 +31,6 @@ public class SmsCouponHistory implements Serializable {
     @Column(name = "get_type")
     private Integer getType;
 
-    /**
-     * 创建时间
-     */
     @Column(name = "create_time")
     private Date createTime;
 
@@ -64,6 +47,12 @@ public class SmsCouponHistory implements Serializable {
     private Date useTime;
 
     /**
+     * 订单编号
+     */
+    @Column(name = "order_id")
+    private Long orderId;
+
+    /**
      * 订单号码
      */
     @Column(name = "order_sn")
@@ -71,17 +60,17 @@ public class SmsCouponHistory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public SmsCouponHistory(Long id, Long couponId, Long memberId, Long orderId, String couponCode, String memberNickname, Integer getType, Date createTime, Integer useStatus, Date useTime, String orderSn) {
+    public SmsCouponHistory(Long id, Long couponId, Long memberId, String couponCode, String memberNickname, Integer getType, Date createTime, Integer useStatus, Date useTime, Long orderId, String orderSn) {
         this.id = id;
         this.couponId = couponId;
         this.memberId = memberId;
-        this.orderId = orderId;
         this.couponCode = couponCode;
         this.memberNickname = memberNickname;
         this.getType = getType;
         this.createTime = createTime;
         this.useStatus = useStatus;
         this.useTime = useTime;
+        this.orderId = orderId;
         this.orderSn = orderSn;
     }
 
@@ -104,72 +93,42 @@ public class SmsCouponHistory implements Serializable {
     }
 
     /**
-     * 获取优惠券id
-     *
-     * @return coupon_id - 优惠券id
+     * @return coupon_id
      */
     public Long getCouponId() {
         return couponId;
     }
 
     /**
-     * 设置优惠券id
-     *
-     * @param couponId 优惠券id
+     * @param couponId
      */
     public void setCouponId(Long couponId) {
         this.couponId = couponId;
     }
 
     /**
-     * 获取会员id
-     *
-     * @return member_id - 会员id
+     * @return member_id
      */
     public Long getMemberId() {
         return memberId;
     }
 
     /**
-     * 设置会员id
-     *
-     * @param memberId 会员id
+     * @param memberId
      */
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
 
     /**
-     * 获取订单id
-     *
-     * @return order_id - 订单id
-     */
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    /**
-     * 设置订单id
-     *
-     * @param orderId 订单id
-     */
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    /**
-     * 获取优惠券码
-     *
-     * @return coupon_code - 优惠券码
+     * @return coupon_code
      */
     public String getCouponCode() {
         return couponCode;
     }
 
     /**
-     * 设置优惠券码
-     *
-     * @param couponCode 优惠券码
+     * @param couponCode
      */
     public void setCouponCode(String couponCode) {
         this.couponCode = couponCode == null ? null : couponCode.trim();
@@ -212,18 +171,14 @@ public class SmsCouponHistory implements Serializable {
     }
 
     /**
-     * 获取创建时间
-     *
-     * @return create_time - 创建时间
+     * @return create_time
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 设置创建时间
-     *
-     * @param createTime 创建时间
+     * @param createTime
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
@@ -266,6 +221,24 @@ public class SmsCouponHistory implements Serializable {
     }
 
     /**
+     * 获取订单编号
+     *
+     * @return order_id - 订单编号
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    /**
+     * 设置订单编号
+     *
+     * @param orderId 订单编号
+     */
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    /**
      * 获取订单号码
      *
      * @return order_sn - 订单号码
@@ -292,13 +265,13 @@ public class SmsCouponHistory implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", couponId=").append(couponId);
         sb.append(", memberId=").append(memberId);
-        sb.append(", orderId=").append(orderId);
         sb.append(", couponCode=").append(couponCode);
         sb.append(", memberNickname=").append(memberNickname);
         sb.append(", getType=").append(getType);
         sb.append(", createTime=").append(createTime);
         sb.append(", useStatus=").append(useStatus);
         sb.append(", useTime=").append(useTime);
+        sb.append(", orderId=").append(orderId);
         sb.append(", orderSn=").append(orderSn);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

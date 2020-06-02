@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="coupon_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="order_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -16,17 +16,17 @@
       <arg column="pay_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="freight_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="promotion_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
-      <arg column="points_discount_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="integration_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="coupon_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="discount_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="pay_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="source_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="order_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="logistics_company" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="logistics_num" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="delivery_company" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="delivery_sn" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="auto_confirm_day" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="get_points" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="integration" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="growth" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="promotion_info" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="bill_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
@@ -36,7 +36,7 @@
       <arg column="bill_receiver_email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="receiver_postcode" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiver_post_code" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_province" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_city" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_region" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -44,10 +44,10 @@
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="confirm_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="delete_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="pay_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="use_points" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="use_integration" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payment_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="delivery_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="receiver_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="receive_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="comment_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
@@ -56,13 +56,12 @@
     <!--
       WARNING - @mbg.generated
     -->
-    order_id, member_id, coupon_id, order_sn, create_time, member_username, total_amount, 
-    pay_amount, freight_amount, promotion_amount, points_discount_amount, coupon_amount, 
-    discount_amount, pay_type, source_type, status, order_type, logistics_company, logistics_num, 
-    auto_confirm_day, get_points, growth, promotion_info, bill_type, bill_header, bill_content, 
-    bill_receiver_phone, bill_receiver_email, receiver_name, receiver_phone, receiver_postcode, 
-    receiver_province, receiver_city, receiver_region, receiver_detail_address, note, 
-    confirm_status, delete_status, pay_time, use_points, delivery_time, receiver_time, 
-    comment_time, modify_time
+    id, member_id, coupon_id, order_sn, create_time, member_username, total_amount, pay_amount, 
+    freight_amount, promotion_amount, integration_amount, coupon_amount, discount_amount, 
+    pay_type, source_type, status, order_type, delivery_company, delivery_sn, auto_confirm_day, 
+    integration, growth, promotion_info, bill_type, bill_header, bill_content, bill_receiver_phone, 
+    bill_receiver_email, receiver_name, receiver_phone, receiver_post_code, receiver_province, 
+    receiver_city, receiver_region, receiver_detail_address, note, confirm_status, delete_status, 
+    use_integration, payment_time, delivery_time, receive_time, comment_time, modify_time
   </sql>
 </mapper>

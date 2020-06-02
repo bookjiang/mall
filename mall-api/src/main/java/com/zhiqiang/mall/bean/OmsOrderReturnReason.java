@@ -7,18 +7,20 @@ import javax.persistence.*;
 @Table(name = "oms_order_return_reason")
 public class OmsOrderReturnReason implements Serializable {
     @Id
-    @Column(name = "order_return_reason_id")
-    private Long orderReturnReasonId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
-     * 原因
+     * 退货类型
      */
     private String name;
 
+    private Integer sort;
+
     /**
-     * 是否显示:0->不显示；1->显示
+     * 状态：0->不启用；1->启用
      */
-    private Integer staus;
+    private Integer status;
 
     /**
      * 添加时间
@@ -28,10 +30,11 @@ public class OmsOrderReturnReason implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OmsOrderReturnReason(Long orderReturnReasonId, String name, Integer staus, Date createTime) {
-        this.orderReturnReasonId = orderReturnReasonId;
+    public OmsOrderReturnReason(Long id, String name, Integer sort, Integer status, Date createTime) {
+        this.id = id;
         this.name = name;
-        this.staus = staus;
+        this.sort = sort;
+        this.status = status;
         this.createTime = createTime;
     }
 
@@ -40,53 +43,67 @@ public class OmsOrderReturnReason implements Serializable {
     }
 
     /**
-     * @return order_return_reason_id
+     * @return id
      */
-    public Long getOrderReturnReasonId() {
-        return orderReturnReasonId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param orderReturnReasonId
+     * @param id
      */
-    public void setOrderReturnReasonId(Long orderReturnReasonId) {
-        this.orderReturnReasonId = orderReturnReasonId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取原因
+     * 获取退货类型
      *
-     * @return name - 原因
+     * @return name - 退货类型
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置原因
+     * 设置退货类型
      *
-     * @param name 原因
+     * @param name 退货类型
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * 获取是否显示:0->不显示；1->显示
-     *
-     * @return staus - 是否显示:0->不显示；1->显示
+     * @return sort
      */
-    public Integer getStaus() {
-        return staus;
+    public Integer getSort() {
+        return sort;
     }
 
     /**
-     * 设置是否显示:0->不显示；1->显示
-     *
-     * @param staus 是否显示:0->不显示；1->显示
+     * @param sort
      */
-    public void setStaus(Integer staus) {
-        this.staus = staus;
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    /**
+     * 获取状态：0->不启用；1->启用
+     *
+     * @return status - 状态：0->不启用；1->启用
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     * 设置状态：0->不启用；1->启用
+     *
+     * @param status 状态：0->不启用；1->启用
+     */
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     /**
@@ -113,9 +130,10 @@ public class OmsOrderReturnReason implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderReturnReasonId=").append(orderReturnReasonId);
+        sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", staus=").append(staus);
+        sb.append(", sort=").append(sort);
+        sb.append(", status=").append(status);
         sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

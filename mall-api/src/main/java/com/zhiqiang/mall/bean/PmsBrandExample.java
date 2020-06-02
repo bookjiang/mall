@@ -104,63 +104,63 @@ public class PmsBrandExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andBrandIdIsNull() {
-            addCriterion("brand_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdIsNotNull() {
-            addCriterion("brand_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdEqualTo(Long value) {
-            addCriterion("brand_id =", value, "brandId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdNotEqualTo(Long value) {
-            addCriterion("brand_id <>", value, "brandId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdGreaterThan(Long value) {
-            addCriterion("brand_id >", value, "brandId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("brand_id >=", value, "brandId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdLessThan(Long value) {
-            addCriterion("brand_id <", value, "brandId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdLessThanOrEqualTo(Long value) {
-            addCriterion("brand_id <=", value, "brandId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdIn(List<Long> values) {
-            addCriterion("brand_id in", values, "brandId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdNotIn(List<Long> values) {
-            addCriterion("brand_id not in", values, "brandId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdBetween(Long value1, Long value2) {
-            addCriterion("brand_id between", value1, value2, "brandId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andBrandIdNotBetween(Long value1, Long value2) {
-            addCriterion("brand_id not between", value1, value2, "brandId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -231,6 +231,196 @@ public class PmsBrandExample {
 
         public Criteria andNameNotBetween(String value1, String value2) {
             addCriterion("name not between", value1, value2, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterIsNull() {
+            addCriterion("first_letter is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterIsNotNull() {
+            addCriterion("first_letter is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterEqualTo(String value) {
+            addCriterion("first_letter =", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterNotEqualTo(String value) {
+            addCriterion("first_letter <>", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterGreaterThan(String value) {
+            addCriterion("first_letter >", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterGreaterThanOrEqualTo(String value) {
+            addCriterion("first_letter >=", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterLessThan(String value) {
+            addCriterion("first_letter <", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterLessThanOrEqualTo(String value) {
+            addCriterion("first_letter <=", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterLike(String value) {
+            addCriterion("first_letter like", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterNotLike(String value) {
+            addCriterion("first_letter not like", value, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterIn(List<String> values) {
+            addCriterion("first_letter in", values, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterNotIn(List<String> values) {
+            addCriterion("first_letter not in", values, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterBetween(String value1, String value2) {
+            addCriterion("first_letter between", value1, value2, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFirstLetterNotBetween(String value1, String value2) {
+            addCriterion("first_letter not between", value1, value2, "firstLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortIsNull() {
+            addCriterion("sort is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortIsNotNull() {
+            addCriterion("sort is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortEqualTo(Integer value) {
+            addCriterion("sort =", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortNotEqualTo(Integer value) {
+            addCriterion("sort <>", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortGreaterThan(Integer value) {
+            addCriterion("sort >", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sort >=", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortLessThan(Integer value) {
+            addCriterion("sort <", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortLessThanOrEqualTo(Integer value) {
+            addCriterion("sort <=", value, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortIn(List<Integer> values) {
+            addCriterion("sort in", values, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortNotIn(List<Integer> values) {
+            addCriterion("sort not in", values, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortBetween(Integer value1, Integer value2) {
+            addCriterion("sort between", value1, value2, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andSortNotBetween(Integer value1, Integer value2) {
+            addCriterion("sort not between", value1, value2, "sort");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusIsNull() {
+            addCriterion("factory_status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusIsNotNull() {
+            addCriterion("factory_status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusEqualTo(Integer value) {
+            addCriterion("factory_status =", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusNotEqualTo(Integer value) {
+            addCriterion("factory_status <>", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusGreaterThan(Integer value) {
+            addCriterion("factory_status >", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("factory_status >=", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusLessThan(Integer value) {
+            addCriterion("factory_status <", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("factory_status <=", value, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusIn(List<Integer> values) {
+            addCriterion("factory_status in", values, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusNotIn(List<Integer> values) {
+            addCriterion("factory_status not in", values, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusBetween(Integer value1, Integer value2) {
+            addCriterion("factory_status between", value1, value2, "factoryStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andFactoryStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("factory_status not between", value1, value2, "factoryStatus");
             return (Criteria) this;
         }
 
@@ -484,133 +674,73 @@ public class PmsBrandExample {
             return (Criteria) this;
         }
 
-        public Criteria andFactoryIsNull() {
-            addCriterion("factory is null");
+        public Criteria andBigPicIsNull() {
+            addCriterion("big_pic is null");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryIsNotNull() {
-            addCriterion("factory is not null");
+        public Criteria andBigPicIsNotNull() {
+            addCriterion("big_pic is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryEqualTo(Integer value) {
-            addCriterion("factory =", value, "factory");
+        public Criteria andBigPicEqualTo(String value) {
+            addCriterion("big_pic =", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryNotEqualTo(Integer value) {
-            addCriterion("factory <>", value, "factory");
+        public Criteria andBigPicNotEqualTo(String value) {
+            addCriterion("big_pic <>", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryGreaterThan(Integer value) {
-            addCriterion("factory >", value, "factory");
+        public Criteria andBigPicGreaterThan(String value) {
+            addCriterion("big_pic >", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryGreaterThanOrEqualTo(Integer value) {
-            addCriterion("factory >=", value, "factory");
+        public Criteria andBigPicGreaterThanOrEqualTo(String value) {
+            addCriterion("big_pic >=", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryLessThan(Integer value) {
-            addCriterion("factory <", value, "factory");
+        public Criteria andBigPicLessThan(String value) {
+            addCriterion("big_pic <", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryLessThanOrEqualTo(Integer value) {
-            addCriterion("factory <=", value, "factory");
+        public Criteria andBigPicLessThanOrEqualTo(String value) {
+            addCriterion("big_pic <=", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryIn(List<Integer> values) {
-            addCriterion("factory in", values, "factory");
+        public Criteria andBigPicLike(String value) {
+            addCriterion("big_pic like", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryNotIn(List<Integer> values) {
-            addCriterion("factory not in", values, "factory");
+        public Criteria andBigPicNotLike(String value) {
+            addCriterion("big_pic not like", value, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryBetween(Integer value1, Integer value2) {
-            addCriterion("factory between", value1, value2, "factory");
+        public Criteria andBigPicIn(List<String> values) {
+            addCriterion("big_pic in", values, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andFactoryNotBetween(Integer value1, Integer value2) {
-            addCriterion("factory not between", value1, value2, "factory");
+        public Criteria andBigPicNotIn(List<String> values) {
+            addCriterion("big_pic not in", values, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andPictureIsNull() {
-            addCriterion("picture is null");
+        public Criteria andBigPicBetween(String value1, String value2) {
+            addCriterion("big_pic between", value1, value2, "bigPic");
             return (Criteria) this;
         }
 
-        public Criteria andPictureIsNotNull() {
-            addCriterion("picture is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureEqualTo(String value) {
-            addCriterion("picture =", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureNotEqualTo(String value) {
-            addCriterion("picture <>", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureGreaterThan(String value) {
-            addCriterion("picture >", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureGreaterThanOrEqualTo(String value) {
-            addCriterion("picture >=", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureLessThan(String value) {
-            addCriterion("picture <", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureLessThanOrEqualTo(String value) {
-            addCriterion("picture <=", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureLike(String value) {
-            addCriterion("picture like", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureNotLike(String value) {
-            addCriterion("picture not like", value, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureIn(List<String> values) {
-            addCriterion("picture in", values, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureNotIn(List<String> values) {
-            addCriterion("picture not in", values, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureBetween(String value1, String value2) {
-            addCriterion("picture between", value1, value2, "picture");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureNotBetween(String value1, String value2) {
-            addCriterion("picture not between", value1, value2, "picture");
+        public Criteria andBigPicNotBetween(String value1, String value2) {
+            addCriterion("big_pic not between", value1, value2, "bigPic");
             return (Criteria) this;
         }
     }

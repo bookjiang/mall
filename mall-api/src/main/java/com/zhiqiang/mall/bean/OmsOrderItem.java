@@ -6,12 +6,9 @@ import javax.persistence.*;
 
 @Table(name = "oms_order_item")
 public class OmsOrderItem implements Serializable {
-    /**
-     * 订单商品条目id
-     */
     @Id
-    @Column(name = "order_item_id")
-    private Long orderItemId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 订单id
@@ -25,58 +22,26 @@ public class OmsOrderItem implements Serializable {
     @Column(name = "order_sn")
     private String orderSn;
 
-    /**
-     * 商品id
-     */
     @Column(name = "product_id")
     private Long productId;
 
-    /**
-     * 商品图片
-     */
     @Column(name = "product_pic")
     private String productPic;
 
-    /**
-     * 商品名称
-     */
     @Column(name = "product_name")
     private String productName;
 
-    /**
-     * 商品货号（条码）
-     */
+    @Column(name = "product_brand")
+    private String productBrand;
+
     @Column(name = "product_sn")
     private String productSn;
 
     /**
-     * 分类id
+     * 销售价格
      */
-    @Column(name = "product_classify_id")
-    private Long productClassifyId;
-
-    /**
-     * 商品品牌
-     */
-    @Column(name = "brand_name")
-    private String brandName;
-
-    /**
-     * sku编号
-     */
-    @Column(name = "sku_id")
-    private Long skuId;
-
-    /**
-     * sku条码
-     */
-    @Column(name = "sku_sn")
-    private Long skuSn;
-
-    /**
-     * sku价格
-     */
-    private BigDecimal price;
+    @Column(name = "product_price")
+    private BigDecimal productPrice;
 
     /**
      * 购买数量
@@ -85,77 +50,89 @@ public class OmsOrderItem implements Serializable {
     private Integer productQuantity;
 
     /**
-     * 商品促销信息
+     * 商品sku编号
      */
-    @Column(name = "promotion_info")
-    private String promotionInfo;
+    @Column(name = "product_sku_id")
+    private Long productSkuId;
 
     /**
-     * 单件商品促销金额
+     * 商品sku条码
+     */
+    @Column(name = "product_sku_code")
+    private String productSkuCode;
+
+    /**
+     * 商品分类id
+     */
+    @Column(name = "product_category_id")
+    private Long productCategoryId;
+
+    /**
+     * 商品促销名称
+     */
+    @Column(name = "promotion_name")
+    private String promotionName;
+
+    /**
+     * 商品促销分解金额
      */
     @Column(name = "promotion_amount")
     private BigDecimal promotionAmount;
 
     /**
-     * 单件商品优惠券金额
+     * 优惠券优惠分解金额
      */
     @Column(name = "coupon_amount")
     private BigDecimal couponAmount;
 
     /**
-     * 单件商品积分优惠金额
+     * 积分优惠分解金额
      */
-    @Column(name = "points_amount")
-    private BigDecimal pointsAmount;
+    @Column(name = "integration_amount")
+    private BigDecimal integrationAmount;
 
     /**
-     * 单件商品实际应付金额
+     * 该商品经过优惠后的分解金额
      */
     @Column(name = "real_amount")
     private BigDecimal realAmount;
 
-    /**
-     * 商品可获得积分
-     */
-    @Column(name = "get_points")
-    private Integer getPoints;
+    @Column(name = "gift_integration")
+    private Integer giftIntegration;
+
+    @Column(name = "gift_growth")
+    private Integer giftGrowth;
 
     /**
-     * 商品可获得成长值
+     * 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      */
-    @Column(name = "get_growth")
-    private Integer getGrowth;
-
-    /**
-     * 商品销售属性[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
-     */
-    @Column(name = "product_attribute")
-    private String productAttribute;
+    @Column(name = "product_attr")
+    private String productAttr;
 
     private static final long serialVersionUID = 1L;
 
-    public OmsOrderItem(Long orderItemId, Long orderId, String orderSn, Long productId, String productPic, String productName, String productSn, Long productClassifyId, String brandName, Long skuId, Long skuSn, BigDecimal price, Integer productQuantity, String promotionInfo, BigDecimal promotionAmount, BigDecimal couponAmount, BigDecimal pointsAmount, BigDecimal realAmount, Integer getPoints, Integer getGrowth, String productAttribute) {
-        this.orderItemId = orderItemId;
+    public OmsOrderItem(Long id, Long orderId, String orderSn, Long productId, String productPic, String productName, String productBrand, String productSn, BigDecimal productPrice, Integer productQuantity, Long productSkuId, String productSkuCode, Long productCategoryId, String promotionName, BigDecimal promotionAmount, BigDecimal couponAmount, BigDecimal integrationAmount, BigDecimal realAmount, Integer giftIntegration, Integer giftGrowth, String productAttr) {
+        this.id = id;
         this.orderId = orderId;
         this.orderSn = orderSn;
         this.productId = productId;
         this.productPic = productPic;
         this.productName = productName;
+        this.productBrand = productBrand;
         this.productSn = productSn;
-        this.productClassifyId = productClassifyId;
-        this.brandName = brandName;
-        this.skuId = skuId;
-        this.skuSn = skuSn;
-        this.price = price;
+        this.productPrice = productPrice;
         this.productQuantity = productQuantity;
-        this.promotionInfo = promotionInfo;
+        this.productSkuId = productSkuId;
+        this.productSkuCode = productSkuCode;
+        this.productCategoryId = productCategoryId;
+        this.promotionName = promotionName;
         this.promotionAmount = promotionAmount;
         this.couponAmount = couponAmount;
-        this.pointsAmount = pointsAmount;
+        this.integrationAmount = integrationAmount;
         this.realAmount = realAmount;
-        this.getPoints = getPoints;
-        this.getGrowth = getGrowth;
-        this.productAttribute = productAttribute;
+        this.giftIntegration = giftIntegration;
+        this.giftGrowth = giftGrowth;
+        this.productAttr = productAttr;
     }
 
     public OmsOrderItem() {
@@ -163,21 +140,17 @@ public class OmsOrderItem implements Serializable {
     }
 
     /**
-     * 获取订单商品条目id
-     *
-     * @return order_item_id - 订单商品条目id
+     * @return id
      */
-    public Long getOrderItemId() {
-        return orderItemId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * 设置订单商品条目id
-     *
-     * @param orderItemId 订单商品条目id
+     * @param id
      */
-    public void setOrderItemId(Long orderItemId) {
-        this.orderItemId = orderItemId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -217,165 +190,91 @@ public class OmsOrderItem implements Serializable {
     }
 
     /**
-     * 获取商品id
-     *
-     * @return product_id - 商品id
+     * @return product_id
      */
     public Long getProductId() {
         return productId;
     }
 
     /**
-     * 设置商品id
-     *
-     * @param productId 商品id
+     * @param productId
      */
     public void setProductId(Long productId) {
         this.productId = productId;
     }
 
     /**
-     * 获取商品图片
-     *
-     * @return product_pic - 商品图片
+     * @return product_pic
      */
     public String getProductPic() {
         return productPic;
     }
 
     /**
-     * 设置商品图片
-     *
-     * @param productPic 商品图片
+     * @param productPic
      */
     public void setProductPic(String productPic) {
         this.productPic = productPic == null ? null : productPic.trim();
     }
 
     /**
-     * 获取商品名称
-     *
-     * @return product_name - 商品名称
+     * @return product_name
      */
     public String getProductName() {
         return productName;
     }
 
     /**
-     * 设置商品名称
-     *
-     * @param productName 商品名称
+     * @param productName
      */
     public void setProductName(String productName) {
         this.productName = productName == null ? null : productName.trim();
     }
 
     /**
-     * 获取商品货号（条码）
-     *
-     * @return product_sn - 商品货号（条码）
+     * @return product_brand
+     */
+    public String getProductBrand() {
+        return productBrand;
+    }
+
+    /**
+     * @param productBrand
+     */
+    public void setProductBrand(String productBrand) {
+        this.productBrand = productBrand == null ? null : productBrand.trim();
+    }
+
+    /**
+     * @return product_sn
      */
     public String getProductSn() {
         return productSn;
     }
 
     /**
-     * 设置商品货号（条码）
-     *
-     * @param productSn 商品货号（条码）
+     * @param productSn
      */
     public void setProductSn(String productSn) {
         this.productSn = productSn == null ? null : productSn.trim();
     }
 
     /**
-     * 获取分类id
+     * 获取销售价格
      *
-     * @return product_classify_id - 分类id
+     * @return product_price - 销售价格
      */
-    public Long getProductClassifyId() {
-        return productClassifyId;
+    public BigDecimal getProductPrice() {
+        return productPrice;
     }
 
     /**
-     * 设置分类id
+     * 设置销售价格
      *
-     * @param productClassifyId 分类id
+     * @param productPrice 销售价格
      */
-    public void setProductClassifyId(Long productClassifyId) {
-        this.productClassifyId = productClassifyId;
-    }
-
-    /**
-     * 获取商品品牌
-     *
-     * @return brand_name - 商品品牌
-     */
-    public String getBrandName() {
-        return brandName;
-    }
-
-    /**
-     * 设置商品品牌
-     *
-     * @param brandName 商品品牌
-     */
-    public void setBrandName(String brandName) {
-        this.brandName = brandName == null ? null : brandName.trim();
-    }
-
-    /**
-     * 获取sku编号
-     *
-     * @return sku_id - sku编号
-     */
-    public Long getSkuId() {
-        return skuId;
-    }
-
-    /**
-     * 设置sku编号
-     *
-     * @param skuId sku编号
-     */
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
-    }
-
-    /**
-     * 获取sku条码
-     *
-     * @return sku_sn - sku条码
-     */
-    public Long getSkuSn() {
-        return skuSn;
-    }
-
-    /**
-     * 设置sku条码
-     *
-     * @param skuSn sku条码
-     */
-    public void setSkuSn(Long skuSn) {
-        this.skuSn = skuSn;
-    }
-
-    /**
-     * 获取sku价格
-     *
-     * @return price - sku价格
-     */
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    /**
-     * 设置sku价格
-     *
-     * @param price sku价格
-     */
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setProductPrice(BigDecimal productPrice) {
+        this.productPrice = productPrice;
     }
 
     /**
@@ -397,147 +296,193 @@ public class OmsOrderItem implements Serializable {
     }
 
     /**
-     * 获取商品促销信息
+     * 获取商品sku编号
      *
-     * @return promotion_info - 商品促销信息
+     * @return product_sku_id - 商品sku编号
      */
-    public String getPromotionInfo() {
-        return promotionInfo;
+    public Long getProductSkuId() {
+        return productSkuId;
     }
 
     /**
-     * 设置商品促销信息
+     * 设置商品sku编号
      *
-     * @param promotionInfo 商品促销信息
+     * @param productSkuId 商品sku编号
      */
-    public void setPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo == null ? null : promotionInfo.trim();
+    public void setProductSkuId(Long productSkuId) {
+        this.productSkuId = productSkuId;
     }
 
     /**
-     * 获取单件商品促销金额
+     * 获取商品sku条码
      *
-     * @return promotion_amount - 单件商品促销金额
+     * @return product_sku_code - 商品sku条码
+     */
+    public String getProductSkuCode() {
+        return productSkuCode;
+    }
+
+    /**
+     * 设置商品sku条码
+     *
+     * @param productSkuCode 商品sku条码
+     */
+    public void setProductSkuCode(String productSkuCode) {
+        this.productSkuCode = productSkuCode == null ? null : productSkuCode.trim();
+    }
+
+    /**
+     * 获取商品分类id
+     *
+     * @return product_category_id - 商品分类id
+     */
+    public Long getProductCategoryId() {
+        return productCategoryId;
+    }
+
+    /**
+     * 设置商品分类id
+     *
+     * @param productCategoryId 商品分类id
+     */
+    public void setProductCategoryId(Long productCategoryId) {
+        this.productCategoryId = productCategoryId;
+    }
+
+    /**
+     * 获取商品促销名称
+     *
+     * @return promotion_name - 商品促销名称
+     */
+    public String getPromotionName() {
+        return promotionName;
+    }
+
+    /**
+     * 设置商品促销名称
+     *
+     * @param promotionName 商品促销名称
+     */
+    public void setPromotionName(String promotionName) {
+        this.promotionName = promotionName == null ? null : promotionName.trim();
+    }
+
+    /**
+     * 获取商品促销分解金额
+     *
+     * @return promotion_amount - 商品促销分解金额
      */
     public BigDecimal getPromotionAmount() {
         return promotionAmount;
     }
 
     /**
-     * 设置单件商品促销金额
+     * 设置商品促销分解金额
      *
-     * @param promotionAmount 单件商品促销金额
+     * @param promotionAmount 商品促销分解金额
      */
     public void setPromotionAmount(BigDecimal promotionAmount) {
         this.promotionAmount = promotionAmount;
     }
 
     /**
-     * 获取单件商品优惠券金额
+     * 获取优惠券优惠分解金额
      *
-     * @return coupon_amount - 单件商品优惠券金额
+     * @return coupon_amount - 优惠券优惠分解金额
      */
     public BigDecimal getCouponAmount() {
         return couponAmount;
     }
 
     /**
-     * 设置单件商品优惠券金额
+     * 设置优惠券优惠分解金额
      *
-     * @param couponAmount 单件商品优惠券金额
+     * @param couponAmount 优惠券优惠分解金额
      */
     public void setCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
     }
 
     /**
-     * 获取单件商品积分优惠金额
+     * 获取积分优惠分解金额
      *
-     * @return points_amount - 单件商品积分优惠金额
+     * @return integration_amount - 积分优惠分解金额
      */
-    public BigDecimal getPointsAmount() {
-        return pointsAmount;
+    public BigDecimal getIntegrationAmount() {
+        return integrationAmount;
     }
 
     /**
-     * 设置单件商品积分优惠金额
+     * 设置积分优惠分解金额
      *
-     * @param pointsAmount 单件商品积分优惠金额
+     * @param integrationAmount 积分优惠分解金额
      */
-    public void setPointsAmount(BigDecimal pointsAmount) {
-        this.pointsAmount = pointsAmount;
+    public void setIntegrationAmount(BigDecimal integrationAmount) {
+        this.integrationAmount = integrationAmount;
     }
 
     /**
-     * 获取单件商品实际应付金额
+     * 获取该商品经过优惠后的分解金额
      *
-     * @return real_amount - 单件商品实际应付金额
+     * @return real_amount - 该商品经过优惠后的分解金额
      */
     public BigDecimal getRealAmount() {
         return realAmount;
     }
 
     /**
-     * 设置单件商品实际应付金额
+     * 设置该商品经过优惠后的分解金额
      *
-     * @param realAmount 单件商品实际应付金额
+     * @param realAmount 该商品经过优惠后的分解金额
      */
     public void setRealAmount(BigDecimal realAmount) {
         this.realAmount = realAmount;
     }
 
     /**
-     * 获取商品可获得积分
-     *
-     * @return get_points - 商品可获得积分
+     * @return gift_integration
      */
-    public Integer getGetPoints() {
-        return getPoints;
+    public Integer getGiftIntegration() {
+        return giftIntegration;
     }
 
     /**
-     * 设置商品可获得积分
-     *
-     * @param getPoints 商品可获得积分
+     * @param giftIntegration
      */
-    public void setGetPoints(Integer getPoints) {
-        this.getPoints = getPoints;
+    public void setGiftIntegration(Integer giftIntegration) {
+        this.giftIntegration = giftIntegration;
     }
 
     /**
-     * 获取商品可获得成长值
-     *
-     * @return get_growth - 商品可获得成长值
+     * @return gift_growth
      */
-    public Integer getGetGrowth() {
-        return getGrowth;
+    public Integer getGiftGrowth() {
+        return giftGrowth;
     }
 
     /**
-     * 设置商品可获得成长值
-     *
-     * @param getGrowth 商品可获得成长值
+     * @param giftGrowth
      */
-    public void setGetGrowth(Integer getGrowth) {
-        this.getGrowth = getGrowth;
+    public void setGiftGrowth(Integer giftGrowth) {
+        this.giftGrowth = giftGrowth;
     }
 
     /**
-     * 获取商品销售属性[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     * 获取商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      *
-     * @return product_attribute - 商品销售属性[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     * @return product_attr - 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      */
-    public String getProductAttribute() {
-        return productAttribute;
+    public String getProductAttr() {
+        return productAttr;
     }
 
     /**
-     * 设置商品销售属性[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     * 设置商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      *
-     * @param productAttribute 商品销售属性[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     * @param productAttr 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      */
-    public void setProductAttribute(String productAttribute) {
-        this.productAttribute = productAttribute == null ? null : productAttribute.trim();
+    public void setProductAttr(String productAttr) {
+        this.productAttr = productAttr == null ? null : productAttr.trim();
     }
 
     @Override
@@ -546,27 +491,27 @@ public class OmsOrderItem implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderItemId=").append(orderItemId);
+        sb.append(", id=").append(id);
         sb.append(", orderId=").append(orderId);
         sb.append(", orderSn=").append(orderSn);
         sb.append(", productId=").append(productId);
         sb.append(", productPic=").append(productPic);
         sb.append(", productName=").append(productName);
+        sb.append(", productBrand=").append(productBrand);
         sb.append(", productSn=").append(productSn);
-        sb.append(", productClassifyId=").append(productClassifyId);
-        sb.append(", brandName=").append(brandName);
-        sb.append(", skuId=").append(skuId);
-        sb.append(", skuSn=").append(skuSn);
-        sb.append(", price=").append(price);
+        sb.append(", productPrice=").append(productPrice);
         sb.append(", productQuantity=").append(productQuantity);
-        sb.append(", promotionInfo=").append(promotionInfo);
+        sb.append(", productSkuId=").append(productSkuId);
+        sb.append(", productSkuCode=").append(productSkuCode);
+        sb.append(", productCategoryId=").append(productCategoryId);
+        sb.append(", promotionName=").append(promotionName);
         sb.append(", promotionAmount=").append(promotionAmount);
         sb.append(", couponAmount=").append(couponAmount);
-        sb.append(", pointsAmount=").append(pointsAmount);
+        sb.append(", integrationAmount=").append(integrationAmount);
         sb.append(", realAmount=").append(realAmount);
-        sb.append(", getPoints=").append(getPoints);
-        sb.append(", getGrowth=").append(getGrowth);
-        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", giftIntegration=").append(giftIntegration);
+        sb.append(", giftGrowth=").append(giftGrowth);
+        sb.append(", productAttr=").append(productAttr);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

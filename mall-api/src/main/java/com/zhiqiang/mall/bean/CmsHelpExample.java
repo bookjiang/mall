@@ -165,63 +165,63 @@ public class CmsHelpExample {
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdIsNull() {
-            addCriterion("classify_id is null");
+        public Criteria andCategoryIdIsNull() {
+            addCriterion("category_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdIsNotNull() {
-            addCriterion("classify_id is not null");
+        public Criteria andCategoryIdIsNotNull() {
+            addCriterion("category_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdEqualTo(Long value) {
-            addCriterion("classify_id =", value, "classifyId");
+        public Criteria andCategoryIdEqualTo(Long value) {
+            addCriterion("category_id =", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdNotEqualTo(Long value) {
-            addCriterion("classify_id <>", value, "classifyId");
+        public Criteria andCategoryIdNotEqualTo(Long value) {
+            addCriterion("category_id <>", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdGreaterThan(Long value) {
-            addCriterion("classify_id >", value, "classifyId");
+        public Criteria andCategoryIdGreaterThan(Long value) {
+            addCriterion("category_id >", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("classify_id >=", value, "classifyId");
+        public Criteria andCategoryIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("category_id >=", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdLessThan(Long value) {
-            addCriterion("classify_id <", value, "classifyId");
+        public Criteria andCategoryIdLessThan(Long value) {
+            addCriterion("category_id <", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdLessThanOrEqualTo(Long value) {
-            addCriterion("classify_id <=", value, "classifyId");
+        public Criteria andCategoryIdLessThanOrEqualTo(Long value) {
+            addCriterion("category_id <=", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdIn(List<Long> values) {
-            addCriterion("classify_id in", values, "classifyId");
+        public Criteria andCategoryIdIn(List<Long> values) {
+            addCriterion("category_id in", values, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdNotIn(List<Long> values) {
-            addCriterion("classify_id not in", values, "classifyId");
+        public Criteria andCategoryIdNotIn(List<Long> values) {
+            addCriterion("category_id not in", values, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdBetween(Long value1, Long value2) {
-            addCriterion("classify_id between", value1, value2, "classifyId");
+        public Criteria andCategoryIdBetween(Long value1, Long value2) {
+            addCriterion("category_id between", value1, value2, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andClassifyIdNotBetween(Long value1, Long value2) {
-            addCriterion("classify_id not between", value1, value2, "classifyId");
+        public Criteria andCategoryIdNotBetween(Long value1, Long value2) {
+            addCriterion("category_id not between", value1, value2, "categoryId");
             return (Criteria) this;
         }
 

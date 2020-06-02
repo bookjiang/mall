@@ -1,7 +1,8 @@
 package com.zhiqiang.mall.product.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.zhiqiang.mall.bean.PmsProductCategoryWithChildrenItem;
+
+import com.zhiqiang.mall.model.PmsProductCategoryWithChildrenItem;
 import com.zhiqiang.mall.product.Dao.PmsProductCategoryDao;
 import com.zhiqiang.mall.service.PmsProductClassifyService;
 import org.springframework.beans.factory.annotation.Autowired;

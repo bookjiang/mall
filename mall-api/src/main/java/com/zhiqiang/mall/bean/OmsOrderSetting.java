@@ -6,48 +6,48 @@ import javax.persistence.*;
 @Table(name = "oms_order_setting")
 public class OmsOrderSetting implements Serializable {
     @Id
-    @Column(name = "order_setting_id")
-    private Long orderSettingId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
-     * 秒杀订单超时关闭时间（分钟）
+     * 秒杀订单超时关闭时间(分)
      */
-    @Column(name = "sales_close_time")
-    private Integer salesCloseTime;
+    @Column(name = "flash_order_overtime")
+    private Integer flashOrderOvertime;
 
     /**
-     * 正常订单超时关闭时间（分）
+     * 正常订单超时时间(分)
      */
-    @Column(name = "normal_close_time")
-    private Integer normalCloseTime;
+    @Column(name = "normal_order_overtime")
+    private Integer normalOrderOvertime;
 
     /**
-     * 自动收货时间（天）
+     * 发货后自动确认收货时间（天）
      */
-    @Column(name = "confirm_close_time")
-    private Integer confirmCloseTime;
+    @Column(name = "confirm_overtime")
+    private Integer confirmOvertime;
 
     /**
-     * 售后时间（天）
+     * 自动完成交易时间，不能申请售后（天）
      */
-    @Column(name = "after_sales_time")
-    private Integer afterSalesTime;
+    @Column(name = "finish_overtime")
+    private Integer finishOvertime;
 
     /**
-     * 订单自动评价时间（天)
+     * 订单完成后自动好评时间（天）
      */
-    @Column(name = "auto_comment_time")
-    private Integer autoCommentTime;
+    @Column(name = "comment_overtime")
+    private Integer commentOvertime;
 
     private static final long serialVersionUID = 1L;
 
-    public OmsOrderSetting(Long orderSettingId, Integer salesCloseTime, Integer normalCloseTime, Integer confirmCloseTime, Integer afterSalesTime, Integer autoCommentTime) {
-        this.orderSettingId = orderSettingId;
-        this.salesCloseTime = salesCloseTime;
-        this.normalCloseTime = normalCloseTime;
-        this.confirmCloseTime = confirmCloseTime;
-        this.afterSalesTime = afterSalesTime;
-        this.autoCommentTime = autoCommentTime;
+    public OmsOrderSetting(Long id, Integer flashOrderOvertime, Integer normalOrderOvertime, Integer confirmOvertime, Integer finishOvertime, Integer commentOvertime) {
+        this.id = id;
+        this.flashOrderOvertime = flashOrderOvertime;
+        this.normalOrderOvertime = normalOrderOvertime;
+        this.confirmOvertime = confirmOvertime;
+        this.finishOvertime = finishOvertime;
+        this.commentOvertime = commentOvertime;
     }
 
     public OmsOrderSetting() {
@@ -55,107 +55,107 @@ public class OmsOrderSetting implements Serializable {
     }
 
     /**
-     * @return order_setting_id
+     * @return id
      */
-    public Long getOrderSettingId() {
-        return orderSettingId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param orderSettingId
+     * @param id
      */
-    public void setOrderSettingId(Long orderSettingId) {
-        this.orderSettingId = orderSettingId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取秒杀订单超时关闭时间（分钟）
+     * 获取秒杀订单超时关闭时间(分)
      *
-     * @return sales_close_time - 秒杀订单超时关闭时间（分钟）
+     * @return flash_order_overtime - 秒杀订单超时关闭时间(分)
      */
-    public Integer getSalesCloseTime() {
-        return salesCloseTime;
+    public Integer getFlashOrderOvertime() {
+        return flashOrderOvertime;
     }
 
     /**
-     * 设置秒杀订单超时关闭时间（分钟）
+     * 设置秒杀订单超时关闭时间(分)
      *
-     * @param salesCloseTime 秒杀订单超时关闭时间（分钟）
+     * @param flashOrderOvertime 秒杀订单超时关闭时间(分)
      */
-    public void setSalesCloseTime(Integer salesCloseTime) {
-        this.salesCloseTime = salesCloseTime;
+    public void setFlashOrderOvertime(Integer flashOrderOvertime) {
+        this.flashOrderOvertime = flashOrderOvertime;
     }
 
     /**
-     * 获取正常订单超时关闭时间（分）
+     * 获取正常订单超时时间(分)
      *
-     * @return normal_close_time - 正常订单超时关闭时间（分）
+     * @return normal_order_overtime - 正常订单超时时间(分)
      */
-    public Integer getNormalCloseTime() {
-        return normalCloseTime;
+    public Integer getNormalOrderOvertime() {
+        return normalOrderOvertime;
     }
 
     /**
-     * 设置正常订单超时关闭时间（分）
+     * 设置正常订单超时时间(分)
      *
-     * @param normalCloseTime 正常订单超时关闭时间（分）
+     * @param normalOrderOvertime 正常订单超时时间(分)
      */
-    public void setNormalCloseTime(Integer normalCloseTime) {
-        this.normalCloseTime = normalCloseTime;
+    public void setNormalOrderOvertime(Integer normalOrderOvertime) {
+        this.normalOrderOvertime = normalOrderOvertime;
     }
 
     /**
-     * 获取自动收货时间（天）
+     * 获取发货后自动确认收货时间（天）
      *
-     * @return confirm_close_time - 自动收货时间（天）
+     * @return confirm_overtime - 发货后自动确认收货时间（天）
      */
-    public Integer getConfirmCloseTime() {
-        return confirmCloseTime;
+    public Integer getConfirmOvertime() {
+        return confirmOvertime;
     }
 
     /**
-     * 设置自动收货时间（天）
+     * 设置发货后自动确认收货时间（天）
      *
-     * @param confirmCloseTime 自动收货时间（天）
+     * @param confirmOvertime 发货后自动确认收货时间（天）
      */
-    public void setConfirmCloseTime(Integer confirmCloseTime) {
-        this.confirmCloseTime = confirmCloseTime;
+    public void setConfirmOvertime(Integer confirmOvertime) {
+        this.confirmOvertime = confirmOvertime;
     }
 
     /**
-     * 获取售后时间（天）
+     * 获取自动完成交易时间，不能申请售后（天）
      *
-     * @return after_sales_time - 售后时间（天）
+     * @return finish_overtime - 自动完成交易时间，不能申请售后（天）
      */
-    public Integer getAfterSalesTime() {
-        return afterSalesTime;
+    public Integer getFinishOvertime() {
+        return finishOvertime;
     }
 
     /**
-     * 设置售后时间（天）
+     * 设置自动完成交易时间，不能申请售后（天）
      *
-     * @param afterSalesTime 售后时间（天）
+     * @param finishOvertime 自动完成交易时间，不能申请售后（天）
      */
-    public void setAfterSalesTime(Integer afterSalesTime) {
-        this.afterSalesTime = afterSalesTime;
+    public void setFinishOvertime(Integer finishOvertime) {
+        this.finishOvertime = finishOvertime;
     }
 
     /**
-     * 获取订单自动评价时间（天)
+     * 获取订单完成后自动好评时间（天）
      *
-     * @return auto_comment_time - 订单自动评价时间（天)
+     * @return comment_overtime - 订单完成后自动好评时间（天）
      */
-    public Integer getAutoCommentTime() {
-        return autoCommentTime;
+    public Integer getCommentOvertime() {
+        return commentOvertime;
     }
 
     /**
-     * 设置订单自动评价时间（天)
+     * 设置订单完成后自动好评时间（天）
      *
-     * @param autoCommentTime 订单自动评价时间（天)
+     * @param commentOvertime 订单完成后自动好评时间（天）
      */
-    public void setAutoCommentTime(Integer autoCommentTime) {
-        this.autoCommentTime = autoCommentTime;
+    public void setCommentOvertime(Integer commentOvertime) {
+        this.commentOvertime = commentOvertime;
     }
 
     @Override
@@ -164,12 +164,12 @@ public class OmsOrderSetting implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderSettingId=").append(orderSettingId);
-        sb.append(", salesCloseTime=").append(salesCloseTime);
-        sb.append(", normalCloseTime=").append(normalCloseTime);
-        sb.append(", confirmCloseTime=").append(confirmCloseTime);
-        sb.append(", afterSalesTime=").append(afterSalesTime);
-        sb.append(", autoCommentTime=").append(autoCommentTime);
+        sb.append(", id=").append(id);
+        sb.append(", flashOrderOvertime=").append(flashOrderOvertime);
+        sb.append(", normalOrderOvertime=").append(normalOrderOvertime);
+        sb.append(", confirmOvertime=").append(confirmOvertime);
+        sb.append(", finishOvertime=").append(finishOvertime);
+        sb.append(", commentOvertime=").append(commentOvertime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

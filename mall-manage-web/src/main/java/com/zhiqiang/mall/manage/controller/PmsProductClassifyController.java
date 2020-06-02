@@ -1,8 +1,8 @@
 package com.zhiqiang.mall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.zhiqiang.mall.bean.PmsProductCategoryWithChildrenItem;
 import com.zhiqiang.mall.commonbean.CommonResult;
+import com.zhiqiang.mall.model.PmsProductCategoryWithChildrenItem;
 import com.zhiqiang.mall.service.PmsProductClassifyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

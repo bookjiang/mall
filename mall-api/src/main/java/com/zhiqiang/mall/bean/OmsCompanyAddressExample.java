@@ -104,63 +104,63 @@ public class OmsCompanyAddressExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAddressIdIsNull() {
-            addCriterion("address_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdIsNotNull() {
-            addCriterion("address_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdEqualTo(Long value) {
-            addCriterion("address_id =", value, "addressId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdNotEqualTo(Long value) {
-            addCriterion("address_id <>", value, "addressId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdGreaterThan(Long value) {
-            addCriterion("address_id >", value, "addressId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("address_id >=", value, "addressId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdLessThan(Long value) {
-            addCriterion("address_id <", value, "addressId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdLessThanOrEqualTo(Long value) {
-            addCriterion("address_id <=", value, "addressId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdIn(List<Long> values) {
-            addCriterion("address_id in", values, "addressId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdNotIn(List<Long> values) {
-            addCriterion("address_id not in", values, "addressId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdBetween(Long value1, Long value2) {
-            addCriterion("address_id between", value1, value2, "addressId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAddressIdNotBetween(Long value1, Long value2) {
-            addCriterion("address_id not between", value1, value2, "addressId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 

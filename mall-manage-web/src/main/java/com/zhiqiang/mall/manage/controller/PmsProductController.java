@@ -3,9 +3,10 @@ package com.zhiqiang.mall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.PmsProduct;
-import com.zhiqiang.mall.bean.ProductQueryParams;
 import com.zhiqiang.mall.commonbean.CommonPage;
 import com.zhiqiang.mall.commonbean.CommonResult;
+import com.zhiqiang.mall.model.PmsProductResult;
+import com.zhiqiang.mall.model.ProductQueryParams;
 import com.zhiqiang.mall.service.PmsProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -47,7 +48,7 @@ public class PmsProductController {
                                                         @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
 
-       // System.out.println(productQueryParam.toString());
+        //System.out.println(productQueryParam.toString());
        // System.out.println("pageSize"+pageSize+"pageNum"+pageNum);
         PageInfo<PmsProduct> List = pmsProductService.listAll(productQueryParam, pageSize, pageNum);
         return CommonResult.success(CommonPage.restPage(List));
@@ -57,6 +58,7 @@ public class PmsProductController {
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> getList(String keyword) {
+
         List<PmsProduct> productList = pmsProductService.list(keyword);
         return CommonResult.success(productList);
     }
@@ -125,6 +127,14 @@ public class PmsProductController {
         } else {
             return CommonResult.failed();
         }
+    }
+
+    @ApiOperation("根据商品id获取商品编辑信息")
+    @RequestMapping(value = "/updateInfo/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<PmsProductResult> getUpdateInfo(@PathVariable Long id) {
+        PmsProductResult productResult = pmsProductService.getUpdateInfo(id);
+        return CommonResult.success(productResult);
     }
 
 }

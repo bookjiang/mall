@@ -14,7 +14,12 @@
       <arg column="comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="return_order_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="login_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="attend_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="fans_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="collect_product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="collect_subject_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="collect_topic_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="collect_comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="invite_friend_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="recent_order_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
@@ -24,6 +29,7 @@
       WARNING - @mbg.generated
     -->
     id, member_id, consume_amount, order_count, coupon_count, comment_count, return_order_count, 
-    login_count, collect_product_count, invite_friend_count, recent_order_time
+    login_count, attend_count, fans_count, collect_product_count, collect_subject_count, 
+    collect_topic_count, collect_comment_count, invite_friend_count, recent_order_time
   </sql>
 </mapper>

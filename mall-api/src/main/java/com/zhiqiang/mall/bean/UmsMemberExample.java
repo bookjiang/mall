@@ -132,63 +132,63 @@ public class UmsMemberExample {
             addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
-        public Criteria andMemberIdIsNull() {
-            addCriterion("member_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdIsNotNull() {
-            addCriterion("member_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdEqualTo(Long value) {
-            addCriterion("member_id =", value, "memberId");
+        public Criteria andIdEqualTo(Long value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotEqualTo(Long value) {
-            addCriterion("member_id <>", value, "memberId");
+        public Criteria andIdNotEqualTo(Long value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdGreaterThan(Long value) {
-            addCriterion("member_id >", value, "memberId");
+        public Criteria andIdGreaterThan(Long value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("member_id >=", value, "memberId");
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdLessThan(Long value) {
-            addCriterion("member_id <", value, "memberId");
+        public Criteria andIdLessThan(Long value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdLessThanOrEqualTo(Long value) {
-            addCriterion("member_id <=", value, "memberId");
+        public Criteria andIdLessThanOrEqualTo(Long value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdIn(List<Long> values) {
-            addCriterion("member_id in", values, "memberId");
+        public Criteria andIdIn(List<Long> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotIn(List<Long> values) {
-            addCriterion("member_id not in", values, "memberId");
+        public Criteria andIdNotIn(List<Long> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdBetween(Long value1, Long value2) {
-            addCriterion("member_id between", value1, value2, "memberId");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotBetween(Long value1, Long value2) {
-            addCriterion("member_id not between", value1, value2, "memberId");
+        public Criteria andIdNotBetween(Long value1, Long value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -322,6 +322,76 @@ public class UmsMemberExample {
             return (Criteria) this;
         }
 
+        public Criteria andPasswordIsNull() {
+            addCriterion("password is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordIsNotNull() {
+            addCriterion("password is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordEqualTo(String value) {
+            addCriterion("password =", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordNotEqualTo(String value) {
+            addCriterion("password <>", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordGreaterThan(String value) {
+            addCriterion("password >", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
+            addCriterion("password >=", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordLessThan(String value) {
+            addCriterion("password <", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordLessThanOrEqualTo(String value) {
+            addCriterion("password <=", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordLike(String value) {
+            addCriterion("password like", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordNotLike(String value) {
+            addCriterion("password not like", value, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordIn(List<String> values) {
+            addCriterion("password in", values, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordNotIn(List<String> values) {
+            addCriterion("password not in", values, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordBetween(String value1, String value2) {
+            addCriterion("password between", value1, value2, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andPasswordNotBetween(String value1, String value2) {
+            addCriterion("password not between", value1, value2, "password");
+            return (Criteria) this;
+        }
+
         public Criteria andNicknameIsNull() {
             addCriterion("nickname is null");
             return (Criteria) this;
@@ -389,66 +459,6 @@ public class UmsMemberExample {
 
         public Criteria andNicknameNotBetween(String value1, String value2) {
             addCriterion("nickname not between", value1, value2, "nickname");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNull() {
-            addCriterion("status is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusEqualTo(Integer value) {
-            addCriterion("status =", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotEqualTo(Integer value) {
-            addCriterion("status <>", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThan(Integer value) {
-            addCriterion("status >", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("status >=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThan(Integer value) {
-            addCriterion("status <", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("status <=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIn(List<Integer> values) {
-            addCriterion("status in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotIn(List<Integer> values) {
-            addCriterion("status not in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
-            addCriterion("status between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
 
@@ -522,73 +532,63 @@ public class UmsMemberExample {
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNull() {
-            addCriterion("password is null");
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNotNull() {
-            addCriterion("password is not null");
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordEqualTo(String value) {
-            addCriterion("password =", value, "password");
+        public Criteria andStatusEqualTo(Integer value) {
+            addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotEqualTo(String value) {
-            addCriterion("password <>", value, "password");
+        public Criteria andStatusNotEqualTo(Integer value) {
+            addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThan(String value) {
-            addCriterion("password >", value, "password");
+        public Criteria andStatusGreaterThan(Integer value) {
+            addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
-            addCriterion("password >=", value, "password");
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThan(String value) {
-            addCriterion("password <", value, "password");
+        public Criteria andStatusLessThan(Integer value) {
+            addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThanOrEqualTo(String value) {
-            addCriterion("password <=", value, "password");
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLike(String value) {
-            addCriterion("password like", value, "password");
+        public Criteria andStatusIn(List<Integer> values) {
+            addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotLike(String value) {
-            addCriterion("password not like", value, "password");
+        public Criteria andStatusNotIn(List<Integer> values) {
+            addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIn(List<String> values) {
-            addCriterion("password in", values, "password");
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
+            addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotIn(List<String> values) {
-            addCriterion("password not in", values, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordBetween(String value1, String value2) {
-            addCriterion("password between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordNotBetween(String value1, String value2) {
-            addCriterion("password not between", value1, value2, "password");
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
 
@@ -1232,6 +1232,66 @@ public class UmsMemberExample {
             return (Criteria) this;
         }
 
+        public Criteria andLuckeyCountIsNull() {
+            addCriterion("luckey_count is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountIsNotNull() {
+            addCriterion("luckey_count is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountEqualTo(Integer value) {
+            addCriterion("luckey_count =", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountNotEqualTo(Integer value) {
+            addCriterion("luckey_count <>", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountGreaterThan(Integer value) {
+            addCriterion("luckey_count >", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("luckey_count >=", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountLessThan(Integer value) {
+            addCriterion("luckey_count <", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountLessThanOrEqualTo(Integer value) {
+            addCriterion("luckey_count <=", value, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountIn(List<Integer> values) {
+            addCriterion("luckey_count in", values, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountNotIn(List<Integer> values) {
+            addCriterion("luckey_count not in", values, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountBetween(Integer value1, Integer value2) {
+            addCriterion("luckey_count between", value1, value2, "luckeyCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andLuckeyCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("luckey_count not between", value1, value2, "luckeyCount");
+            return (Criteria) this;
+        }
+
         public Criteria andHistoryIntegrationIsNull() {
             addCriterion("history_integration is null");
             return (Criteria) this;
@@ -1289,66 +1349,6 @@ public class UmsMemberExample {
 
         public Criteria andHistoryIntegrationNotBetween(Integer value1, Integer value2) {
             addCriterion("history_integration not between", value1, value2, "historyIntegration");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipIsNull() {
-            addCriterion("is_vip is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipIsNotNull() {
-            addCriterion("is_vip is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipEqualTo(Integer value) {
-            addCriterion("is_vip =", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipNotEqualTo(Integer value) {
-            addCriterion("is_vip <>", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipGreaterThan(Integer value) {
-            addCriterion("is_vip >", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipGreaterThanOrEqualTo(Integer value) {
-            addCriterion("is_vip >=", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipLessThan(Integer value) {
-            addCriterion("is_vip <", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipLessThanOrEqualTo(Integer value) {
-            addCriterion("is_vip <=", value, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipIn(List<Integer> values) {
-            addCriterion("is_vip in", values, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipNotIn(List<Integer> values) {
-            addCriterion("is_vip not in", values, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipBetween(Integer value1, Integer value2) {
-            addCriterion("is_vip between", value1, value2, "isVip");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsVipNotBetween(Integer value1, Integer value2) {
-            addCriterion("is_vip not between", value1, value2, "isVip");
             return (Criteria) this;
         }
     }

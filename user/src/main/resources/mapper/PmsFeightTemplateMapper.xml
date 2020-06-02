@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.user.mapper.PmsFeightTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.zhiqiang.mall.bean.PmsFeightTemplate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="charge_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="first_weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="first_fee" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="continue_weight" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="continme_fee" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="dest" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, name, charge_type, first_weight, first_fee, continue_weight, continme_fee, dest
+  </sql>
+</mapper>

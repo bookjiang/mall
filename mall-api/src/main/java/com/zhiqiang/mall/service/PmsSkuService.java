@@ -1,6 +1,7 @@
 package com.zhiqiang.mall.service;
 
-import com.zhiqiang.mall.bean.PmsSku;
+
+import com.zhiqiang.mall.bean.PmsSkuStock;
 
 import java.util.List;
 
@@ -12,5 +13,5 @@ import java.util.List;
  */
 public interface PmsSkuService {
 
-    List<PmsSku> getList(Long pid, String keyword);
+    List<PmsSkuStock> getList(Long pid, String keyword);
 }

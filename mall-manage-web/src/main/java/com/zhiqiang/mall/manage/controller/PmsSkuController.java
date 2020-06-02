@@ -1,7 +1,8 @@
 package com.zhiqiang.mall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.zhiqiang.mall.bean.PmsSku;
+
+import com.zhiqiang.mall.bean.PmsSkuStock;
 import com.zhiqiang.mall.commonbean.CommonResult;
 import com.zhiqiang.mall.service.PmsSkuService;
 import io.swagger.annotations.Api;
@@ -28,8 +29,8 @@ public class PmsSkuController {
     @ApiOperation("根据商品编号及编号模糊搜索sku库存")
     @RequestMapping(value = "/{pid}", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<PmsSku>> getList(@PathVariable Long pid, @RequestParam(value = "keyword",required = false) String keyword) {
-        List<PmsSku> skuList = pmsSkuService.getList(pid, keyword);
+    public CommonResult<List<PmsSkuStock>> getList(@PathVariable Long pid, @RequestParam(value = "keyword",required = false) String keyword) {
+        List<PmsSkuStock> skuList = pmsSkuService.getList(pid, keyword);
         return CommonResult.success(skuList);
     }
 

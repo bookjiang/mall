@@ -6,48 +6,14 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="report_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="report_member_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="report_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="comment_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="report_object" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="report_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="handle_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="handle_man" javaType="java.lang.Long" jdbcType="BIGINT" />
     </constructor>
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.CmsMemberReport">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <constructor>
-      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="report_member_name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="report_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="comment_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="report_object" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="report_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="handle_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="note" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="handle_man" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="report_content" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
-      <arg column="handle_replay" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    id, report_member_name, create_time, report_type, comment_id, report_object, report_status, 
-    handle_status, note, handle_man
-  </sql>
-  <sql id="Blob_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    report_content, handle_replay
-  </sql>
 </mapper>

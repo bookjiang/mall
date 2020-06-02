@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "ums_growth_change_history")
 public class UmsGrowthChangeHistory implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "member_id")

@@ -7,18 +7,16 @@ import javax.persistence.*;
 @Table(name = "cms_help")
 public class CmsHelp implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "classify_id")
-    private Long classifyId;
+    @Column(name = "category_id")
+    private Long categoryId;
 
     private String icon;
 
     private String title;
 
-    /**
-     * 是否显示：0->不显示；1->显示
-     */
     @Column(name = "show_status")
     private Integer showStatus;
 
@@ -32,9 +30,9 @@ public class CmsHelp implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public CmsHelp(Long id, Long classifyId, String icon, String title, Integer showStatus, Date createTime, Integer readCount, String content) {
+    public CmsHelp(Long id, Long categoryId, String icon, String title, Integer showStatus, Date createTime, Integer readCount, String content) {
         this.id = id;
-        this.classifyId = classifyId;
+        this.categoryId = categoryId;
         this.icon = icon;
         this.title = title;
         this.showStatus = showStatus;
@@ -62,17 +60,17 @@ public class CmsHelp implements Serializable {
     }
 
     /**
-     * @return classify_id
+     * @return category_id
      */
-    public Long getClassifyId() {
-        return classifyId;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
     /**
-     * @param classifyId
+     * @param categoryId
      */
-    public void setClassifyId(Long classifyId) {
-        this.classifyId = classifyId;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     /**
@@ -104,18 +102,14 @@ public class CmsHelp implements Serializable {
     }
 
     /**
-     * 获取是否显示：0->不显示；1->显示
-     *
-     * @return show_status - 是否显示：0->不显示；1->显示
+     * @return show_status
      */
     public Integer getShowStatus() {
         return showStatus;
     }
 
     /**
-     * 设置是否显示：0->不显示；1->显示
-     *
-     * @param showStatus 是否显示：0->不显示；1->显示
+     * @param showStatus
      */
     public void setShowStatus(Integer showStatus) {
         this.showStatus = showStatus;
@@ -170,7 +164,7 @@ public class CmsHelp implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", classifyId=").append(classifyId);
+        sb.append(", categoryId=").append(categoryId);
         sb.append(", icon=").append(icon);
         sb.append(", title=").append(title);
         sb.append(", showStatus=").append(showStatus);

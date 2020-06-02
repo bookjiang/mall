@@ -8,24 +8,15 @@ import javax.persistence.*;
 @Table(name = "oms_cart_item")
 public class OmsCartItem implements Serializable {
     @Id
-    @Column(name = "cart_id")
-    private Long cartId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    /**
-     * 商品的id
-     */
     @Column(name = "product_id")
     private Long productId;
 
-    /**
-     * sku的id
-     */
-    @Column(name = "sku_id")
-    private Long skuId;
+    @Column(name = "product_sku_id")
+    private Long productSkuId;
 
-    /**
-     * 用户id
-     */
     @Column(name = "member_id")
     private Long memberId;
 
@@ -52,33 +43,22 @@ public class OmsCartItem implements Serializable {
     private String productName;
 
     /**
-     * 商品品牌
+     * 商品副标题（卖点）
      */
-    @Column(name = "brand_name")
-    private String brandName;
-
-    /**
-     * 商品的条码
-     */
-    @Column(name = "product_sn")
-    private String productSn;
-
-    /**
-     * 商品关键字（卖点）
-     */
-    private String keywords;
+    @Column(name = "product_sub_title")
+    private String productSubTitle;
 
     /**
      * 商品sku条码
      */
-    @Column(name = "sku_sn")
-    private Long skuSn;
+    @Column(name = "product_sku_code")
+    private String productSkuCode;
 
     /**
      * 会员昵称
      */
-    @Column(name = "member_name")
-    private String memberName;
+    @Column(name = "member_nickname")
+    private String memberNickname;
 
     /**
      * 创建时间
@@ -99,38 +79,44 @@ public class OmsCartItem implements Serializable {
     private Integer deleteStatus;
 
     /**
-     * 商品的分类
+     * 商品分类
      */
-    @Column(name = "product_classify_id")
-    private Long productClassifyId;
+    @Column(name = "product_category_id")
+    private Long productCategoryId;
+
+    @Column(name = "product_brand")
+    private String productBrand;
+
+    @Column(name = "product_sn")
+    private String productSn;
 
     /**
-     * 商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]
+     * 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      */
-    @Column(name = "product_attribute")
-    private String productAttribute;
+    @Column(name = "product_attr")
+    private String productAttr;
 
     private static final long serialVersionUID = 1L;
 
-    public OmsCartItem(Long cartId, Long productId, Long skuId, Long memberId, Integer quantity, BigDecimal price, String productPic, String productName, String brandName, String productSn, String keywords, Long skuSn, String memberName, Date createDate, Date modifyDate, Integer deleteStatus, Long productClassifyId, String productAttribute) {
-        this.cartId = cartId;
+    public OmsCartItem(Long id, Long productId, Long productSkuId, Long memberId, Integer quantity, BigDecimal price, String productPic, String productName, String productSubTitle, String productSkuCode, String memberNickname, Date createDate, Date modifyDate, Integer deleteStatus, Long productCategoryId, String productBrand, String productSn, String productAttr) {
+        this.id = id;
         this.productId = productId;
-        this.skuId = skuId;
+        this.productSkuId = productSkuId;
         this.memberId = memberId;
         this.quantity = quantity;
         this.price = price;
         this.productPic = productPic;
         this.productName = productName;
-        this.brandName = brandName;
-        this.productSn = productSn;
-        this.keywords = keywords;
-        this.skuSn = skuSn;
-        this.memberName = memberName;
+        this.productSubTitle = productSubTitle;
+        this.productSkuCode = productSkuCode;
+        this.memberNickname = memberNickname;
         this.createDate = createDate;
         this.modifyDate = modifyDate;
         this.deleteStatus = deleteStatus;
-        this.productClassifyId = productClassifyId;
-        this.productAttribute = productAttribute;
+        this.productCategoryId = productCategoryId;
+        this.productBrand = productBrand;
+        this.productSn = productSn;
+        this.productAttr = productAttr;
     }
 
     public OmsCartItem() {
@@ -138,68 +124,56 @@ public class OmsCartItem implements Serializable {
     }
 
     /**
-     * @return cart_id
+     * @return id
      */
-    public Long getCartId() {
-        return cartId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param cartId
+     * @param id
      */
-    public void setCartId(Long cartId) {
-        this.cartId = cartId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
-     * 获取商品的id
-     *
-     * @return product_id - 商品的id
+     * @return product_id
      */
     public Long getProductId() {
         return productId;
     }
 
     /**
-     * 设置商品的id
-     *
-     * @param productId 商品的id
+     * @param productId
      */
     public void setProductId(Long productId) {
         this.productId = productId;
     }
 
     /**
-     * 获取sku的id
-     *
-     * @return sku_id - sku的id
+     * @return product_sku_id
      */
-    public Long getSkuId() {
-        return skuId;
+    public Long getProductSkuId() {
+        return productSkuId;
     }
 
     /**
-     * 设置sku的id
-     *
-     * @param skuId sku的id
+     * @param productSkuId
      */
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
+    public void setProductSkuId(Long productSkuId) {
+        this.productSkuId = productSkuId;
     }
 
     /**
-     * 获取用户id
-     *
-     * @return member_id - 用户id
+     * @return member_id
      */
     public Long getMemberId() {
         return memberId;
     }
 
     /**
-     * 设置用户id
-     *
-     * @param memberId 用户id
+     * @param memberId
      */
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
@@ -278,93 +252,57 @@ public class OmsCartItem implements Serializable {
     }
 
     /**
-     * 获取商品品牌
+     * 获取商品副标题（卖点）
      *
-     * @return brand_name - 商品品牌
+     * @return product_sub_title - 商品副标题（卖点）
      */
-    public String getBrandName() {
-        return brandName;
+    public String getProductSubTitle() {
+        return productSubTitle;
     }
 
     /**
-     * 设置商品品牌
+     * 设置商品副标题（卖点）
      *
-     * @param brandName 商品品牌
+     * @param productSubTitle 商品副标题（卖点）
      */
-    public void setBrandName(String brandName) {
-        this.brandName = brandName == null ? null : brandName.trim();
-    }
-
-    /**
-     * 获取商品的条码
-     *
-     * @return product_sn - 商品的条码
-     */
-    public String getProductSn() {
-        return productSn;
-    }
-
-    /**
-     * 设置商品的条码
-     *
-     * @param productSn 商品的条码
-     */
-    public void setProductSn(String productSn) {
-        this.productSn = productSn == null ? null : productSn.trim();
-    }
-
-    /**
-     * 获取商品关键字（卖点）
-     *
-     * @return keywords - 商品关键字（卖点）
-     */
-    public String getKeywords() {
-        return keywords;
-    }
-
-    /**
-     * 设置商品关键字（卖点）
-     *
-     * @param keywords 商品关键字（卖点）
-     */
-    public void setKeywords(String keywords) {
-        this.keywords = keywords == null ? null : keywords.trim();
+    public void setProductSubTitle(String productSubTitle) {
+        this.productSubTitle = productSubTitle == null ? null : productSubTitle.trim();
     }
 
     /**
      * 获取商品sku条码
      *
-     * @return sku_sn - 商品sku条码
+     * @return product_sku_code - 商品sku条码
      */
-    public Long getSkuSn() {
-        return skuSn;
+    public String getProductSkuCode() {
+        return productSkuCode;
     }
 
     /**
      * 设置商品sku条码
      *
-     * @param skuSn 商品sku条码
+     * @param productSkuCode 商品sku条码
      */
-    public void setSkuSn(Long skuSn) {
-        this.skuSn = skuSn;
+    public void setProductSkuCode(String productSkuCode) {
+        this.productSkuCode = productSkuCode == null ? null : productSkuCode.trim();
     }
 
     /**
      * 获取会员昵称
      *
-     * @return member_name - 会员昵称
+     * @return member_nickname - 会员昵称
      */
-    public String getMemberName() {
-        return memberName;
+    public String getMemberNickname() {
+        return memberNickname;
     }
 
     /**
      * 设置会员昵称
      *
-     * @param memberName 会员昵称
+     * @param memberNickname 会员昵称
      */
-    public void setMemberName(String memberName) {
-        this.memberName = memberName == null ? null : memberName.trim();
+    public void setMemberNickname(String memberNickname) {
+        this.memberNickname = memberNickname == null ? null : memberNickname.trim();
     }
 
     /**
@@ -422,39 +360,67 @@ public class OmsCartItem implements Serializable {
     }
 
     /**
-     * 获取商品的分类
+     * 获取商品分类
      *
-     * @return product_classify_id - 商品的分类
+     * @return product_category_id - 商品分类
      */
-    public Long getProductClassifyId() {
-        return productClassifyId;
+    public Long getProductCategoryId() {
+        return productCategoryId;
     }
 
     /**
-     * 设置商品的分类
+     * 设置商品分类
      *
-     * @param productClassifyId 商品的分类
+     * @param productCategoryId 商品分类
      */
-    public void setProductClassifyId(Long productClassifyId) {
-        this.productClassifyId = productClassifyId;
+    public void setProductCategoryId(Long productCategoryId) {
+        this.productCategoryId = productCategoryId;
     }
 
     /**
-     * 获取商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]
-     *
-     * @return product_attribute - 商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]
+     * @return product_brand
      */
-    public String getProductAttribute() {
-        return productAttribute;
+    public String getProductBrand() {
+        return productBrand;
     }
 
     /**
-     * 设置商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]
-     *
-     * @param productAttribute 商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]
+     * @param productBrand
      */
-    public void setProductAttribute(String productAttribute) {
-        this.productAttribute = productAttribute == null ? null : productAttribute.trim();
+    public void setProductBrand(String productBrand) {
+        this.productBrand = productBrand == null ? null : productBrand.trim();
+    }
+
+    /**
+     * @return product_sn
+     */
+    public String getProductSn() {
+        return productSn;
+    }
+
+    /**
+     * @param productSn
+     */
+    public void setProductSn(String productSn) {
+        this.productSn = productSn == null ? null : productSn.trim();
+    }
+
+    /**
+     * 获取商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     *
+     * @return product_attr - 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     */
+    public String getProductAttr() {
+        return productAttr;
+    }
+
+    /**
+     * 设置商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     *
+     * @param productAttr 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     */
+    public void setProductAttr(String productAttr) {
+        this.productAttr = productAttr == null ? null : productAttr.trim();
     }
 
     @Override
@@ -463,24 +429,24 @@ public class OmsCartItem implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", cartId=").append(cartId);
+        sb.append(", id=").append(id);
         sb.append(", productId=").append(productId);
-        sb.append(", skuId=").append(skuId);
+        sb.append(", productSkuId=").append(productSkuId);
         sb.append(", memberId=").append(memberId);
         sb.append(", quantity=").append(quantity);
         sb.append(", price=").append(price);
         sb.append(", productPic=").append(productPic);
         sb.append(", productName=").append(productName);
-        sb.append(", brandName=").append(brandName);
-        sb.append(", productSn=").append(productSn);
-        sb.append(", keywords=").append(keywords);
-        sb.append(", skuSn=").append(skuSn);
-        sb.append(", memberName=").append(memberName);
+        sb.append(", productSubTitle=").append(productSubTitle);
+        sb.append(", productSkuCode=").append(productSkuCode);
+        sb.append(", memberNickname=").append(memberNickname);
         sb.append(", createDate=").append(createDate);
         sb.append(", modifyDate=").append(modifyDate);
         sb.append(", deleteStatus=").append(deleteStatus);
-        sb.append(", productClassifyId=").append(productClassifyId);
-        sb.append(", productAttribute=").append(productAttribute);
+        sb.append(", productCategoryId=").append(productCategoryId);
+        sb.append(", productBrand=").append(productBrand);
+        sb.append(", productSn=").append(productSn);
+        sb.append(", productAttr=").append(productAttr);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -6,14 +6,16 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="first_letter" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="factory_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="product_comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="logo" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="factory" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="picture" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="big_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.zhiqiang.mall.bean.PmsBrand">
@@ -21,14 +23,16 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="brand_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="first_letter" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="factory_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="show_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="product_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="product_comment_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="logo" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="factory" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="picture" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="big_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="brand_story" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
     </constructor>
   </resultMap>
@@ -36,8 +40,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    brand_id, name, show_status, product_count, product_comment_count, logo, factory, 
-    picture
+    id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, 
+    logo, big_pic
   </sql>
   <sql id="Blob_Column_List">
     <!--

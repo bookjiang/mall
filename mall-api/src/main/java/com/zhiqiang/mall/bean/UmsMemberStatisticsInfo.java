@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "ums_member_statistics_info")
 public class UmsMemberStatisticsInfo implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "member_id")
@@ -49,8 +50,29 @@ public class UmsMemberStatisticsInfo implements Serializable {
     @Column(name = "login_count")
     private Integer loginCount;
 
+    /**
+     * 关注数量
+     */
+    @Column(name = "attend_count")
+    private Integer attendCount;
+
+    /**
+     * 粉丝数量
+     */
+    @Column(name = "fans_count")
+    private Integer fansCount;
+
     @Column(name = "collect_product_count")
     private Integer collectProductCount;
+
+    @Column(name = "collect_subject_count")
+    private Integer collectSubjectCount;
+
+    @Column(name = "collect_topic_count")
+    private Integer collectTopicCount;
+
+    @Column(name = "collect_comment_count")
+    private Integer collectCommentCount;
 
     @Column(name = "invite_friend_count")
     private Integer inviteFriendCount;
@@ -63,7 +85,7 @@ public class UmsMemberStatisticsInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public UmsMemberStatisticsInfo(Long id, Long memberId, BigDecimal consumeAmount, Integer orderCount, Integer couponCount, Integer commentCount, Integer returnOrderCount, Integer loginCount, Integer collectProductCount, Integer inviteFriendCount, Date recentOrderTime) {
+    public UmsMemberStatisticsInfo(Long id, Long memberId, BigDecimal consumeAmount, Integer orderCount, Integer couponCount, Integer commentCount, Integer returnOrderCount, Integer loginCount, Integer attendCount, Integer fansCount, Integer collectProductCount, Integer collectSubjectCount, Integer collectTopicCount, Integer collectCommentCount, Integer inviteFriendCount, Date recentOrderTime) {
         this.id = id;
         this.memberId = memberId;
         this.consumeAmount = consumeAmount;
@@ -72,7 +94,12 @@ public class UmsMemberStatisticsInfo implements Serializable {
         this.commentCount = commentCount;
         this.returnOrderCount = returnOrderCount;
         this.loginCount = loginCount;
+        this.attendCount = attendCount;
+        this.fansCount = fansCount;
         this.collectProductCount = collectProductCount;
+        this.collectSubjectCount = collectSubjectCount;
+        this.collectTopicCount = collectTopicCount;
+        this.collectCommentCount = collectCommentCount;
         this.inviteFriendCount = inviteFriendCount;
         this.recentOrderTime = recentOrderTime;
     }
@@ -218,6 +245,42 @@ public class UmsMemberStatisticsInfo implements Serializable {
     }
 
     /**
+     * 获取关注数量
+     *
+     * @return attend_count - 关注数量
+     */
+    public Integer getAttendCount() {
+        return attendCount;
+    }
+
+    /**
+     * 设置关注数量
+     *
+     * @param attendCount 关注数量
+     */
+    public void setAttendCount(Integer attendCount) {
+        this.attendCount = attendCount;
+    }
+
+    /**
+     * 获取粉丝数量
+     *
+     * @return fans_count - 粉丝数量
+     */
+    public Integer getFansCount() {
+        return fansCount;
+    }
+
+    /**
+     * 设置粉丝数量
+     *
+     * @param fansCount 粉丝数量
+     */
+    public void setFansCount(Integer fansCount) {
+        this.fansCount = fansCount;
+    }
+
+    /**
      * @return collect_product_count
      */
     public Integer getCollectProductCount() {
@@ -229,6 +292,48 @@ public class UmsMemberStatisticsInfo implements Serializable {
      */
     public void setCollectProductCount(Integer collectProductCount) {
         this.collectProductCount = collectProductCount;
+    }
+
+    /**
+     * @return collect_subject_count
+     */
+    public Integer getCollectSubjectCount() {
+        return collectSubjectCount;
+    }
+
+    /**
+     * @param collectSubjectCount
+     */
+    public void setCollectSubjectCount(Integer collectSubjectCount) {
+        this.collectSubjectCount = collectSubjectCount;
+    }
+
+    /**
+     * @return collect_topic_count
+     */
+    public Integer getCollectTopicCount() {
+        return collectTopicCount;
+    }
+
+    /**
+     * @param collectTopicCount
+     */
+    public void setCollectTopicCount(Integer collectTopicCount) {
+        this.collectTopicCount = collectTopicCount;
+    }
+
+    /**
+     * @return collect_comment_count
+     */
+    public Integer getCollectCommentCount() {
+        return collectCommentCount;
+    }
+
+    /**
+     * @param collectCommentCount
+     */
+    public void setCollectCommentCount(Integer collectCommentCount) {
+        this.collectCommentCount = collectCommentCount;
     }
 
     /**
@@ -277,7 +382,12 @@ public class UmsMemberStatisticsInfo implements Serializable {
         sb.append(", commentCount=").append(commentCount);
         sb.append(", returnOrderCount=").append(returnOrderCount);
         sb.append(", loginCount=").append(loginCount);
+        sb.append(", attendCount=").append(attendCount);
+        sb.append(", fansCount=").append(fansCount);
         sb.append(", collectProductCount=").append(collectProductCount);
+        sb.append(", collectSubjectCount=").append(collectSubjectCount);
+        sb.append(", collectTopicCount=").append(collectTopicCount);
+        sb.append(", collectCommentCount=").append(collectCommentCount);
         sb.append(", inviteFriendCount=").append(inviteFriendCount);
         sb.append(", recentOrderTime=").append(recentOrderTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

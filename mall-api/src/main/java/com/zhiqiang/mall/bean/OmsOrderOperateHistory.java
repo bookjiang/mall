@@ -7,8 +7,8 @@ import javax.persistence.*;
 @Table(name = "oms_order_operate_history")
 public class OmsOrderOperateHistory implements Serializable {
     @Id
-    @Column(name = "order_operate_history_id")
-    private Long orderOperateHistoryId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 订单id
@@ -17,7 +17,7 @@ public class OmsOrderOperateHistory implements Serializable {
     private Long orderId;
 
     /**
-     * 操作者：用户；系统；后台管理员
+     * 操作人：用户；系统；后台管理员
      */
     @Column(name = "operate_man")
     private String operateMan;
@@ -29,16 +29,10 @@ public class OmsOrderOperateHistory implements Serializable {
     private Date createTime;
 
     /**
-     * 操作前订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     * 订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
      */
-    @Column(name = "order_before_status")
-    private Integer orderBeforeStatus;
-
-    /**
-     * 操作后订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
-     */
-    @Column(name = "order_late_status")
-    private Integer orderLateStatus;
+    @Column(name = "order_status")
+    private Integer orderStatus;
 
     /**
      * 备注
@@ -47,13 +41,12 @@ public class OmsOrderOperateHistory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OmsOrderOperateHistory(Long orderOperateHistoryId, Long orderId, String operateMan, Date createTime, Integer orderBeforeStatus, Integer orderLateStatus, String note) {
-        this.orderOperateHistoryId = orderOperateHistoryId;
+    public OmsOrderOperateHistory(Long id, Long orderId, String operateMan, Date createTime, Integer orderStatus, String note) {
+        this.id = id;
         this.orderId = orderId;
         this.operateMan = operateMan;
         this.createTime = createTime;
-        this.orderBeforeStatus = orderBeforeStatus;
-        this.orderLateStatus = orderLateStatus;
+        this.orderStatus = orderStatus;
         this.note = note;
     }
 
@@ -62,17 +55,17 @@ public class OmsOrderOperateHistory implements Serializable {
     }
 
     /**
-     * @return order_operate_history_id
+     * @return id
      */
-    public Long getOrderOperateHistoryId() {
-        return orderOperateHistoryId;
+    public Long getId() {
+        return id;
     }
 
     /**
-     * @param orderOperateHistoryId
+     * @param id
      */
-    public void setOrderOperateHistoryId(Long orderOperateHistoryId) {
-        this.orderOperateHistoryId = orderOperateHistoryId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -94,18 +87,18 @@ public class OmsOrderOperateHistory implements Serializable {
     }
 
     /**
-     * 获取操作者：用户；系统；后台管理员
+     * 获取操作人：用户；系统；后台管理员
      *
-     * @return operate_man - 操作者：用户；系统；后台管理员
+     * @return operate_man - 操作人：用户；系统；后台管理员
      */
     public String getOperateMan() {
         return operateMan;
     }
 
     /**
-     * 设置操作者：用户；系统；后台管理员
+     * 设置操作人：用户；系统；后台管理员
      *
-     * @param operateMan 操作者：用户；系统；后台管理员
+     * @param operateMan 操作人：用户；系统；后台管理员
      */
     public void setOperateMan(String operateMan) {
         this.operateMan = operateMan == null ? null : operateMan.trim();
@@ -130,39 +123,21 @@ public class OmsOrderOperateHistory implements Serializable {
     }
 
     /**
-     * 获取操作前订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     * 获取订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
      *
-     * @return order_before_status - 操作前订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     * @return order_status - 订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
      */
-    public Integer getOrderBeforeStatus() {
-        return orderBeforeStatus;
+    public Integer getOrderStatus() {
+        return orderStatus;
     }
 
     /**
-     * 设置操作前订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     * 设置订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
      *
-     * @param orderBeforeStatus 操作前订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     * @param orderStatus 订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
      */
-    public void setOrderBeforeStatus(Integer orderBeforeStatus) {
-        this.orderBeforeStatus = orderBeforeStatus;
-    }
-
-    /**
-     * 获取操作后订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
-     *
-     * @return order_late_status - 操作后订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
-     */
-    public Integer getOrderLateStatus() {
-        return orderLateStatus;
-    }
-
-    /**
-     * 设置操作后订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
-     *
-     * @param orderLateStatus 操作后订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
-     */
-    public void setOrderLateStatus(Integer orderLateStatus) {
-        this.orderLateStatus = orderLateStatus;
+    public void setOrderStatus(Integer orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     /**
@@ -189,12 +164,11 @@ public class OmsOrderOperateHistory implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderOperateHistoryId=").append(orderOperateHistoryId);
+        sb.append(", id=").append(id);
         sb.append(", orderId=").append(orderId);
         sb.append(", operateMan=").append(operateMan);
         sb.append(", createTime=").append(createTime);
-        sb.append(", orderBeforeStatus=").append(orderBeforeStatus);
-        sb.append(", orderLateStatus=").append(orderLateStatus);
+        sb.append(", orderStatus=").append(orderStatus);
         sb.append(", note=").append(note);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
