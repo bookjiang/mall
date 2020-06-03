@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,8 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Oss相关操作接口
- * Created by macro on 2018/4/26.
+ * Created by zhiqiang.
  */
+@CrossOrigin
 @Controller
 @Api(tags = "OssController", description = "Oss管理")
 @RequestMapping("/aliyun/oss")

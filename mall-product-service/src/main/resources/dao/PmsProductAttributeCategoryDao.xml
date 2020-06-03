@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.product.Dao.PmsProductAttributeCategoryDao">
+    <resultMap id="getListWithAttrMap" type="com.zhiqiang.mall.model.PmsProductAttributeCategoryItem" extends="com.zhiqiang.mall.user.mapper.PmsProductAttributeCategoryMapper.BaseResultMap">
+        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.zhiqiang.mall.user.mapper.PmsProductAttributeMapper.BaseResultMap">
+        </collection>
+    </resultMap>
+    <select id="getListWithAttr" resultMap="getListWithAttrMap">
+        SELECT
+            pac.id,
+            pac.name,
+            pac.attribute_count,
+            pac.param_count,
+            pa.id attr_id,
+            pa.name attr_name,
+            pa.product_attribute_category_id attr_product_attribute_category_id,
+            pa.select_type attr_select_type,
+            pa.input_type attr_input_type,
+            pa.input_list attr_input_list,
+            pa.sort attr_sort,
+            pa.filter_type attr_filter_type,
+            pa.select_type attr_select_type,
+            pa.search_type attr_search_type,
+            pa.related_status attr_related_status,
+            pa.hand_add_status attr_hand_add_status,
+            pa.type attr_type
+        FROM
+            pms_product_attribute_category pac
+            LEFT JOIN pms_product_attribute pa ON pac.id = pa.product_attribute_category_id
+        AND pa.type=1;
+    </select>
+</mapper>

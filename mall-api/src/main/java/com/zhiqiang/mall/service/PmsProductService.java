@@ -2,6 +2,7 @@ package com.zhiqiang.mall.service;
 
 import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.PmsProduct;
+import com.zhiqiang.mall.model.PmsProductParam;
 import com.zhiqiang.mall.model.PmsProductResult;
 import com.zhiqiang.mall.model.ProductQueryParams;
 
@@ -30,4 +31,6 @@ public interface PmsProductService {
     int updateDeleteStatus(List<Long> ids, Integer deleteStatus);
 
     PmsProductResult getUpdateInfo(Long id);
+
+    int create(PmsProductParam productParam);
 }

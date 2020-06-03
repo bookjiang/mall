@@ -29,6 +29,26 @@ public class PmsProductParam extends PmsProduct {
     @ApiModelProperty("优选专区和商品的关系")
     public List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList;
 
+
+    public PmsProductParam()
+    {}
+    public PmsProductParam(List<PmsProductLadder> productLadderList, List<PmsProductFullReduction> productFullReductionList, List<PmsMemberPrice> memberPriceList, List<PmsSkuStock> skuStockList, List<PmsProductAttributeValue> productAttributeValueList) {
+        this.productLadderList = productLadderList;
+        this.productFullReductionList = productFullReductionList;
+        this.memberPriceList = memberPriceList;
+        this.skuStockList = skuStockList;
+        this.productAttributeValueList = productAttributeValueList;
+    }
+
+    public PmsProductParam(Long id, Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName, String description, String detailDesc, String detailHtml, String detailMobileHtml, List<PmsProductLadder> productLadderList, List<PmsProductFullReduction> productFullReductionList, List<PmsMemberPrice> memberPriceList, List<PmsSkuStock> skuStockList, List<PmsProductAttributeValue> productAttributeValueList) {
+        super(id, brandId, productCategoryId, feightTemplateId, productAttributeCategoryId, name, pic, productSn, deleteStatus, publishStatus, newStatus, recommandStatus, verifyStatus, sort, sale, price, promotionPrice, giftGrowth, giftPoint, usePointLimit, subTitle, originalPrice, stock, lowStock, unit, weight, previewStatus, serviceIds, keywords, note, albumPics, detailTitle, promotionStartTime, promotionEndTime, promotionPerLimit, promotionType, brandName, productCategoryName, description, detailDesc, detailHtml, detailMobileHtml);
+        this.productLadderList = productLadderList;
+        this.productFullReductionList = productFullReductionList;
+        this.memberPriceList = memberPriceList;
+        this.skuStockList = skuStockList;
+        this.productAttributeValueList = productAttributeValueList;
+    }
+
     public PmsProductParam(Long id, Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName, String description, String detailDesc, String detailHtml, String detailMobileHtml, List<PmsProductLadder> productLadderList, List<PmsProductFullReduction> productFullReductionList, List<PmsMemberPrice> memberPriceList, List<PmsSkuStock> skuStockList, List<PmsProductAttributeValue> productAttributeValueList, List<CmsSubjectProductRelation> subjectProductRelationList, List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList) {
         super(id, brandId, productCategoryId, feightTemplateId, productAttributeCategoryId, name, pic, productSn, deleteStatus, publishStatus, newStatus, recommandStatus, verifyStatus, sort, sale, price, promotionPrice, giftGrowth, giftPoint, usePointLimit, subTitle, originalPrice, stock, lowStock, unit, weight, previewStatus, serviceIds, keywords, note, albumPics, detailTitle, promotionStartTime, promotionEndTime, promotionPerLimit, promotionType, brandName, productCategoryName, description, detailDesc, detailHtml, detailMobileHtml);
         this.productLadderList = productLadderList;

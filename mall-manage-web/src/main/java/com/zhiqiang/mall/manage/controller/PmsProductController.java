@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.PmsProduct;
 import com.zhiqiang.mall.commonbean.CommonPage;
 import com.zhiqiang.mall.commonbean.CommonResult;
+import com.zhiqiang.mall.model.PmsProductParam;
 import com.zhiqiang.mall.model.PmsProductResult;
 import com.zhiqiang.mall.model.ProductQueryParams;
 import com.zhiqiang.mall.service.PmsProductService;
@@ -136,5 +137,20 @@ public class PmsProductController {
         PmsProductResult productResult = pmsProductService.getUpdateInfo(id);
         return CommonResult.success(productResult);
     }
+
+    @ApiOperation("添加商品")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult create(@RequestBody PmsProductParam productParam, BindingResult bindingResult) {
+        System.out.println(productParam.toString());
+        int count = pmsProductService.create(productParam);
+        System.out.println(count);
+        if (count > 0) {
+            return CommonResult.success(count);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
 
 }

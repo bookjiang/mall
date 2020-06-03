@@ -3,13 +3,15 @@ package com.zhiqiang.mall.model;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.io.Serializable;
+
 /**
  * @ClassName: UmsAdminLogin
  * @description: TODO
  * @author: zhiqiang
  * @create: 2020/4/24 11:29
  */
-public class UmsAdminLogin {
+public class UmsAdminLogin implements Serializable {
     @ApiModelProperty(value = "用户名", required = true)
     @NotEmpty(message = "用户名不能为空")
     private String username;

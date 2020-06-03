@@ -2,6 +2,9 @@ package com.zhiqiang.mall.service;
 
 import com.github.pagehelper.PageInfo;
 import com.zhiqiang.mall.bean.PmsProductAttributeCategory;
+import com.zhiqiang.mall.model.PmsProductAttributeCategoryItem;
+
+import java.util.List;
 
 /**
  * @ClassName: PmsProductAttributeCategoryService
@@ -11,4 +14,8 @@ import com.zhiqiang.mall.bean.PmsProductAttributeCategory;
  */
 public interface PmsProductAttributeCategoryService {
     PageInfo<PmsProductAttributeCategory> getList(Integer pageSize, Integer pageNum);
+
+    List<PmsProductAttributeCategoryItem> getListWithAttr();
+
+    int update(Long id, String name);
 }
