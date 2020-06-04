@@ -1,6 +1,9 @@
-package com.zhiqiang.mall.order.service.impl;
+package com.zhiqiang.mall.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
+
+import com.zhiqiang.mall.bean.OmsCompanyAddress;
+
+import java.util.List;
 
 /**
  * @ClassName: OmsCompanyAddressService收货地址管
@@ -8,6 +11,7 @@ import com.alibaba.dubbo.config.annotation.Service;
  * @author: zhiqiang
  * @create: 2020/6/3 23:12
  */
-@Service
+
 public interface OmsCompanyAddressService {
+    List<OmsCompanyAddress> list();
 }
