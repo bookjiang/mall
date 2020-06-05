@@ -96,7 +96,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             if(!passwordEncoder.matches(password,umsAdmin.getPassword())){
                 throw new BadCredentialsException("密码不正确");
             }
-            //System.out.println("umsAdmi"+umsAdmin.toString());
+            System.out.println("umsAdmi"+umsAdmin.toString());
             token= jwtTokenUtil.generateToken(umsAdmin);
 
             insertLoginLog(umsAdmin);

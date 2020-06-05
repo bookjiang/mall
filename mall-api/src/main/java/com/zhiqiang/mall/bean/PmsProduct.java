@@ -215,8 +215,144 @@ public class PmsProduct implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public PmsProduct(Long id, Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName, String description, String detailDesc, String detailHtml, String detailMobileHtml) {
+    public PmsProduct(Long id, Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, String description, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, String detailDesc, String detailHtml, String detailMobileHtml, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName) {
         this.id = id;
+        this.brandId = brandId;
+        this.productCategoryId = productCategoryId;
+        this.feightTemplateId = feightTemplateId;
+        this.productAttributeCategoryId = productAttributeCategoryId;
+        this.name = name;
+        this.pic = pic;
+        this.productSn = productSn;
+        this.deleteStatus = deleteStatus;
+        this.publishStatus = publishStatus;
+        this.newStatus = newStatus;
+        this.recommandStatus = recommandStatus;
+        this.verifyStatus = verifyStatus;
+        this.sort = sort;
+        this.sale = sale;
+        this.price = price;
+        this.promotionPrice = promotionPrice;
+        this.giftGrowth = giftGrowth;
+        this.giftPoint = giftPoint;
+        this.usePointLimit = usePointLimit;
+        this.subTitle = subTitle;
+        this.originalPrice = originalPrice;
+        this.stock = stock;
+        this.lowStock = lowStock;
+        this.unit = unit;
+        this.weight = weight;
+        this.previewStatus = previewStatus;
+        this.serviceIds = serviceIds;
+        this.keywords = keywords;
+        this.note = note;
+        this.albumPics = albumPics;
+        this.detailTitle = detailTitle;
+        this.promotionStartTime = promotionStartTime;
+        this.promotionEndTime = promotionEndTime;
+        this.promotionPerLimit = promotionPerLimit;
+        this.promotionType = promotionType;
+        this.brandName = brandName;
+        this.productCategoryName = productCategoryName;
+        this.description = description;
+        this.detailDesc = detailDesc;
+        this.detailHtml = detailHtml;
+        this.detailMobileHtml = detailMobileHtml;
+    }
+
+
+    public PmsProduct(Long id, Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String detailTitle, String detailDesc, String detailHtml, String detailMobileHtml, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName) {
+        this.id = id;
+        this.brandId = brandId;
+        this.productCategoryId = productCategoryId;
+        this.feightTemplateId = feightTemplateId;
+        this.productAttributeCategoryId = productAttributeCategoryId;
+        this.name = name;
+        this.pic = pic;
+        this.productSn = productSn;
+        this.deleteStatus = deleteStatus;
+        this.publishStatus = publishStatus;
+        this.newStatus = newStatus;
+        this.recommandStatus = recommandStatus;
+        this.verifyStatus = verifyStatus;
+        this.sort = sort;
+        this.sale = sale;
+        this.price = price;
+        this.promotionPrice = promotionPrice;
+        this.giftGrowth = giftGrowth;
+        this.giftPoint = giftPoint;
+        this.usePointLimit = usePointLimit;
+        this.subTitle = subTitle;
+        this.originalPrice = originalPrice;
+        this.stock = stock;
+        this.lowStock = lowStock;
+        this.unit = unit;
+        this.weight = weight;
+        this.previewStatus = previewStatus;
+        this.serviceIds = serviceIds;
+        this.keywords = keywords;
+        this.note = note;
+        this.albumPics = albumPics;
+        this.detailTitle = detailTitle;
+        this.promotionStartTime = promotionStartTime;
+        this.promotionEndTime = promotionEndTime;
+        this.promotionPerLimit = promotionPerLimit;
+        this.promotionType = promotionType;
+        this.brandName = brandName;
+        this.productCategoryName = productCategoryName;
+        this.description = description;
+        this.detailDesc = detailDesc;
+        this.detailHtml = detailHtml;
+        this.detailMobileHtml = detailMobileHtml;
+    }
+
+    public PmsProduct(Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName, String description, String detailDesc, String detailHtml, String detailMobileHtml) {
+        this.brandId = brandId;
+        this.productCategoryId = productCategoryId;
+        this.feightTemplateId = feightTemplateId;
+        this.productAttributeCategoryId = productAttributeCategoryId;
+        this.name = name;
+        this.pic = pic;
+        this.productSn = productSn;
+        this.deleteStatus = deleteStatus;
+        this.publishStatus = publishStatus;
+        this.newStatus = newStatus;
+        this.recommandStatus = recommandStatus;
+        this.verifyStatus = verifyStatus;
+        this.sort = sort;
+        this.sale = sale;
+        this.price = price;
+        this.promotionPrice = promotionPrice;
+        this.giftGrowth = giftGrowth;
+        this.giftPoint = giftPoint;
+        this.usePointLimit = usePointLimit;
+        this.subTitle = subTitle;
+        this.originalPrice = originalPrice;
+        this.stock = stock;
+        this.lowStock = lowStock;
+        this.unit = unit;
+        this.weight = weight;
+        this.previewStatus = previewStatus;
+        this.serviceIds = serviceIds;
+        this.keywords = keywords;
+        this.note = note;
+        this.albumPics = albumPics;
+        this.detailTitle = detailTitle;
+        this.promotionStartTime = promotionStartTime;
+        this.promotionEndTime = promotionEndTime;
+        this.promotionPerLimit = promotionPerLimit;
+        this.promotionType = promotionType;
+        this.brandName = brandName;
+        this.productCategoryName = productCategoryName;
+        this.description = description;
+        this.detailDesc = detailDesc;
+        this.detailHtml = detailHtml;
+        this.detailMobileHtml = detailMobileHtml;
+    }
+
+
+    public PmsProduct(Long id,Long brandId, Long productCategoryId, Long feightTemplateId, Long productAttributeCategoryId, String name, String pic, String productSn, Integer deleteStatus, Integer publishStatus, Integer newStatus, Integer recommandStatus, Integer verifyStatus, Integer sort, Integer sale, BigDecimal price, BigDecimal promotionPrice, Integer giftGrowth, Integer giftPoint, Integer usePointLimit, String subTitle, BigDecimal originalPrice, Integer stock, Integer lowStock, String unit, BigDecimal weight, Integer previewStatus, String serviceIds, String keywords, String note, String albumPics, String detailTitle, Date promotionStartTime, Date promotionEndTime, Integer promotionPerLimit, Integer promotionType, String brandName, String productCategoryName) {
+        this.id=id;
         this.brandId = brandId;
         this.productCategoryId = productCategoryId;
         this.feightTemplateId = feightTemplateId;

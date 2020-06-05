@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiqiang.mall.sale.dao.SmsFlashPromotionProductRelationDao">
+    <resultMap id="flashProductMap" type="com.zhiqiang.mall.model.SmsFlashPromotionProduct" extends="com.zhiqiang.mall.user.mapper.SmsFlashPromotionProductRelationMapper.BaseResultMap">
+        <association property="product" resultMap="com.zhiqiang.mall.user.mapper.PmsProductMapper.BaseResultMap" columnPrefix="p_"/>
+    </resultMap>
+    <select id="getList" resultMap="flashProductMap">
+        SELECT
+            r.id,
+            r.flash_promotion_price,
+            r.flash_promotion_count,
+            r.flash_promotion_limit,
+            r.flash_promotion_id,
+            r.flash_promotion_session_id,
+            r.product_id,
+            r.sort,
+--             p.id p_id,
+--             p.`name` p_name,
+--             p.product_sn p_product_sn,
+--             p.price p_price,
+--             p.stock p_stock,
+--             p.brand_id p_brand_id,
+--             p.product_category_id p_product_category_id
+
+            p.id p_id,
+            p.brand_id p_brand_id,
+            p.product_category_id p_product_category_id,
+            p.feight_template_id p_feight_template_id,
+            p.product_attribute_category_id p_product_attribute_category_id,
+            p.name p_name,
+            p.pic p_pic,
+            p.product_sn p_product_sn,
+            p.delete_status p_delete_status,
+            p.publish_status p_publish_status,
+            p.new_status p_new_status,
+            p.recommand_status p_recommand_status,
+            p.verify_status p_verify_status,
+            p.sort p_sort,
+            p.sale p_sale,
+            p.price p_price,
+            p.promotion_price p_promotion_price,
+            p.gift_growth p_gift_growth,
+            p.gift_point p_gift_point,
+            p.use_point_limit p_use_point_limit,
+            p.sub_title  p_sub_title,
+            p.description  p_description,
+            p.original_price p_original_price,
+            p.stock  p_stock,
+            p.low_stock p_low_stock,
+            p.unit p_unit,
+            p.weight p_weight,
+            p.preview_status p_preview_status,
+            p.service_ids p_service_ids,
+            p.keywords p_keywords,
+            p.note p_note,
+            p.album_pics p_album_pics,
+            p.detail_title p_detail_title,
+            p.detail_desc p_detail_desc,
+            p.detail_html p_detail_html,
+            p.detail_mobile_html p_detail_mobile_html,
+            p.promotion_start_time p_promotion_start_time,
+            p.promotion_end_time p_promotion_end_time,
+            p.promotion_per_limit p_promotion_per_limit,
+            p.promotion_type p_promotion_type,
+            p.brand_name p_brand_name,
+           p.product_category_name p_product_category_name
+
+        FROM
+            sms_flash_promotion_product_relation r
+            LEFT JOIN pms_product p ON r.product_id = p.id
+        WHERE
+            r.flash_promotion_id = #{flashPromotionId}
+            AND r.flash_promotion_session_id = #{flashPromotionSessionId}
+        ORDER BY r.sort DESC
+    </select>
+</mapper>

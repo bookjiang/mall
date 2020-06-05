@@ -23,4 +23,10 @@
     id, flash_promotion_id, flash_promotion_session_id, product_id, flash_promotion_price, 
     flash_promotion_count, flash_promotion_limit, sort
   </sql>
+<!--  <select id="countByExample" parameterType="com.zhiqiang.mall.bean.SmsFlashPromotionProductRelationExample" resultType="java.lang.Long">-->
+<!--    select count(*) from sms_flash_promotion_product_relation-->
+<!--    <if test="_parameter != null">-->
+<!--      <include refid="Example_Where_Clause" />-->
+<!--    </if>-->
+<!--  </select>-->
 </mapper>
